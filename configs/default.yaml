@@ -1,0 +1,33 @@
+project:
+  name: afriqa-entity-aware-qa
+  seed: 42
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  outputs: outputs
+
+data:
+  afriqa_name: masakhane/afriqa-gold-passages
+  masakhaner_name: masakhane/masakhaner2
+  languages: [swh, hau, yor]         # Swahili, Hausa, Yoruba
+  cache_dir: .cache/huggingface
+
+model:
+  base: google/mt5-base
+  max_source_length: 256
+  max_target_length: 64
+
+train:
+  batch_size: 8
+  grad_accum: 2
+  lr: 3.0e-5
+  weight_decay: 0.01
+  epochs: 3
+  warmup_steps: 200
+  fp16: false
+
+eval:
+  do_semantic: true
+  labse_model: sentence-transformers/LaBSE
+  semantic_threshold: 0.75
