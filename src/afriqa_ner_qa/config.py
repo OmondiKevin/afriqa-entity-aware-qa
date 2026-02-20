@@ -1,0 +1,12 @@
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any, Dict, Union
+import yaml
+
+
+def load_config(path: Union[str, Path]) -> Dict[str, Any]:
+    """Load YAML config into a dict."""
+    path = Path(path)
+    with path.open("r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
