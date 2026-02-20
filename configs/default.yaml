@@ -10,7 +10,10 @@ paths:
 data:
   afriqa_name: masakhane/afriqa-gold-passages
   masakhaner_name: masakhane/masakhaner2
-  languages: [swh, hau, yor]         # Swahili, Hausa, Yoruba
+
+  afriqa_configs: [swa, hau, yor]
+  masakhaner_configs: [swa, hau, yor]
+
   cache_dir: .cache/huggingface
 
 model:
