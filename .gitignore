@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+*.conda
+*.env
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Data & experiment artifacts (do NOT commit)
+data/
+outputs/
+.cache/
+wandb/
+runs/
+checkpoints/
+predictions/
+logs/
+
+# Model files
+*.pt
+*.bin
+*.ckpt
+*.safetensors
+*.onnx
+
+# Large files
+*.zip
+*.tar
+*.gz
