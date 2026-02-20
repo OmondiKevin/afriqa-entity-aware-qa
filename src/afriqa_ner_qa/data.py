@@ -5,11 +5,11 @@ from datasets import DatasetDict, load_dataset
 
 
 def load_afriqa(dataset_name: str, cache_dir: str | None = None) -> DatasetDict:
-    return load_dataset(dataset_name, cache_dir=cache_dir)
+    return load_dataset(dataset_name, cache_dir=cache_dir, trust_remote_code=True)
 
 
 def load_masakhaner(dataset_name: str, cache_dir: str | None = None) -> DatasetDict:
-    return load_dataset(dataset_name, cache_dir=cache_dir)
+    return load_dataset(dataset_name, cache_dir=cache_dir, trust_remote_code=True)
 
 
 def filter_by_languages(ds: DatasetDict, lang_field: str, languages: List[str]) -> DatasetDict:
@@ -26,3 +26,4 @@ def filter_by_languages(ds: DatasetDict, lang_field: str, languages: List[str]) 
 
 def summarize_splits(ds: DatasetDict) -> List[Tuple[str, int]]:
     return [(split, ds[split].num_rows) for split in ds.keys()]
+    
