@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "afriqa-entity-aware-qa"
+version = "0.1.0"
+description = "Entity-aware adaptation for direct African-language XOR-QA on AfriQA (no translation), using MasakhaNER supervision and EM/F1 + semantic similarity evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kevin Omondi" }]
+keywords = ["nlp", "question-answering", "cross-lingual", "african-languages", "ner", "mt5", "huggingface"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+  "torch>=2.1",
+  "transformers>=4.41",
+  "datasets>=2.19",
+  "accelerate>=0.30",
+  "evaluate>=0.4",
+  "sentence-transformers>=3.0",
+  "scikit-learn>=1.3",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "tqdm>=4.66",
+  "pyyaml>=6.0",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "black>=24.0",
+  "mypy>=1.10",
+  "pre-commit>=3.7",
+  "ipykernel>=6.29",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-select = ["I"]  # import sorting
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
