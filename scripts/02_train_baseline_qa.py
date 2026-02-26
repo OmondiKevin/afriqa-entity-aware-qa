@@ -132,7 +132,7 @@ def main() -> None:
         logger.info(f"Training: learning_rate={lr}, lr_scheduler_type={lr_scheduler_type}, optim={optim_name}")
 
         overfit_max_steps = debug_cfg.get("overfit_max_steps", 0) if overfit_n > 0 else 0  # 0 = use epochs
-        per_device_bs = 8 if overfit_n == 0 else 8
+        per_device_bs = train_cfg.get("batch_size", 8) if overfit_n == 0 else 8
         grad_accum = 1 if overfit_n > 0 else train_cfg.get("grad_accum", 2)
         training_kw: dict = {
             "output_dir": output_dir,

@@ -31,19 +31,19 @@ train:
   max_target_length: 128
   debug_max_target_length: 16
   max_grad_norm: 1.0
-  batch_size: 1
-  grad_accum: 16
-  lr: 3.0e-5
+  batch_size: 8
+  grad_accum: 2
+  lr: 5.0e-4
   learning_rate: 1e-4  # used in overfit mode
   weight_decay: 0.01
-  epochs: 20
+  epochs: 15
   overfit_epochs: 30  # used when debug.overfit_n > 0
-  warmup_steps: 200
+  warmup_steps: 50
   fp16: false
   num_workers: 0
-  eval_steps: 200
-  save_steps: 200
-  logging_steps: 50
+  eval_steps: 50
+  save_steps: 50
+  logging_steps: 10
 
 run:
   baseline_output_dir: outputs/checkpoints/baseline_mt5
