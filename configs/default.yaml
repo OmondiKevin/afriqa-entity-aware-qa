@@ -43,6 +43,7 @@ train:
   num_workers: 0
   eval_steps: 50
   save_steps: 50
+  save_total_limit: 1
   logging_steps: 10
 
 run:

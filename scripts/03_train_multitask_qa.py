@@ -140,6 +140,7 @@ def main() -> None:
             "eval_steps": train_cfg.get("eval_steps", 200) if overfit_n == 0 else 10,
             "save_strategy": "steps",
             "save_steps": train_cfg.get("save_steps", 200),
+            "save_total_limit": train_cfg.get("save_total_limit", 1),
             "load_best_model_at_end": True,
             "metric_for_best_model": "eval_loss",
             "greater_is_better": False,
