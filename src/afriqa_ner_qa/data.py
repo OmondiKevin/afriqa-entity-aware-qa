@@ -165,7 +165,14 @@ def export_seq2seq_jsonl(
                         question = str(question).strip()
                         break
                 target_text = str(normalize_afriqa_answer(row)).strip()
-                input_text = f"{prompt_prefix}{question}".strip() if question else ""
+                
+                context = str(row.get("context", "")).strip()
+                input_text = ""
+                if question and context:
+                    input_text = f"{prompt_prefix}{question} context: {context}".strip()
+                elif question:
+                    input_text = f"{prompt_prefix}{question}".strip()
+                
                 ex_id = str(row.get(id_field, i))
                 lang = row.get(l_field) or ""
                 if isinstance(lang, list):

@@ -28,8 +28,7 @@ def combine_and_shuffle_jsonl(file1: Path, file2: Path, out_file: Path, seed: in
     random.shuffle(lines)
     
     with out_file.open("w", encoding="utf-8") as f:
-        for line in lines:
-            f.write(line)
+        f.writelines(lines)
             
     return len(lines)
 
