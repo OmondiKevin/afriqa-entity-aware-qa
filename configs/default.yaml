@@ -14,23 +14,56 @@ data:
   afriqa_configs: [swa, hau, yor]
   masakhaner_configs: [swa, hau, yor]
 
+  afriqa_disk_path: data/processed/afriqa_swa_hau_yor
+  qa_seq2seq_out_dir: data/processed/qa_seq2seq_swa_hau_yor
+
   cache_dir: .cache/huggingface
 
 model:
   base: google/mt5-base
-  max_source_length: 256
-  max_target_length: 64
+  debug_base: google/mt5-small
+  prompt_prefix: "question: "
+  max_source_length: 192
+  max_target_length: 32
 
 train:
-  batch_size: 8
-  grad_accum: 2
+  max_source_length: 256
+  max_target_length: 128
+  debug_max_target_length: 16
+  max_grad_norm: 1.0
+  batch_size: 1
+  grad_accum: 16
   lr: 3.0e-5
+  learning_rate: 1e-4  # used in overfit mode
   weight_decay: 0.01
-  epochs: 3
+  epochs: 20
+  overfit_epochs: 30  # used when debug.overfit_n > 0
   warmup_steps: 200
   fp16: false
+  num_workers: 0
+  eval_steps: 200
+  save_steps: 200
+  logging_steps: 50
+
+run:
+  baseline_output_dir: outputs/checkpoints/baseline_mt5
+  baseline_pred_path: outputs/predictions/baseline_mt5_test.jsonl
+  overfit_pred_path: outputs/predictions/overfit_mt5_train.jsonl
+  baseline_metrics_json: outputs/metrics/baseline_mt5_test_metrics.json
+  baseline_metrics_csv: outputs/metrics/baseline_mt5_test_metrics.csv
+
+debug:
+  overfit_n: 0
+  overfit_epochs: 50
+  overfit_lr: 3.0e-4
+  overfit_max_steps: 0  # 0 = use epochs; if >0 then train max_steps
+  print_examples: 3
+  generation_max_new_tokens: 8
 
 eval:
   do_semantic: true
   labse_model: sentence-transformers/LaBSE
   semantic_threshold: 0.75
+  semantic_batch_size: 32
+  generation_max_new_tokens: 16
+  generation_min_new_tokens: 1

@@ -7,7 +7,7 @@ name = "afriqa-entity-aware-qa"
 version = "0.1.0"
 description = "Entity-aware adaptation for direct African-language XOR-QA on AfriQA (no translation), using MasakhaNER supervision and EM/F1 + semantic similarity evaluation."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Kevin Omondi" }]
 keywords = ["nlp", "question-answering", "cross-lingual", "african-languages", "ner", "mt5", "huggingface"]
