@@ -152,5 +152,5 @@ def build_seq2seq_trainer(
         train_dataset=tokenized_train,
         eval_dataset=tokenized_eval,
         data_collator=data_collator,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
