@@ -136,7 +136,7 @@ def main() -> None:
         grad_accum = 1 if overfit_n > 0 else train_cfg.get("grad_accum", 2)
         training_kw: dict = {
             "output_dir": output_dir,
-            "evaluation_strategy": "steps",
+            "eval_strategy": "steps",
             "eval_steps": train_cfg.get("eval_steps", 200) if overfit_n == 0 else 10,
             "save_strategy": "steps",
             "save_steps": train_cfg.get("save_steps", 200),
