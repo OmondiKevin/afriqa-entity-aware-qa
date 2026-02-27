@@ -61,6 +61,12 @@ debug:
   print_examples: 3
   generation_max_new_tokens: 8
 
+lora:
+  use_lora: false
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
 eval:
   do_semantic: true
   labse_model: sentence-transformers/LaBSE

@@ -56,6 +56,12 @@ def main() -> None:
     print_examples = debug_cfg.get("print_examples", 1)
     debug_predict_train = overfit_n > 0 and not args.no_debug_predict_train
 
+    lora_cfg = cfg.get("lora", {})
+    use_lora = lora_cfg.get("use_lora", False)
+    if use_lora:
+        output_dir = output_dir.replace("multitask_mt5", "multitask_mt5_lora")
+        pred_path = pred_path.replace("multitask_mt5_test", "multitask_mt5_lora_test")
+
     model_cfg = cfg.get("model", {})
     if overfit_n > 0:
         model_name = "google/mt5-small"
@@ -92,12 +98,33 @@ def main() -> None:
         tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, add_prefix_space=False)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
+        if use_lora:
+            try:
+                from peft import LoraConfig, get_peft_model, TaskType
+            except ImportError:
+                logger.error("peft is not installed. Please install it using `pip install peft` or set use_lora: false.")
+                sys.exit(1)
+            
+            lora_config = LoraConfig(
+                r=lora_cfg.get("r", 16),
+                lora_alpha=lora_cfg.get("alpha", 32),
+                target_modules=["q", "v"],
+                lora_dropout=lora_cfg.get("dropout", 0.05),
+                bias="none",
+                task_type=TaskType.SEQ_2_SEQ_LM,
+            )
+            model = get_peft_model(model, lora_config)
+            logger.info("LoRA injected! Trainable parameters:")
+            model.print_trainable_parameters()
+
         if overfit_n > 0:
-            model.gradient_checkpointing_disable()
+            if not use_lora:
+                model.gradient_checkpointing_disable()
             model.config.use_cache = True
             logger.info("Overfit mode: gradient checkpointing disabled, use_cache=True")
         else:
-            model.gradient_checkpointing_enable()
+            if not use_lora:
+                model.gradient_checkpointing_enable()
             model.config.use_cache = False
             logger.info("Adafactor + gradient checkpointing enabled for low-memory training")
 
@@ -241,8 +268,16 @@ def main() -> None:
         model = trainer.model
     else:
         logger.info(f"Predict-only mode: loading best checkpoint from {output_dir}")
-        tokenizer = AutoTokenizer.from_pretrained(output_dir, use_fast=False, add_prefix_space=False)
-        model = AutoModelForSeq2SeqLM.from_pretrained(output_dir)
+        
+        if use_lora:
+            from peft import PeftModel
+            tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, add_prefix_space=False)
+            base_model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+            model = PeftModel.from_pretrained(base_model, output_dir)
+            logger.info(f"Loaded base model {model_name} and LoRA adapters from {output_dir}")
+        else:
+            tokenizer = AutoTokenizer.from_pretrained(output_dir, use_fast=False, add_prefix_space=False)
+            model = AutoModelForSeq2SeqLM.from_pretrained(output_dir)
 
     # Generate predictions (from best checkpoint)
     max_source_length = train_cfg.get("max_source_length") or cfg["model"]["max_source_length"]
