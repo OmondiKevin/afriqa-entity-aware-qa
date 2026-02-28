@@ -116,6 +116,7 @@ def build_seq2seq_trainer(
     training_args: Seq2SeqTrainingArguments,
     max_source_length: int,
     max_target_length: int,
+    callbacks: Optional[List[Any]] = None,
 ) -> Seq2SeqTrainer:
     """Build Seq2SeqTrainer with tokenized datasets."""
 
@@ -153,4 +154,5 @@ def build_seq2seq_trainer(
         eval_dataset=tokenized_eval,
         data_collator=data_collator,
         processing_class=tokenizer,
+        callbacks=callbacks,
     )

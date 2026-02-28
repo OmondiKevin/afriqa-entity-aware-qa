@@ -36,7 +36,8 @@ train:
   lr: 5.0e-4
   learning_rate: 1e-4  # used in overfit mode
   weight_decay: 0.01
-  epochs: 4
+  epochs: 20
+  early_stopping_patience: 3
   overfit_epochs: 30  # used when debug.overfit_n > 0
   warmup_steps: 50
   fp16: false

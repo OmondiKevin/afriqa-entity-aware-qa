@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from datasets import load_dataset
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, Seq2SeqTrainingArguments
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, Seq2SeqTrainingArguments, EarlyStoppingCallback
 
 from afriqa_ner_qa.config import load_config
 from afriqa_ner_qa.eval import _clean_extra_id_from_pred, exact_match, generate_predictions
@@ -204,6 +204,12 @@ def main() -> None:
         if overfit_n > 0:
             assert training_args.max_grad_norm > 0, "max_grad_norm must be > 0 for overfit mode"
 
+        trainer_callbacks = []
+        patience = train_cfg.get("early_stopping_patience", 0)
+        if overfit_n == 0 and patience > 0:
+            logger.info(f"Enabling early stopping with patience={patience}")
+            trainer_callbacks.append(EarlyStoppingCallback(early_stopping_patience=patience))
+
         trainer = build_seq2seq_trainer(
             model=model,
             tokenizer=tokenizer,
@@ -212,6 +218,7 @@ def main() -> None:
             training_args=training_args,
             max_source_length=max_source_length,
             max_target_length=max_target_length,
+            callbacks=trainer_callbacks if trainer_callbacks else None,
         )
 
         logger.info("Starting training...")
