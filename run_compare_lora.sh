@@ -27,6 +27,20 @@ python scripts/04_eval_predictions.py --config configs/default.yaml --pred_path 
 mv configs/default.yaml.bak configs/default.yaml
 
 echo "=========================================="
+echo " Backup Phase..."
+echo "=========================================="
+if [ -d "/content/drive/MyDrive" ]; then
+    echo "Google Drive detected. Backing up outputs directory..."
+    mkdir -p "/content/drive/MyDrive/afriqa_final_outputs_comparison"
+    cp -r outputs/* "/content/drive/MyDrive/afriqa_final_outputs_comparison/"
+    echo "Backup complete!"
+else
+    echo "Warning: Google Drive not mounted at /content/drive/MyDrive. Archiving locally."
+    tar -czf outputs_comparison_archive.tar.gz outputs/
+    echo "Archived to outputs_comparison_archive.tar.gz"
+fi
+
+echo "=========================================="
 echo " Experiments finished successfully!"
 echo " Check outputs/metrics/ for comparison csv files."
 echo "=========================================="
