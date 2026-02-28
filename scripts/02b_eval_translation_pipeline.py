@@ -55,6 +55,10 @@ def main() -> None:
     use_mps = torch.backends.mps.is_available()
     device = torch.device("cuda" if torch.cuda.is_available() else "mps" if use_mps else "cpu")
     logger.info(f"Using device: {device}")
+    
+    if torch.cuda.is_available():
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.backends.cudnn.allow_tf32 = True
 
     # Load NLLB
     model_name = "facebook/nllb-200-distilled-600M"
@@ -88,7 +92,7 @@ def main() -> None:
             generated_tokens = qa_model.generate(**inputs, max_new_tokens=32)
         return qa_tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
 
-    batch_size = 16
+    batch_size = 128
     results = []
     
     output_path = paths.outputs / "predictions" / "translation_pipeline_test.jsonl"
