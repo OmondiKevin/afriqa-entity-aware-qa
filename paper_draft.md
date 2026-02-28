@@ -47,10 +47,10 @@ The baseline model, having no explicit prior structural entity guidance, establi
 
 | Language | Exact Match (EM) | Token F1 | Semantic Similarity (SAS+) |
 |----------|-------------------|----------|----------------------------|
-| **Swahili (swa)** | 0.0847 | 0.1206 | 0.3490 |
-| **Hausa (hau)** | 0.1233 | 0.1538 | 0.3951 |
-| **Yoruba (yor)** | 0.0909 | 0.1461 | 0.3548 |
-| **Average (All)** | **0.1002** | **0.1399** | **0.3671** |
+| **Swahili (swa)** | 0.1017 | 0.1318 | 0.3727 |
+| **Hausa (hau)** | 0.1600 | 0.1841 | 0.4097 |
+| **Yoruba (yor)** | 0.1344 | 0.1763 | 0.3917 |
+| **Average (All)** | **0.1321** | **0.1635** | **0.3914** |
 
 *Analysis:* While struggling with exact token boundary generation (yielding lower EM scores), the model demonstrates a foundational semantic grasp of the passages, evidenced by the 36.7% SAS+ score. 
 
