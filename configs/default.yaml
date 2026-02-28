@@ -41,7 +41,7 @@ train:
   overfit_epochs: 30  # used when debug.overfit_n > 0
   warmup_steps: 50
   fp16: true
-  num_workers: 0
+  num_workers: 2
   eval_steps: 50
   save_steps: 50
   save_total_limit: 1
@@ -72,6 +72,6 @@ eval:
   do_semantic: true
   labse_model: sentence-transformers/LaBSE
   semantic_threshold: 0.75
-  semantic_batch_size: 32
+  semantic_batch_size: 128
   generation_max_new_tokens: 16
   generation_min_new_tokens: 1

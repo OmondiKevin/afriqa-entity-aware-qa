@@ -37,6 +37,8 @@ def main() -> None:
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.backends.cudnn.allow_tf32 = True
 
     logger = setup_logger(log_file=str(paths.outputs / "logs" / "03_train_multitask_qa.log"))
 
