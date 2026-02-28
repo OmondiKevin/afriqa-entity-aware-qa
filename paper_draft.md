@@ -3,6 +3,8 @@
 ## 1. Introduction
 Cross-lingual Question Answering (XOR QA) traditionally relies on resource-heavy translation pipelines: translating a user's query from their native language to English, retrieving an English document, extracting the English answer, and translating it back. While effective for high-resource languages, this pipeline architecture aggressively degrades performance for low-resource African languages due to compounding translation errors.
 
+For instance, testing a state-of-the-art translation pipeline (`facebook/nllb-200-distilled-600M` coupled with `google/flan-t5-base`) on the AfriQA dataset yields an average Exact Match (EM) of just **3.77% (0.0377)** across Swahili, Hausa, and Yoruba, dropping as low as **0.40%** for Yoruba. The pipeline bottleneck is evident.
+
 In this research, we evaluate a direct text-to-text extraction approach using multilingual sequence-to-sequence models (`google/mt5-base`), completely bypassing the translation pipeline. Furthermore, we hypothesize that because African languages are underrepresented in standard mT5 pretraining corpora, the model struggles to accurately identify noun and entity boundaries within African text. To solve this, we introduce **Entity-Aware Adaptation** via Multitask Learning.
 
 ---
@@ -103,4 +105,8 @@ We anticipate the Multitask NER model will directly resolve Example 2 by giving 
 ---
 
 ## 5. Conclusion
-*(To be written pending final Multitask vs. Baseline comparative ratios).*
+This research demonstrates that bypassing the traditional translation pipeline in favor of a direct, multilingual generative extraction model (mT5) provides a massive performance leap for low-resource African languages. Our direct text-to-text baseline achieved an average Exact Match of **13.21%**—a nearly 4x improvement over the NLLB-to-Flan-T5 translation pipeline (**3.77%**).
+
+However, our attempt at Entity-Aware Adaptation via joint multitask learning with MasakhaNER revealed severe challenges in task interference. Both our full fine-tuning approach and our highly efficient rank-16 LoRA implementation suffered from catastrophic forgetting on the generative QA task as the models over-optimized for the highly structured, repetitive format of Named Entity Recognition. 
+
+Future work must explore alternative methods for injecting structural entity awareness into African language models without disrupting their generative reasoning capabilities, potentially through sequential continued pre-training rather than simultaneous multitask learning.
