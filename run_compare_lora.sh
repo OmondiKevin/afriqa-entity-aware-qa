@@ -16,6 +16,10 @@ sed -i.bak 's/use_lora: true/use_lora: false/g' configs/default.yaml
 python scripts/03_train_multitask_qa.py --config configs/default.yaml
 python scripts/04_eval_predictions.py --config configs/default.yaml --pred_path outputs/predictions/multitask_mt5_test.jsonl
 
+echo "Sleeping for 10 seconds to ensure GPU memory is flushed..."
+sleep 10
+python -c "import torch; torch.cuda.empty_cache() if torch.cuda.is_available() else None"
+
 echo "[3/4] Training & Evaluating LoRA Multitask..."
 # Temporarily enable LoRA
 sed -i.bak 's/use_lora: false/use_lora: true/g' configs/default.yaml

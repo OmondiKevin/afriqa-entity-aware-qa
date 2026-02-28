@@ -4,6 +4,7 @@ import argparse
 import json
 import random
 import sys
+import gc
 from pathlib import Path
 
 import numpy as np
@@ -366,6 +367,12 @@ def main() -> None:
         logger.info(f"Saved {len(preds)} predictions to {out_path}")
 
     logger.info("Done.")
+    
+    # Aggressively clear GPU memory so sequential scripts don't OOM
+    if torch.cuda.is_available():
+        del model
+        gc.collect()
+        torch.cuda.empty_cache()
 
 
 if __name__ == "__main__":
