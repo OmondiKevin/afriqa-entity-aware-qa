@@ -12,6 +12,11 @@ from transformers import (
     Seq2SeqTrainingArguments,
 )
 
+def is_byt5(model_name: str) -> bool:
+    """Check if the model is ByT5 (uses character-level tokenization)."""
+    return "byt5" in str(model_name).lower()
+
+
 
 def load_jsonl_split(data_dir: str | Path) -> DatasetDict:
     """Load train and validation JSONL from qa_seq2seq_out_dir."""
@@ -88,18 +93,35 @@ def tokenize_function(
 ) -> Dict[str, Any]:
     """Tokenize input_text and target_text for seq2seq. Explicitly mask pad tokens in labels with -100.
     Inputs: truncation to max_source_length. Targets: padding='max_length' for stable masking on CPU."""
-    model_inputs = tokenizer(
-        examples[input_col],
-        max_length=max_source_length,
-        truncation=True,
-        padding=False,
-    )
-    target_tokenized = tokenizer(
-        examples[target_col],
-        max_length=max_target_length,
-        truncation=True,
-        padding="max_length",
-    )
+    is_byt5_model = "byt5" in tokenizer.__class__.__name__.lower() or "byt5" in getattr(tokenizer, "name_or_path", "").lower()
+
+    if is_byt5_model:
+        model_inputs = tokenizer(
+            examples[input_col],
+            max_length=max_source_length,
+            truncation=True,
+            padding=False,
+        )
+        target_tokenized = tokenizer(
+            examples[target_col],
+            max_length=max_target_length,
+            truncation=True,
+            padding="max_length",
+        )
+    else:
+        model_inputs = tokenizer(
+            examples[input_col],
+            max_length=max_source_length,
+            truncation=True,
+            padding=False,
+        )
+        target_tokenized = tokenizer(
+            examples[target_col],
+            max_length=max_target_length,
+            truncation=True,
+            padding="max_length",
+        )
+    
     pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 0
     model_inputs["labels"] = [
         [(tid if tid != pad_id else -100) for tid in label_ids]

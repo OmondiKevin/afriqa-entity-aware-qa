@@ -15,11 +15,13 @@ from afriqa_ner_qa.data import (
 from afriqa_ner_qa.logging_utils import setup_logger
 from afriqa_ner_qa.paths import ProjectPaths
 
-def combine_and_shuffle_jsonl(file1: Path, file2: Path, out_file: Path, seed: int = 42) -> int:
+def combine_and_shuffle_jsonl(file1: Path, file2: Path, out_file: Path, seed: int = 42, upsample_file1: int = 1) -> int:
     lines = []
     if file1.exists():
         with file1.open("r", encoding="utf-8") as f:
-            lines.extend(f.readlines())
+            f1_lines = f.readlines()
+            for _ in range(upsample_file1):
+                lines.extend(f1_lines)
     if file2.exists():
         with file2.open("r", encoding="utf-8") as f:
             lines.extend(f.readlines())
@@ -62,19 +64,22 @@ def main() -> None:
     logger.info(f"Exporting QA seq2seq JSONL to: {qa_out_dir}")
     export_seq2seq_jsonl(afriqa_ds, str(qa_out_dir), prompt_prefix=prompt_prefix_qa, logger=logger)
     
-    prompt_prefix_ner = "extract entities: "
+    prompt_prefix_ner = cfg.get("multitask", {}).get("ner_prompt_prefix", "extract entities: ")
     logger.info(f"Exporting NER seq2seq JSONL to: {ner_out_dir}")
     export_ner_seq2seq_jsonl(ner_ds, str(ner_out_dir), prompt_prefix=prompt_prefix_ner, logger=logger)
 
     final_out_dir.mkdir(parents=True, exist_ok=True)
     logger.info(f"Combining and shuffling into: {final_out_dir}")
     
+    qa_upsample_factor = cfg.get("multitask", {}).get("qa_upsample_factor", 1)
+    
     for split in ["train", "validation", "test"]:
         file1 = qa_out_dir / f"{split}.jsonl"
         file2 = ner_out_dir / f"{split}.jsonl"
         out_file = final_out_dir / f"{split}.jsonl"
-        count = combine_and_shuffle_jsonl(file1, file2, out_file, seed=seed)
-        logger.info(f"  {split}: {count} total examples combined")
+        factor = qa_upsample_factor if split == "train" else 1
+        count = combine_and_shuffle_jsonl(file1, file2, out_file, seed=seed, upsample_file1=factor)
+        logger.info(f"  {split}: {count} total examples combined (QA upsampled {factor}x)")
 
     logger.info("Done.")
 

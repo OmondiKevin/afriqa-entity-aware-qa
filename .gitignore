@@ -26,10 +26,14 @@ ENV/
 .vscode/
 .idea/
 
-# Data & experiment artifacts (do NOT commit)
-data/
+# Data & experiment artifacts (do NOT
+# Custom outputs
 outputs/
-.cache/
+outputs_colab/
+data/processed/
+*.tar.gz
+*.part
+configs/*.bak
 wandb/
 runs/
 checkpoints/

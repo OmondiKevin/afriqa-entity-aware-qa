@@ -22,6 +22,7 @@ from afriqa_ner_qa.train import build_seq2seq_trainer, load_and_tokenize_jsonl_s
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/default.yaml")
+    parser.add_argument("--sequential", action="store_true", help="Run sequential NER->QA training instead of multitask")
     parser.add_argument("--predict_only", action="store_true", help="Skip training; load checkpoint and generate predictions only")
     parser.add_argument("--no_debug_predict_train", action="store_true",
                         help="Disable trainer.predict sanity check on train (enabled by default in overfit mode)")
@@ -66,20 +67,21 @@ def main() -> None:
         pred_path = pred_path.replace("multitask_mt5_test", "multitask_mt5_lora_test")
 
     model_cfg = cfg.get("model", {})
-    if overfit_n > 0:
-        model_name = "google/mt5-small"
-        logger.info(f"Overfit mode: forcing model {model_name} (not {model_cfg.get('base', 'mt5-base')})")
-    else:
-        model_name = model_cfg.get("base", "google/mt5-base")
+    model_name = model_cfg.get("base", "google/mt5-base")
+    if overfit_n > 0 and debug_cfg.get("model"):
+        model_name = debug_cfg.get("model")
+        logger.info(f"Overfit mode: overriding model to {model_name}")
 
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     Path(pred_path).parent.mkdir(parents=True, exist_ok=True)
 
     use_mps = torch.backends.mps.is_available()
-    use_cpu = use_mps or not torch.cuda.is_available()
+    use_cpu = not (torch.cuda.is_available() or use_mps)
 
     if not args.predict_only:
         max_source_length = train_cfg.get("max_source_length") or cfg["model"]["max_source_length"]
+        if "byt5" in model_name.lower():
+            max_source_length = max(1024, max_source_length)
         if overfit_n > 0:
             max_target_length = train_cfg.get("debug_max_target_length", 16)
         else:
@@ -98,7 +100,8 @@ def main() -> None:
         logger.info(f"Train: {len(train_ds)}, Validation: {len(eval_ds)}")
 
         logger.info(f"Loading model and tokenizer: {model_name}")
-        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, add_prefix_space=False)
+        use_fast = "byt5" in model_name.lower()
+        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=use_fast, add_prefix_space=False)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
         if use_lora:
@@ -136,9 +139,9 @@ def main() -> None:
         if use_mps:
             num_workers = 0
             pin_memory = False
-            logger.info("MPS detected: using CPU to avoid OOM (dataloader_num_workers=0, pin_memory=False)")
+            logger.info("MPS detected: dataloader_num_workers=0, pin_memory=False")
         elif use_cpu:
-            logger.info("Using CPU for training (no CUDA)")
+            logger.info("Using CPU for training (no CUDA or MPS)")
 
         if overfit_n > 0:
             lr = float(debug_cfg.get("overfit_lr", 3e-4))
@@ -231,12 +234,70 @@ def main() -> None:
         except (TypeError, ValueError):
             lr_str = str(trainer.args.learning_rate)
         logger.info(f"Trainer args: learning_rate={lr_str}, lr_scheduler_type={trainer.args.lr_scheduler_type}, optim={trainer.args.optim} (constant scheduler => no decay)")
-        try:
-            trainer.train()
-            trainer.save_model(output_dir)
-        except Exception as e:
-            logger.exception(f"Training failed: {e}")
-            sys.exit(1)
+        
+        if args.sequential:
+            logger.info("Starting SEQUENTIAL training. Phase 1: NER")
+            # Create NER-only datasets
+            ner_train = train_ds.filter(lambda x: x["lang"] == "unknown")
+            ner_eval = eval_ds.filter(lambda x: x["lang"] == "unknown")
+            if overfit_n > 0:
+                ner_train = train_ds
+                ner_eval = eval_ds
+            
+            trainer_ner = build_seq2seq_trainer(
+                model=model,
+                tokenizer=tokenizer,
+                train_dataset=ner_train,
+                eval_dataset=ner_eval,
+                training_args=training_args,
+                max_source_length=max_source_length,
+                max_target_length=max_target_length,
+                callbacks=trainer_callbacks if trainer_callbacks else None,
+            )
+            
+            try:
+                trainer_ner.train()
+                ner_out_dir = output_dir + "_ner_phase"
+                trainer_ner.save_model(ner_out_dir)
+                tokenizer.save_pretrained(ner_out_dir)
+                logger.info(f"Saved Phase 1 (NER) checkpoint to {ner_out_dir}")
+            except Exception as e:
+                logger.exception(f"Phase 1 (NER) Training failed: {e}")
+                sys.exit(1)
+                
+            logger.info("Starting SEQUENTIAL training. Phase 2: QA")
+            qa_train = train_ds.filter(lambda x: x["lang"] != "unknown")
+            qa_eval = eval_ds.filter(lambda x: x["lang"] != "unknown")
+            if overfit_n > 0:
+                qa_train = train_ds
+                qa_eval = eval_ds
+                
+            trainer_qa = build_seq2seq_trainer(
+                model=trainer_ner.model,
+                tokenizer=tokenizer,
+                train_dataset=qa_train,
+                eval_dataset=qa_eval,
+                training_args=training_args,
+                max_source_length=max_source_length,
+                max_target_length=max_target_length,
+                callbacks=trainer_callbacks if trainer_callbacks else None,
+            )
+            
+            try:
+                trainer_qa.train()
+                trainer_qa.save_model(output_dir)
+                logger.info(f"Saved Phase 2 (QA) checkpoint to {output_dir}")
+                trainer = trainer_qa
+            except Exception as e:
+                logger.exception(f"Phase 2 (QA) Training failed: {e}")
+                sys.exit(1)
+        else:
+            try:
+                trainer.train()
+                trainer.save_model(output_dir)
+            except Exception as e:
+                logger.exception(f"Training failed: {e}")
+                sys.exit(1)
 
         # Sanity check: trainer.predict on train slice (overfit mode)
         if debug_predict_train:
@@ -278,19 +339,21 @@ def main() -> None:
         model = trainer.model
     else:
         logger.info(f"Predict-only mode: loading best checkpoint from {output_dir}")
-        
+        use_fast = "byt5" in model_name.lower()
         if use_lora:
             from peft import PeftModel
-            tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, add_prefix_space=False)
+            tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=use_fast, add_prefix_space=False)
             base_model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
             model = PeftModel.from_pretrained(base_model, output_dir)
             logger.info(f"Loaded base model {model_name} and LoRA adapters from {output_dir}")
         else:
-            tokenizer = AutoTokenizer.from_pretrained(output_dir, use_fast=False, add_prefix_space=False)
+            tokenizer = AutoTokenizer.from_pretrained(output_dir, use_fast=use_fast, add_prefix_space=False)
             model = AutoModelForSeq2SeqLM.from_pretrained(output_dir)
 
     # Generate predictions (from best checkpoint)
     max_source_length = train_cfg.get("max_source_length") or cfg["model"]["max_source_length"]
+    if "byt5" in model_name.lower():
+        max_source_length = max(1024, max_source_length)
     if overfit_n > 0:
         max_target_length = train_cfg.get("debug_max_target_length", 16)
         gen_max_tokens = eval_cfg.get("generation_max_new_tokens", 16)
@@ -301,7 +364,12 @@ def main() -> None:
         gen_min_new_tokens = generation_min_new_tokens
 
     model.config.use_cache = True
-    device = torch.device("cuda" if torch.cuda.is_available() and not use_cpu else "cpu")
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+    elif torch.backends.mps.is_available():
+        device = torch.device("mps")
+    else:
+        device = torch.device("cpu")
     model = model.to(device)
     logger.info(f"Loading and tokenizing from {qa_seq2seq_dir} (max_source={max_source_length}, max_target={max_target_length})")
     tokenized_ds = load_and_tokenize_jsonl_splits(

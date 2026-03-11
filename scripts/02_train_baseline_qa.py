@@ -57,20 +57,21 @@ def main() -> None:
     debug_predict_train = overfit_n > 0 and not args.no_debug_predict_train
 
     model_cfg = cfg.get("model", {})
-    if overfit_n > 0:
-        model_name = "google/mt5-small"
-        logger.info(f"Overfit mode: forcing model {model_name} (not {model_cfg.get('base', 'mt5-base')})")
-    else:
-        model_name = model_cfg.get("base", "google/mt5-base")
+    model_name = model_cfg.get("base", "google/mt5-base")
+    if overfit_n > 0 and debug_cfg.get("model"):
+        model_name = debug_cfg.get("model")
+        logger.info(f"Overfit mode: overriding model to {model_name}")
 
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     Path(pred_path).parent.mkdir(parents=True, exist_ok=True)
 
     use_mps = torch.backends.mps.is_available()
-    use_cpu = use_mps or not torch.cuda.is_available()
+    use_cpu = not (torch.cuda.is_available() or use_mps)
 
     if not args.predict_only:
         max_source_length = train_cfg.get("max_source_length") or cfg["model"]["max_source_length"]
+        if "byt5" in model_name.lower():
+            max_source_length = max(1024, max_source_length)
         if overfit_n > 0:
             max_target_length = train_cfg.get("debug_max_target_length", 16)
         else:
@@ -89,7 +90,8 @@ def main() -> None:
         logger.info(f"Train: {len(train_ds)}, Validation: {len(eval_ds)}")
 
         logger.info(f"Loading model and tokenizer: {model_name}")
-        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, add_prefix_space=False)
+        use_fast = "byt5" in model_name.lower()
+        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=use_fast, add_prefix_space=False)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
         if overfit_n > 0:
@@ -106,9 +108,9 @@ def main() -> None:
         if use_mps:
             num_workers = 0
             pin_memory = False
-            logger.info("MPS detected: using CPU to avoid OOM (dataloader_num_workers=0, pin_memory=False)")
+            logger.info("MPS detected: dataloader_num_workers=0, pin_memory=False")
         elif use_cpu:
-            logger.info("Using CPU for training (no CUDA)")
+            logger.info("Using CPU for training (no CUDA or MPS)")
 
         if overfit_n > 0:
             lr = float(debug_cfg.get("overfit_lr", 3e-4))
@@ -248,11 +250,14 @@ def main() -> None:
         model = trainer.model
     else:
         logger.info(f"Predict-only mode: loading best checkpoint from {output_dir}")
-        tokenizer = AutoTokenizer.from_pretrained(output_dir, use_fast=False, add_prefix_space=False)
+        use_fast = "byt5" in model_name.lower()
+        tokenizer = AutoTokenizer.from_pretrained(output_dir, use_fast=use_fast, add_prefix_space=False)
         model = AutoModelForSeq2SeqLM.from_pretrained(output_dir)
 
     # Generate predictions (from best checkpoint)
     max_source_length = train_cfg.get("max_source_length") or cfg["model"]["max_source_length"]
+    if "byt5" in model_name.lower():
+        max_source_length = max(1024, max_source_length)
     if overfit_n > 0:
         max_target_length = train_cfg.get("debug_max_target_length", 16)
         gen_max_tokens = eval_cfg.get("generation_max_new_tokens", 16)
@@ -263,7 +268,12 @@ def main() -> None:
         gen_min_new_tokens = generation_min_new_tokens
 
     model.config.use_cache = True
-    device = torch.device("cuda" if torch.cuda.is_available() and not use_cpu else "cpu")
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+    elif torch.backends.mps.is_available():
+        device = torch.device("mps")
+    else:
+        device = torch.device("cpu")
     model = model.to(device)
     logger.info(f"Loading and tokenizing from {qa_seq2seq_dir} (max_source={max_source_length}, max_target={max_target_length})")
     tokenized_ds = load_and_tokenize_jsonl_splits(

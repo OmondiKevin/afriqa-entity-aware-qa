@@ -15,6 +15,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/default.yaml")
     parser.add_argument("--pred_path", default=None, help="Override predictions file path")
+    parser.add_argument("--qa_only", action="store_true", help="Filter out NER examples (lang=unknown) before evaluation")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -49,6 +50,13 @@ def main() -> None:
 
     logger.info(f"Loaded {len(rows)} rows from {pred_path}")
 
+    if args.qa_only:
+        rows = [r for r in rows if r.get("lang") != "unknown"]
+        logger.info(f"Filtered to {len(rows)} QA-only rows (--qa_only passed)")
+        if not rows:
+            logger.warning("No rows remain after QA-only filtering")
+            return
+
     do_semantic = eval_cfg.get("do_semantic", False)
     labse_model = eval_cfg.get("labse_model", "sentence-transformers/LaBSE")
     semantic_batch_size = eval_cfg.get("semantic_batch_size", 32)
@@ -60,21 +68,31 @@ def main() -> None:
             logger.warning("sentence-transformers not installed; skipping semantic similarity (EM/F1 only)")
             do_semantic = False
 
+    strip_tags = eval_cfg.get("strip_ner_tags", False)
+
     metrics = evaluate_predictions(
         rows,
         do_semantic=do_semantic,
         labse_model=labse_model,
         batch_size=semantic_batch_size,
+        strip_tags=strip_tags,
         logger=logger,
     )
 
     if args.pred_path:
         stem = pred_path.stem
+        if args.qa_only and not stem.endswith("_qa_only"):
+            stem += "_qa_only"
         metrics_json_path = paths.outputs / "metrics" / f"{stem}_metrics.json"
         metrics_csv_path = paths.outputs / "metrics" / f"{stem}_metrics.csv"
     else:
-        metrics_json_path = Path(run_cfg.get("baseline_metrics_json", "outputs/metrics/baseline_mt5_test_metrics.json"))
-        metrics_csv_path = Path(run_cfg.get("baseline_metrics_csv", "outputs/metrics/baseline_mt5_test_metrics.csv"))
+        json_path = run_cfg.get("baseline_metrics_json", "outputs/metrics/baseline_mt5_test_metrics.json")
+        csv_path = run_cfg.get("baseline_metrics_csv", "outputs/metrics/baseline_mt5_test_metrics.csv")
+        if args.qa_only:
+            json_path = json_path.replace(".json", "_qa_only.json")
+            csv_path = csv_path.replace(".csv", "_qa_only.csv")
+        metrics_json_path = Path(json_path)
+        metrics_csv_path = Path(csv_path)
 
     metrics_json_path.parent.mkdir(parents=True, exist_ok=True)
     metrics_csv_path.parent.mkdir(parents=True, exist_ok=True)

@@ -25,6 +25,14 @@ def _clean_extra_id_from_pred(text: str) -> str:
     return text.strip()
 
 
+def strip_ner_tags_fn(text: str) -> str:
+    """Remove PER:, LOC:, ORG:, DATE: prefixes from predictions."""
+    for prefix in ["PER:", "LOC:", "ORG:", "DATE:"]:
+        if text.startswith(prefix):
+            return text[len(prefix):].strip()
+    return text
+
+
 def normalize_text(s: str) -> str:
     """Lowercase, strip, remove punctuation, collapse whitespace."""
     if not isinstance(s, str):
@@ -61,6 +69,7 @@ def evaluate_predictions(
     do_semantic: bool = False,
     labse_model: str = "sentence-transformers/LaBSE",
     batch_size: int = 32,
+    strip_tags: bool = False,
     logger: Any = None,
 ) -> Dict[str, Any]:
     """Compute EM, token-F1, and optional semantic similarity. Returns overall + per_lang metrics."""
@@ -78,6 +87,10 @@ def evaluate_predictions(
     langs = [r.get(lang_col, "") or "unknown" for r in rows]
 
     for i, (pred, gold, lang) in enumerate(zip(pred_texts, gold_texts, langs)):
+        if strip_tags:
+            pred = strip_ner_tags_fn(pred)
+            gold = strip_ner_tags_fn(gold)
+            
         em = exact_match(pred, gold)
         f1 = token_f1(pred, gold)
         overall_em += em
