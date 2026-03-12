@@ -167,6 +167,8 @@ def main() -> None:
         overfit_max_steps = debug_cfg.get("overfit_max_steps", 0) if overfit_n > 0 else 0  # 0 = use epochs
         per_device_bs = train_cfg.get("batch_size", 8) if overfit_n == 0 else 8
         grad_accum = 1 if overfit_n > 0 else train_cfg.get("grad_accum", 2)
+        use_fp16 = bool(train_cfg.get("fp16", False) and torch.cuda.is_available())
+        use_bf16 = bool(train_cfg.get("bf16", False) and torch.cuda.is_available())
         training_kw: dict = {
             "output_dir": output_dir,
             "eval_strategy": "steps",
@@ -183,7 +185,8 @@ def main() -> None:
             "learning_rate": lr,
             "weight_decay": weight_decay,
             "num_train_epochs": epochs,
-            "fp16": train_cfg.get("fp16", False),
+            "fp16": use_fp16,
+            "bf16": use_bf16,
             "logging_steps": 1 if overfit_n > 0 else train_cfg.get("logging_steps", 50),
             "seed": seed,
             "dataloader_num_workers": num_workers,
