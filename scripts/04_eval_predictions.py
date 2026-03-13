@@ -15,6 +15,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/default.yaml")
     parser.add_argument("--pred_path", default=None, help="Override predictions file path")
+    parser.add_argument("--log_path", default=None, help="Override evaluation log file path")
     parser.add_argument("--qa_only", action="store_true", help="Filter out NER examples (lang=unknown) before evaluation")
     args = parser.parse_args()
 
@@ -24,7 +25,9 @@ def main() -> None:
 
     (paths.outputs / "metrics").mkdir(parents=True, exist_ok=True)
 
-    logger = setup_logger(log_file=str(paths.outputs / "logs" / "04_eval_predictions.log"))
+    default_log_path = paths.outputs / "logs" / "04_eval_predictions.log"
+    log_path = Path(args.log_path) if args.log_path else default_log_path
+    logger = setup_logger(log_file=str(log_path))
 
     run_cfg = cfg.get("run", {})
     eval_cfg = cfg.get("eval", {})

@@ -10,31 +10,24 @@ paths:
 data:
   afriqa_name: masakhane/afriqa-gold-passages
   masakhaner_name: masakhane/masakhaner2
-
   afriqa_configs: [swa, hau, yor]
   masakhaner_configs: [swa, hau, yor]
-
   afriqa_disk_path: data/processed/afriqa_swa_hau_yor
   qa_seq2seq_out_dir: data/processed/qa_seq2seq_swa_hau_yor
-
   cache_dir: .cache/huggingface
 
 model:
-  # Supported: google/mt5-small, google/mt5-base, google/mt5-large, google/byt5-base
   base: google/mt5-base
   prompt_prefix: "question: "
   max_source_length: 192
   max_target_length: 32
 
 multitask:
-  # Upsample QA examples N times before merging with NER to fix data imbalance
   qa_upsample_factor: 20
-  # Sequential training: train NER first, then fine-tune on QA (avoids format leakage)
   sequential: false
   ner_prompt_prefix: "extract entities: "
 
 ablation:
-  # QA-only matched-volume control: upsample QA train split with this factor
   matched_qa_upsample_factor: 20
 
 train:
@@ -45,11 +38,11 @@ train:
   batch_size: 64
   grad_accum: 1
   lr: 1.0e-4
-  learning_rate: 1e-4  # used in overfit mode
+  learning_rate: 1e-4
   weight_decay: 0.01
   epochs: 20
   early_stopping_patience: 3
-  overfit_epochs: 30  # used when debug.overfit_n > 0
+  overfit_epochs: 30
   warmup_steps: 50
   fp16: false
   bf16: false
@@ -66,19 +59,16 @@ run:
   overfit_pred_path: outputs/predictions/overfit_mt5_train.jsonl
   baseline_metrics_json: outputs/metrics/baseline_mt5_test_metrics.json
   baseline_metrics_csv: outputs/metrics/baseline_mt5_test_metrics.csv
-  multitask_output_dir: outputs/checkpoints/multitask_mt5
-  multitask_pred_path: outputs/predictions/multitask_mt5_test.jsonl
   matchedqa_output_dir: outputs/checkpoints/matchedqa_mt5
   matchedqa_pred_path: outputs/predictions/matchedqa_mt5_test.jsonl
   matchedqa_log_path: outputs/logs/02_train_matchedqa_mt5.log
 
 debug:
   overfit_n: 0
-  # Override model for debug/overfit mode (leave empty to use model.base)
   model: ""
   overfit_epochs: 50
   overfit_lr: 3.0e-4
-  overfit_max_steps: 0  # 0 = use epochs; if >0 then train max_steps
+  overfit_max_steps: 0
   print_examples: 3
   generation_max_new_tokens: 8
 
@@ -95,5 +85,4 @@ eval:
   semantic_batch_size: 128
   generation_max_new_tokens: 16
   generation_min_new_tokens: 1
-  # Strip NER tags (PER:, LOC:, etc.) from predictions before computing metrics
   strip_ner_tags: false

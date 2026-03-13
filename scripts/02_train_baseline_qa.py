@@ -18,10 +18,28 @@ from afriqa_ner_qa.paths import ProjectPaths
 from afriqa_ner_qa.train import build_seq2seq_trainer, load_and_tokenize_jsonl_splits, load_jsonl_split
 
 
+def _upsample_dataset(train_ds, factor: int, seed: int):
+    if factor <= 1:
+        return train_ds
+    base_len = len(train_ds)
+    if base_len == 0:
+        return train_ds
+    indices = np.arange(base_len, dtype=np.int64)
+    repeated = np.tile(indices, factor)
+    rng = np.random.default_rng(seed)
+    rng.shuffle(repeated)
+    return train_ds.select(repeated.tolist())
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/default.yaml")
     parser.add_argument("--predict_only", action="store_true", help="Skip training; load checkpoint and generate predictions only")
+    parser.add_argument(
+        "--matched_volume",
+        action="store_true",
+        help="Run QA-only matched-volume ablation by upsampling QA train data (no NER supervision).",
+    )
     parser.add_argument("--no_debug_predict_train", action="store_true",
                         help="Disable trainer.predict sanity check on train (enabled by default in overfit mode)")
     args = parser.parse_args()
@@ -39,8 +57,6 @@ def main() -> None:
         torch.backends.cuda.matmul.allow_tf32 = True
         torch.backends.cudnn.allow_tf32 = True
 
-    logger = setup_logger(log_file=str(paths.outputs / "logs" / "02_train_baseline_qa.log"))
-
     qa_seq2seq_dir = cfg["data"]["qa_seq2seq_out_dir"]
     max_target_length = cfg["model"]["max_target_length"]
     eval_cfg = cfg.get("eval", {})
@@ -48,10 +64,18 @@ def main() -> None:
     generation_min_new_tokens = eval_cfg.get("generation_min_new_tokens", 0)
     train_cfg = cfg.get("train", {})
     run_cfg = cfg.get("run", {})
+    ablation_cfg = cfg.get("ablation", {})
 
-    output_dir = run_cfg.get("baseline_output_dir", "outputs/checkpoints/baseline_mt5")
-    pred_path = run_cfg.get("baseline_pred_path", "outputs/predictions/baseline_mt5_test.jsonl")
+    if args.matched_volume:
+        output_dir = run_cfg.get("matchedqa_output_dir", "outputs/checkpoints/matchedqa_mt5")
+        pred_path = run_cfg.get("matchedqa_pred_path", "outputs/predictions/matchedqa_mt5_test.jsonl")
+        log_path = run_cfg.get("matchedqa_log_path", "outputs/logs/02_train_matchedqa_mt5.log")
+    else:
+        output_dir = run_cfg.get("baseline_output_dir", "outputs/checkpoints/baseline_mt5")
+        pred_path = run_cfg.get("baseline_pred_path", "outputs/predictions/baseline_mt5_test.jsonl")
+        log_path = run_cfg.get("baseline_log_path", "outputs/logs/02_train_baseline_qa.log")
     overfit_pred_path = run_cfg.get("overfit_pred_path", "outputs/predictions/overfit_mt5_train.jsonl")
+    logger = setup_logger(log_file=str(log_path))
 
     debug_cfg = cfg.get("debug", {})
     overfit_n = debug_cfg.get("overfit_n", 0)
@@ -88,6 +112,15 @@ def main() -> None:
             train_ds = train_ds.select(range(min(overfit_n, len(train_ds))))
             eval_ds = train_ds  # evaluate and predict on same train slice
             logger.info(f"Overfit debug: train=eval=pred on same {len(train_ds)} examples")
+        elif args.matched_volume:
+            default_factor = cfg.get("multitask", {}).get("qa_upsample_factor", 1)
+            upsample_factor = int(ablation_cfg.get("matched_qa_upsample_factor", default_factor))
+            original_len = len(train_ds)
+            train_ds = _upsample_dataset(train_ds, upsample_factor, seed=seed)
+            logger.info(
+                f"Matched-volume mode enabled: upsampled QA train split from {original_len} to {len(train_ds)} "
+                f"(factor={upsample_factor}); NER supervision is disabled."
+            )
 
         logger.info(f"Train: {len(train_ds)}, Validation: {len(eval_ds)}")
 
