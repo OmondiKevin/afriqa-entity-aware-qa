@@ -241,8 +241,20 @@ def main() -> None:
         except (TypeError, ValueError):
             lr_str = str(trainer.args.learning_rate)
         logger.info(f"Trainer args: learning_rate={lr_str}, lr_scheduler_type={trainer.args.lr_scheduler_type}, optim={trainer.args.optim} (constant scheduler => no decay)")
+        
+        from transformers.trainer_utils import get_last_checkpoint
+        import os
+        
+        last_checkpoint = None
+        if os.path.isdir(output_dir):
+            last_checkpoint = get_last_checkpoint(output_dir)
+            
         try:
-            trainer.train()
+            if last_checkpoint is not None:
+                logger.info(f"Resuming training from checkpoint: {last_checkpoint}")
+                trainer.train(resume_from_checkpoint=last_checkpoint)
+            else:
+                trainer.train()
             trainer.save_model(output_dir)
         except Exception as e:
             logger.exception(f"Training failed: {e}")

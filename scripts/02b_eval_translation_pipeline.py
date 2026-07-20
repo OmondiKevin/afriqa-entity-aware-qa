@@ -76,14 +76,28 @@ def main() -> None:
     qa_tokenizer = AutoTokenizer.from_pretrained(qa_model_name)
     qa_model = AutoModelForSeq2SeqLM.from_pretrained(qa_model_name).to(device)
 
-    def translate(texts: list[str], src_lang: str, tgt_lang: str) -> list[str]:
+    def batch_translate(texts: list[str], src_langs: list[str], tgt_langs: list[str]) -> list[str]:
         if not texts: return []
-        tokenizer.src_lang = src_lang
-        inputs = tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=256).to(device)
-        forced_bos_token_id = tokenizer.convert_tokens_to_ids(tgt_lang)
-        with torch.no_grad():
-            generated_tokens = model.generate(**inputs, forced_bos_token_id=forced_bos_token_id, max_new_tokens=64)
-        return tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+        from collections import defaultdict
+        groups = defaultdict(list)
+        for i, (text, src, tgt) in enumerate(zip(texts, src_langs, tgt_langs)):
+            groups[(src, tgt)].append((i, text))
+            
+        results = [""] * len(texts)
+        for (src_lang, tgt_lang), items in groups.items():
+            indices = [i for i, _ in items]
+            batch_texts = [text for _, text in items]
+            
+            tokenizer.src_lang = src_lang
+            inputs = tokenizer(batch_texts, return_tensors="pt", padding=True, truncation=True, max_length=256).to(device)
+            forced_bos_token_id = tokenizer.convert_tokens_to_ids(tgt_lang)
+            with torch.no_grad():
+                generated_tokens = model.generate(**inputs, forced_bos_token_id=forced_bos_token_id, max_new_tokens=64)
+            translated = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+            
+            for idx, trans in zip(indices, translated):
+                results[idx] = trans
+        return results
 
     def answer_english(questions: list[str]) -> list[str]:
         if not questions: return []
@@ -92,7 +106,7 @@ def main() -> None:
             generated_tokens = qa_model.generate(**inputs, max_new_tokens=32)
         return qa_tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
 
-    batch_size = 128
+    batch_size = 64
     results = []
     
     output_path = paths.outputs / "predictions" / "translation_pipeline_test.jsonl"
@@ -107,21 +121,17 @@ def main() -> None:
         # input_text usually has "question: " prefix. Let's strip it to translate just the question.
         clean_qs = [q.replace("question: ", "").strip() for q in input_texts]
         
-        q_en = []
-        for q, lang in zip(clean_qs, langs):
-            src_lang = get_nllb_lang_code(lang)
-            tgt_lang = "eng_Latn"
-            ans = translate([q], src_lang, tgt_lang)[0]
-            q_en.append(ans)
+        nllb_langs = [get_nllb_lang_code(l) for l in langs]
+        eng_langs = ["eng_Latn"] * len(langs)
+        
+        # 1. Translate queries to English (batched by source language)
+        q_en = batch_translate(clean_qs, nllb_langs, eng_langs)
             
+        # 2. Answer in English (already batched)
         a_en = answer_english(q_en)
         
-        a_orig = []
-        for a, lang in zip(a_en, langs):
-            src_lang = "eng_Latn"
-            tgt_lang = get_nllb_lang_code(lang)
-            translated_ans = translate([a], src_lang, tgt_lang)[0]
-            a_orig.append(translated_ans)
+        # 3. Translate answers back to source language (batched by target language)
+        a_orig = batch_translate(a_en, eng_langs, nllb_langs)
             
         for idx in range(len(batch["id"])):
             row = {

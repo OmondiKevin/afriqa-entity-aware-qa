@@ -1,0 +1,85 @@
+project:
+  name: afriqa-entity-aware-qa
+  seed: 42
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  outputs: outputs
+
+data:
+  afriqa_name: masakhane/afriqa-gold-passages
+  masakhaner_name: masakhane/masakhaner2
+  afriqa_configs: [swa, hau, yor]
+  masakhaner_configs: [swa, hau, yor]
+  afriqa_disk_path: data/processed/afriqa_swa_hau_yor
+  qa_seq2seq_out_dir: data/processed/qa_seq2seq_swa_hau_yor
+  cache_dir: .cache/huggingface
+
+model:
+  base: google/byt5-base
+  prompt_prefix: "question: "
+  max_source_length: 192
+  max_target_length: 32
+
+multitask:
+  qa_upsample_factor: 20
+  sequential: false
+  ner_prompt_prefix: "extract entities: "
+
+ablation:
+  matched_qa_upsample_factor: 1
+
+train:
+  max_source_length: 256
+  max_target_length: 128
+  debug_max_target_length: 16
+  max_grad_norm: 1.0
+  batch_size: 64
+  grad_accum: 1
+  lr: 1.0e-4
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  epochs: 20
+  early_stopping_patience: 3
+  overfit_epochs: 30
+  warmup_steps: 50
+  fp16: false
+  bf16: false
+  num_workers: 2
+  eval_steps: 50
+  save_steps: 50
+  save_total_limit: 1
+  logging_steps: 10
+
+run:
+  baseline_output_dir: outputs/checkpoints/baseline_byt5
+  baseline_pred_path: outputs/predictions/baseline_byt5_test.jsonl
+  baseline_log_path: outputs/logs/02_train_baseline_byt5.log
+  overfit_pred_path: outputs/predictions/overfit_byt5_train.jsonl
+  baseline_metrics_json: outputs/metrics/baseline_byt5_test_metrics.json
+  baseline_metrics_csv: outputs/metrics/baseline_byt5_test_metrics.csv
+
+debug:
+  overfit_n: 0
+  model: ""
+  overfit_epochs: 50
+  overfit_lr: 3.0e-4
+  overfit_max_steps: 0
+  print_examples: 3
+  generation_max_new_tokens: 8
+
+lora:
+  use_lora: false
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
+eval:
+  do_semantic: true
+  labse_model: sentence-transformers/LaBSE
+  semantic_threshold: 0.75
+  semantic_batch_size: 128
+  generation_max_new_tokens: 16
+  generation_min_new_tokens: 1
+  strip_ner_tags: false
