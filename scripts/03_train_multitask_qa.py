@@ -16,7 +16,7 @@ from afriqa_ner_qa.config import load_config
 from afriqa_ner_qa.eval import _clean_extra_id_from_pred, exact_match, generate_predictions
 from afriqa_ner_qa.logging_utils import setup_logger
 from afriqa_ner_qa.paths import ProjectPaths
-from afriqa_ner_qa.train import build_seq2seq_trainer, load_and_tokenize_jsonl_splits, load_jsonl_split
+from afriqa_ner_qa.train import build_seq2seq_trainer, load_and_tokenize_jsonl_splits, load_jsonl_split, resolve_resume_checkpoint
 
 
 def main() -> None:
@@ -26,6 +26,7 @@ def main() -> None:
     parser.add_argument("--predict_only", action="store_true", help="Skip training; load checkpoint and generate predictions only")
     parser.add_argument("--no_debug_predict_train", action="store_true",
                         help="Disable trainer.predict sanity check on train (enabled by default in overfit mode)")
+    parser.add_argument("--force_rerun", action="store_true", help="Force run even if predictions file already exists")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -54,6 +55,10 @@ def main() -> None:
     output_dir = run_cfg.get("multitask_output_dir", "outputs/checkpoints/multitask_mt5")
     pred_path = run_cfg.get("multitask_pred_path", "outputs/predictions/multitask_mt5_test.jsonl")
     overfit_pred_path = run_cfg.get("overfit_pred_path_mt", "outputs/predictions/overfit_mt5_multitask_train.jsonl")
+
+    if Path(pred_path).exists() and not args.force_rerun and not args.predict_only:
+        logger.info(f"Predictions already exist at {pred_path}. Skipping training for idempotent execution. Use --force_rerun to override.")
+        return
 
     debug_cfg = cfg.get("debug", {})
     overfit_n = debug_cfg.get("overfit_n", 0)
@@ -259,7 +264,12 @@ def main() -> None:
             )
             
             try:
-                trainer_ner.train()
+                ner_out_dir = output_dir + "_ner_phase"
+                last_ckpt_ner = resolve_resume_checkpoint(ner_out_dir, logger=logger)
+                if last_ckpt_ner:
+                    trainer_ner.train(resume_from_checkpoint=last_ckpt_ner)
+                else:
+                    trainer_ner.train()
                 ner_out_dir = output_dir + "_ner_phase"
                 trainer_ner.save_model(ner_out_dir)
                 tokenizer.save_pretrained(ner_out_dir)
@@ -287,7 +297,11 @@ def main() -> None:
             )
             
             try:
-                trainer_qa.train()
+                last_ckpt_qa = resolve_resume_checkpoint(output_dir, logger=logger)
+                if last_ckpt_qa:
+                    trainer_qa.train(resume_from_checkpoint=last_ckpt_qa)
+                else:
+                    trainer_qa.train()
                 trainer_qa.save_model(output_dir)
                 logger.info(f"Saved Phase 2 (QA) checkpoint to {output_dir}")
                 trainer = trainer_qa
@@ -296,7 +310,11 @@ def main() -> None:
                 sys.exit(1)
         else:
             try:
-                trainer.train()
+                last_ckpt = resolve_resume_checkpoint(output_dir, logger=logger)
+                if last_ckpt:
+                    trainer.train(resume_from_checkpoint=last_ckpt)
+                else:
+                    trainer.train()
                 trainer.save_model(output_dir)
             except Exception as e:
                 logger.exception(f"Training failed: {e}")

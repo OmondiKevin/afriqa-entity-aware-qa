@@ -15,7 +15,7 @@ from afriqa_ner_qa.config import load_config
 from afriqa_ner_qa.eval import _clean_extra_id_from_pred, exact_match, generate_predictions
 from afriqa_ner_qa.logging_utils import setup_logger
 from afriqa_ner_qa.paths import ProjectPaths
-from afriqa_ner_qa.train import build_seq2seq_trainer, load_and_tokenize_jsonl_splits, load_jsonl_split
+from afriqa_ner_qa.train import build_seq2seq_trainer, load_and_tokenize_jsonl_splits, load_jsonl_split, resolve_resume_checkpoint
 
 
 def _upsample_dataset(train_ds, factor: int, seed: int):
@@ -42,6 +42,7 @@ def main() -> None:
     )
     parser.add_argument("--no_debug_predict_train", action="store_true",
                         help="Disable trainer.predict sanity check on train (enabled by default in overfit mode)")
+    parser.add_argument("--force_rerun", action="store_true", help="Force run even if predictions file already exists")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -76,6 +77,10 @@ def main() -> None:
         log_path = run_cfg.get("baseline_log_path", "outputs/logs/02_train_baseline_qa.log")
     overfit_pred_path = run_cfg.get("overfit_pred_path", "outputs/predictions/overfit_mt5_train.jsonl")
     logger = setup_logger(log_file=str(log_path))
+
+    if Path(pred_path).exists() and not args.force_rerun and not args.predict_only:
+        logger.info(f"Predictions already exist at {pred_path}. Skipping training for idempotent execution. Use --force_rerun to override.")
+        return
 
     debug_cfg = cfg.get("debug", {})
     overfit_n = debug_cfg.get("overfit_n", 0)
@@ -252,16 +257,10 @@ def main() -> None:
             lr_str = str(trainer.args.learning_rate)
         logger.info(f"Trainer args: learning_rate={lr_str}, lr_scheduler_type={trainer.args.lr_scheduler_type}, optim={trainer.args.optim} (constant scheduler => no decay)")
         
-        from transformers.trainer_utils import get_last_checkpoint
-        import os
-        
-        last_checkpoint = None
-        if os.path.isdir(output_dir):
-            last_checkpoint = get_last_checkpoint(output_dir)
+        last_checkpoint = resolve_resume_checkpoint(output_dir, logger=logger)
             
         try:
             if last_checkpoint is not None:
-                logger.info(f"Resuming training from checkpoint: {last_checkpoint}")
                 trainer.train(resume_from_checkpoint=last_checkpoint)
             else:
                 trainer.train()

@@ -178,3 +178,56 @@ def build_seq2seq_trainer(
         processing_class=tokenizer,
         callbacks=callbacks,
     )
+
+
+def resolve_resume_checkpoint(output_dir: str | Path, logger: Any = None) -> Optional[str]:
+    """
+    Robust checkpoint utility to safely resolve the latest valid checkpoint.
+    - Ensures Google Drive is actually mounted if running in Colab.
+    - Prevents silent fallback to ephemeral disk.
+    - Detects corrupted checkpoint folders and aborts.
+    """
+    import os
+    from transformers.trainer_utils import get_last_checkpoint
+    
+    out_path = Path(output_dir).resolve()
+    
+    # 1. Drive Mount Check for Colab
+    if "COLAB_GPU" in os.environ or "COLAB_JUPYTER_IP" in os.environ:
+        if "drive" not in str(out_path).lower():
+            err_msg = f"Colab environment detected, but output directory {out_path} is NOT on Google Drive! Aborting to prevent silent data loss."
+            if logger:
+                logger.error(err_msg)
+            raise RuntimeError(err_msg)
+            
+    if not out_path.exists():
+        if logger:
+            logger.info(f"Output directory {out_path} does not exist. Starting fresh.")
+        return None
+        
+    # 2. Resolve Checkpoint
+    try:
+        last_checkpoint = get_last_checkpoint(str(out_path))
+    except ValueError as e:
+        err_msg = f"Failed to parse checkpoints in {out_path}. Folder might be corrupted: {e}"
+        if logger:
+            logger.error(err_msg)
+        raise RuntimeError(err_msg)
+        
+    if last_checkpoint is None:
+        # Check if there are corrupted checkpoint dirs that get_last_checkpoint silently ignored
+        checkpoint_dirs = [d for d in out_path.iterdir() if d.is_dir() and d.name.startswith("checkpoint-")]
+        if checkpoint_dirs:
+            err_msg = f"Found invalid or corrupted checkpoint directories in {out_path}: {[d.name for d in checkpoint_dirs]}. Aborting to prevent overwriting."
+            if logger:
+                logger.error(err_msg)
+            raise RuntimeError(err_msg)
+        
+        if logger:
+            logger.info(f"No valid checkpoints found in {out_path}. Starting fresh.")
+        return None
+        
+    if logger:
+        logger.info(f"[RESUMING] Discovered latest valid checkpoint: {last_checkpoint}")
+        
+    return last_checkpoint
