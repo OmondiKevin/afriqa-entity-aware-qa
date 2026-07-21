@@ -40,8 +40,8 @@ train:
   lr: 1.0e-4
   learning_rate: 1e-4
   weight_decay: 0.01
-  epochs: 100
-  early_stopping_patience: 0
+  epochs: 200
+  early_stopping_patience: 5
   overfit_epochs: 30
   warmup_steps: 50
   fp16: false
