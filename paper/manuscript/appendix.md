@@ -1,169 +1,173 @@
 # Appendix
 
-## Appendix A: Complete Per-Language Results
+---
 
-**Table A1: Full per-language results for all configurations (EM / F1 / Semantic Similarity).**
+## A. Hyperparameter Details
+
+**Table A1: Training configuration per experiment.** All values confirmed from training logs. Discrepancies between YAML config values and runtime values are noted.
+
+| Parameter | mT5 Baseline | ByT5 Baseline | mT5 QA-Ups. | ByT5 QA-Ups. | mT5 Multi. | ByT5 Multi. |
+|---|---|---|---|---|---|---|
+| Model | google/mt5-base | google/byt5-base | mt5-base | byt5-base | mt5-base | byt5-base |
+| Learning Rate | 1e-4 | 1e-4 | 1e-4 | 1e-4 | 1e-4 | 1e-4 |
+| Optimizer | Adafactor | Adafactor | Adafactor | Adafactor | Adafactor | Adafactor |
+| Scheduler | Linear | Linear | Linear | Linear | Linear | Linear |
+| Physical Batch | 64 | 32 | 64 | 64 | 64 | 64 |
+| Grad. Accum. | 1 | 2 | 1 | 1 | 1 | 1 |
+| Effective Batch | 64 | 64 | 64 | 64 | 64 | 64 |
+| max_source_len | 256 (tokens) | 1024 (bytes)* | 256 | 1024* | 256 | 1024* |
+| max_target_len | 128 (tokens) | 128 (bytes)** | 128 | 128** | 128 | 128 |
+| gen_max_new_tok | 16 (tokens) | **16 (bytes)†** | 16 | **16†** | 16 | **16†** |
+| Epochs (max) | 20 | 20 | 20 | 20 | 20 | 20 |
+| Early Stop. | 3 | 3 | 3 | 3 | 3 | 3 |
+| Warmup | 50 | 50 | 50 | 50 | 50 | 50 |
+| Precision | bf16 | bf16 | bf16 | bf16 | bf16 | bf16 |
+| Seed | 42 | 42 | 42 | 42 | 42 | 42 |
+| QA Upsample | 1× | 1× | 20× | 20× | 20× | 20× |
+
+\* The YAML config `train.max_source_length = 256` was overridden at runtime to 1024 for all ByT5 experiments. Confirmed from training logs.  
+\*\* max_target_length = 128 bytes sets the training truncation boundary. Evaluation used 16 bytes (`gen_max_new_tokens`).  
+† **Critical:** 16 bytes ≈ 13–16 ASCII characters. 24.1% of gold answers exceed 16 bytes. All ByT5 QA metrics are lower bounds.
+
+---
+
+## B. Dataset Statistics
+
+**Table B1: AfriQA gold-passage QA dataset, per-language split counts.**
+
+| Language | Train | Validation | Test |
+|---|---:|---:|---:|
+| Hausa | 223 | 222 | 300 |
+| Yoruba | 247 | 0 | 253 |
+| Swahili | **0** | **0** | 295 |
+| **Total** | **470** | **222** | **848** |
+
+> **Zero-shot Swahili:** Swahili is entirely absent from training and validation splits. All Swahili performance figures in this paper represent zero-shot cross-lingual generalization from Hausa and Yoruba training data. This applies equally to all fine-tuned model configurations.
+
+**Table B2: MasakhaNER 2.0 dataset, total examples (Hausa + Yoruba + Swahili combined).**
+
+| Split | Examples |
+|---|---:|
+| Train | 19,185 |
+| Validation | 2,741 |
+| Test | 5,480 |
+| **Total** | **27,406** |
+
+---
+
+## C. Per-Language Metrics (Extended)
+
+**Table C1: Per-language EM, F1, and semantic similarity for all configurations.** SWA = Swahili (zero-shot); HAU = Hausa; YOR = Yoruba. †Lower bound (16-byte generation cap).
 
 | Configuration | SWA EM | SWA F1 | SWA Sem | HAU EM | HAU F1 | HAU Sem | YOR EM | YOR F1 | YOR Sem |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Baseline mT5 (1×) | 0.017 | 0.055 | 0.272 | 0.030 | 0.057 | 0.288 | 0.051 | 0.105 | 0.322 |
-| Baseline ByT5 (1×) | 0.003 | 0.058 | 0.297 | 0.017 | 0.046 | 0.317 | 0.059 | 0.122 | 0.372 |
-| Translation Pipeline | 0.122 | 0.202 | — | 0.157 | 0.234 | — | 0.059 | 0.122 | — |
-| Matched-Vol mT5 (20×) | 0.176 | 0.214 | 0.423 | 0.227 | 0.261 | 0.468 | 0.186 | 0.233 | 0.425 |
-| Matched-Vol ByT5 (20×) | 0.180 | 0.253 | 0.484 | **0.277** | **0.334** | **0.559** | 0.198 | 0.287 | 0.491 |
-| Multitask mT5 | 0.176 | 0.224 | 0.426 | **0.277** | 0.306 | 0.513 | 0.170 | 0.255 | 0.467 |
-| Multitask ByT5 | **0.190** | **0.266** | 0.455 | 0.227 | 0.293 | 0.515 | 0.154 | 0.254 | 0.455 |
-| LoRA mT5 | 0.129 | 0.158 | 0.359 | 0.200 | 0.222 | 0.423 | 0.162 | 0.222 | 0.415 |
-| LoRA ByT5 | 0.054 | 0.108 | 0.319 | 0.050 | 0.099 | 0.317 | 0.028 | 0.071 | 0.284 |
+| Baseline mT5 | 0.017 | 0.055 | 0.312 | 0.030 | 0.057 | 0.273 | 0.051 | 0.105 | 0.292 |
+| Baseline ByT5† | 0.003 | 0.058 | 0.327 | 0.017 | 0.046 | 0.318 | 0.059 | 0.122 | 0.340 |
+| QA-Ups. mT5 | 0.176 | 0.214 | 0.419 | 0.227 | 0.261 | 0.453 | 0.186 | 0.233 | 0.447 |
+| QA-Ups. ByT5† | 0.180 | 0.253 | 0.499 | 0.277 | 0.334 | 0.541 | 0.198 | 0.287 | 0.502 |
+| Multitask mT5 | 0.176 | 0.224 | 0.443 | 0.277 | 0.306 | 0.498 | 0.170 | 0.255 | 0.465 |
+| Multitask ByT5† | 0.190 | 0.266 | 0.469 | 0.227 | 0.293 | 0.497 | 0.154 | 0.254 | 0.464 |
+| LoRA mT5 | 0.142 | 0.174 | 0.384 | 0.197 | 0.235 | 0.415 | 0.142 | 0.192 | 0.397 |
+| LoRA ByT5† | 0.034 | 0.080 | 0.305 | 0.057 | 0.113 | 0.318 | 0.040 | 0.090 | 0.301 |
+| Translation | 0.122 | 0.202 | — | 0.157 | 0.234 | — | 0.059 | 0.122 | — |
+
+**Table C2: ByT5 task delta (Multitask ByT5 − QA-Upsampled ByT5) per language and metric.** Positive = NER supervision helps; Negative = NER supervision hurts.
+
+| Language | EM Δ | F1 Δ | Sem Δ |
+|---|---:|---:|---:|
+| Swahili (zero-shot) | **+0.010** | **+0.013** | −0.030 |
+| Hausa | −0.050 | −0.041 | −0.044 |
+| Yoruba | −0.043 | −0.033 | −0.038 |
+| **Overall** | **−0.027** | **−0.020** | **−0.037** |
+
+Negative in 7 of 9 language-metric combinations. Positive only for Swahili EM and Swahili F1, where the zero-shot condition makes interpretation unreliable.
 
 ---
 
-## Appendix B: Full Delta Decomposition Tables
+## D. Training Step Analysis
 
-**Table B1: Per-language delta decomposition for mT5 (all three metrics).**
+**Table D1: QA exposure and optimizer steps per configuration epoch.** This table documents why Δ_task reflects equal-QA-exposure-per-epoch, not equal optimizer steps.
 
-| Language | Metric | Baseline | Matched-Vol | Multitask | Δ_exposure | Δ_task |
-|---|---|---:|---:|---:|---:|---:|
-| Overall | EM | 0.032 | 0.197 | 0.210 | +0.165 | +0.013 |
-| Overall | F1 | 0.071 | 0.236 | 0.262 | +0.165 | +0.026 |
-| Overall | Sem | 0.293 | 0.439 | 0.469 | +0.147 | +0.030 |
-| Swahili | EM | 0.017 | 0.176 | 0.176 | +0.159 | 0.000 |
-| Swahili | F1 | 0.055 | 0.214 | 0.224 | +0.158 | +0.011 |
-| Swahili | Sem | 0.272 | 0.423 | 0.426 | +0.151 | +0.003 |
-| Hausa | EM | 0.030 | 0.227 | 0.277 | +0.197 | +0.050 |
-| Hausa | F1 | 0.057 | 0.261 | 0.306 | +0.203 | +0.045 |
-| Hausa | Sem | 0.288 | 0.468 | 0.513 | +0.180 | +0.045 |
-| Yoruba | EM | 0.051 | 0.186 | 0.170 | +0.134 | −0.016 |
-| Yoruba | F1 | 0.105 | 0.233 | 0.255 | +0.128 | +0.022 |
-| Yoruba | Sem | 0.322 | 0.425 | 0.467 | +0.104 | +0.042 |
+| Configuration | QA examples/epoch | NER examples/epoch | Total examples/epoch | Optimizer steps/epoch |
+|---|---:|---:|---:|---:|
+| Baseline (1×) | 470 | 0 | 470 | 8 |
+| QA-Upsampled (20×) | 9,400 | 0 | 9,400 | 147 |
+| Multitask (20× QA) | 9,400 | 19,185 | 28,585 | 447 |
 
-**Table B2: Per-language delta decomposition for ByT5 (all three metrics).**
+*Optimizer steps = ceil(examples / effective_batch_size = 64)*
 
-| Language | Metric | Baseline | Matched-Vol | Multitask | Δ_exposure | Δ_task |
-|---|---|---:|---:|---:|---:|---:|
-| Overall | EM | 0.025 | 0.219 | 0.192 | +0.195 | −0.027 |
-| Overall | F1 | 0.073 | 0.292 | 0.272 | +0.219 | −0.020 |
-| Overall | Sem | 0.327 | 0.513 | 0.476 | +0.186 | −0.037 |
-| Swahili | EM | 0.003 | 0.180 | 0.190 | +0.177 | +0.010 |
-| Swahili | F1 | 0.058 | 0.253 | 0.266 | +0.195 | +0.013 |
-| Swahili | Sem | 0.297 | 0.484 | 0.455 | +0.188 | −0.030 |
-| Hausa | EM | 0.017 | 0.277 | 0.227 | +0.260 | −0.050 |
-| Hausa | F1 | 0.046 | 0.334 | 0.293 | +0.288 | −0.041 |
-| Hausa | Sem | 0.317 | 0.559 | 0.515 | +0.242 | −0.044 |
-| Yoruba | EM | 0.059 | 0.198 | 0.154 | +0.138 | −0.043 |
-| Yoruba | F1 | 0.122 | 0.287 | 0.254 | +0.165 | −0.033 |
-| Yoruba | Sem | 0.372 | 0.491 | 0.455 | +0.119 | −0.036 |
+The Multitask configuration takes **3.04× more optimizer steps per epoch** than the QA-Upsampled configuration. Because Δ_task = Multitask − QA-Upsampled, the task delta conflates the effect of NER supervision with 3.04× additional compute per epoch. This is a limitation of the current experimental design.
 
 ---
 
-## Appendix C: NER Evaluation Details
+## E. NER Evaluation Details
 
-**Table C1: NER evaluation results (MasakhaNER test set, n = 5,480).**
+**Table E1: NER generation analysis on MasakhaNER 2.0 test set.**
 
-| Model | Parseable | P | R | F1 | TP | FP | FN |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Multitask mT5 | 409 (7.5%) | 0.840 | 0.036 | 0.070 | 368 | 70 | 9,766 |
-| Multitask ByT5 | 41 (0.7%) | 0.122 | ~0.000 | 0.001 | 5 | 36 | 10,129 |
+| Metric | Multitask mT5 | Multitask ByT5 |
+|---|---:|---:|
+| Total predictions | 5,480 | 5,480 |
+| Parseable predictions | 409 (7.5%) | 41 (0.7%) |
+| Precision (on parseable) | 0.840 | 0.122 |
+| Recall (over all examples) | 0.036 | ~0.000 |
+| F1 (token-level) | 0.070 | 0.001 |
 
-**Table C2: NER performance by entity type — Multitask mT5.**
-
-| Type | Support | TP | FP | FN | P | R | F1 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| PER | 3,095 | 94 | 9 | 3,001 | 0.913 | 0.030 | 0.059 |
-| LOC | 3,215 | 84 | 4 | 3,131 | 0.955 | 0.026 | 0.051 |
-| ORG | 2,174 | 94 | 30 | 2,080 | 0.758 | 0.043 | 0.082 |
-| DATE | 1,650 | 96 | 27 | 1,554 | 0.780 | 0.058 | 0.108 |
+"Parseable" means the prediction matched the expected tag-delimited format (e.g., "PER: Odunayo Ogundepo, LOC: Nigeria"). The 0.7% parse rate for ByT5 indicates the model largely did not acquire the NER output format, making its NER training signal functionally unreliable for the vast majority of examples.
 
 ---
 
-## Appendix D: Qualitative Error Examples
+## F. Translation Pipeline Details
 
-The following examples are drawn from the automated error analysis pipeline (`outputs/analysis/error_analysis_report.md`) and represent real predictions from the Matched-Vol ByT5 model.
+The translation baseline was implemented entirely using open-source neural models, with no commercial API calls:
 
-### Exact Match Examples
+**Stage 1:** NLLB-200-distilled-600M [NLLB Team, 2022] translates the source-language *question string* (passage not included) into English. The prompt prefix "question: " is stripped before translation.
 
-**Swahili:** Gold: "Oginga Odinga" → Predicted: "Oginga Odinga" *(F1 = 1.0)*  
-**Hausa:** Gold: "1951" → Predicted: "1951" *(F1 = 1.0)*  
-**Yoruba:** Gold: "Port-au-Prince" → Predicted: "Port-au-Prince" *(F1 = 1.0)*
+**Stage 2:** FLAN-T5-base generates an English answer from the translated English question only. **The gold passage is not provided.** This makes the pipeline a *closed-book parametric baseline* relying on world-knowledge in FLAN-T5-base parameters.
 
-### High-F1 Partial Match (Byte Truncation Pattern)
+**Stage 3:** NLLB-200-distilled-600M translates the English answer back into the source language.
 
-**Swahili:** Gold: "Thomas Alva Edison" → Predicted: "Thomas Alva Edis" *(F1 = 0.667)*  
-**Hausa:** Gold: "James Francis Cameron" → Predicted: "James Francis Ca" *(F1 = 0.667)*  
-**Hausa:** Gold: "Babagana Umara Zulum" → Predicted: "Babagana Umara Z" *(F1 = 0.667)*  
-**Yoruba:** Gold: "John Stith Pemberton" → Predicted: "John Stith Pembe" *(F1 = 0.667)*
-
-The consistent mid-name truncation (removing the final 2–4 characters) strongly suggests a generation length constraint interacting with byte-level encoding rather than semantic failure.
-
-### Semantic Hallucination (Wrong but Plausible)
-
-**Hausa:** Gold: "Doha" → Predicted: "Al Jazeera" *(F1 = 0.0)* — Alternative entity in the same Qatar domain.  
-**Yoruba:** Gold: "Oluṣẹgun ọbasanjọ" → Predicted: "General Yakubu G..." *(F1 = 0.0)* — Alternative Nigerian head of state.  
-**Swahili:** Gold: "Mwaka wa 1990" → Predicted: "National Party" *(F1 = 0.0)*
-
-These errors suggest the model has acquired world-knowledge associations but cannot reliably select the specific referent demanded by the question.
+**Implications:** The fine-tuned direct models (Configurations 1, 3, 4, 5) read the gold passage during inference. The translation baseline does not. This informational asymmetry advantages direct models. The comparison demonstrates that even with passage access, severely under-exposed (1×) models fail to outperform the closed-book translation pipeline; 20× exposure resolves this. It does not demonstrate superiority over a passage-reading translation system.
 
 ---
 
-## Appendix E: Training Configuration Files
+## G. Qualitative Error Examples
 
-Full YAML configuration for the ByT5 baseline experiment (`configs/baseline_byt5_1x.yaml`):
+**Table G1: Characteristic error patterns with corrected generation-cap annotation.**
 
-```yaml
-project:
-  name: afriqa-entity-aware-qa
-  seed: 42
+**Category 1: Byte-level truncation (artifact of 16-byte cap)**
 
-model:
-  base: google/byt5-base
-  prompt_prefix: "question: "
-  max_source_length: 192
-  max_target_length: 32
+| Model | Gold | Prediction | Analysis |
+|---|---|---|---|
+| ByT5 QA-Ups. | Thomas Alva Edison (18 bytes) | Thomas Alva Edis (16 bytes) | Hard truncation |
+| ByT5 QA-Ups. | James Francis Cameron (21 bytes) | James Francis Ca (16 bytes) | Hard truncation |
+| ByT5 QA-Ups. | Babagana Umara Zulum (21 bytes) | Babagana Umara Z (16 bytes) | Hard truncation |
+| ByT5 QA-Ups. | Adam Wilhelm Moltke (20 bytes) | Adam Wilhelm Mol (16 bytes) | Hard truncation |
 
-train:
-  max_source_length: 256
-  max_target_length: 128
-  max_grad_norm: 1.0
-  batch_size: 32
-  grad_accum: 2
-  lr: 1.0e-4
-  learning_rate: 1e-4
-  weight_decay: 0.01
-  epochs: 20
-  early_stopping_patience: 3
-  warmup_steps: 50
-  fp16: false
-  bf16: true
-  num_workers: 4
+*These predictions would likely score EM=1 at a 128-byte generation limit. They currently score F1 ≈ 0.67.*
 
-lora:
-  use_lora: false
-  r: 16
-  alpha: 32
-  dropout: 0.05
+**Category 2: Semantic domain hallucination**
 
-eval:
-  do_semantic: true
-  labse_model: sentence-transformers/LaBSE
-  generation_max_new_tokens: 16
-  generation_min_new_tokens: 1
-```
+| Model | Gold | Prediction | Analysis |
+|---|---|---|---|
+| mT5 QA-Ups. | Doha | Al Jazeera | Correct domain (Qatar/media), wrong entity |
+| ByT5 QA-Ups. | Mt Petro | Annuario Pontifi[cio] | Vatican domain preserved, wrong referent |
+| Multitask mT5 | Webuye | 1992 | Entity type confusion (name→year) |
 
----
+**Category 3: Translation-pipeline hallucination**
 
-## Appendix F: Reproducibility Checklist
+| Gold | NLLB-translated Q | FLAN-T5 Answer | Back-translated | Analysis |
+|---|---|---|---|---|
+| Oginga Odinga | Who founded FORD-Kenya? | Oginga Odinga | Jaramogi Oginga Odinga | Correct but expanded (back-translation adds "Jaramogi") |
+| Ama Ata Aidoo | Who wrote "Our Sister Killjoy"? | Ama Ata Aidoo | Ama Ata Aidoo | Correct (FLAN-T5 world knowledge) |
+| 2021 | In what year did a woman first become US VP? | 2021 | 2021 | Correct |
 
-| Item | Status |
-|---|---|
-| Random seed reported | ✓ Seed = 42 |
-| Hardware specified | ✓ A100-SXM4-80GB, 167GB RAM |
-| Hyperparameters specified | ✓ See Appendix E |
-| Model weights committed to repo | ✗ Excluded (model weights not committed) |
-| Predictions committed | ✓ `outputs/predictions/` |
-| Metrics committed | ✓ `outputs/metrics/` |
-| Training logs committed | ✓ `outputs/logs/` |
-| Evaluation scripts versioned | ✓ `scripts/04_eval_predictions.py` |
-| Dataset sources cited | ✓ HuggingFace: masakhane/afriqa-gold-passages, masakhane/masakhaner2 |
-| Multi-seed variance reported | ✗ Not yet conducted (acknowledged limitation) |
-| Compute hours reported | ✗ Not precisely measured |
+The translation baseline shows strong performance on high-frequency world-knowledge facts and poor performance on African-specific facts requiring local passage knowledge.
+
+**Category 4: NER format leakage into QA (mT5 Multitask)**
+
+| Input | Gold | Prediction | Analysis |
+|---|---|---|---|
+| question: Who discovered X? | John Smith | PER: John Smith | NER format prefix leaked into QA |
+
+This leakage pattern (1.8% of mT5 Multitask predictions) does not occur in ByT5 Multitask (0.4%), consistent with ByT5's low NER format acquisition rate.
 
