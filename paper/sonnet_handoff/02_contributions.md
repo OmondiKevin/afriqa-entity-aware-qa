@@ -1,5 +1,5 @@
 # Contributions
-1. **Empirical Proof of Exposure Scaling:** We demonstrate that the apparent superiority of translation pipelines over direct low-resource QA is an artifact of insufficient gradient steps, not architectural inability.
-2. **Tokenization vs. Supervision Discovery:** We isolate and prove that explicit multitask supervision (NER) is structurally required for subword models (mT5) but actively harmful to byte-level models (ByT5) due to their fluid morphological processing.
-3. **State-of-the-Art Baseline:** We establish a new unconstrained SOTA for direct Swahili, Hausa, and Yoruba QA on the AfriQA dataset using Matched-Volume ByT5 (EM=0.219).
-4. **LoRA Limitations:** We empirically show that rank-16 LoRA adapters are insufficient to capture the deep routing required by byte-level models under multitask regimes.\n
+1. **Empirical Evidence of Exposure Scaling:** We demonstrate that the apparent superiority of translation pipelines over direct low-resource QA in early experiments is largely an artifact of insufficient gradient steps, not architectural inability.
+2. **Tokenization vs. Supervision Discovery:** We isolate and show that explicit multitask supervision (NER) structurally benefits subword models (mT5) but degrades byte-level models (ByT5) due to their fluid morphological processing.
+3. **Strong Baseline Formulation:** We establish a rigorous baseline for direct Swahili, Hausa, and Yoruba QA on the AfriQA dataset using Matched-Volume ByT5 (EM=0.219).
+4. **LoRA Limitations:** We empirically document that rank-16 LoRA adapters fail to capture the deep routing required by byte-level models under our multitask regimes.\n

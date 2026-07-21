@@ -1,9 +1,15 @@
 # Experimental Setup
-- **Architectures:** mT5-base (subword), ByT5-base (byte-level).
-- **Optimizer:** AdamW.
-- **Hardware:** NVIDIA A100-SXM4-80GB.
-- **Precision:** bfloat16 (bf16).
-- **Effective Batch Size:** 64 for all configurations (ensures rigorous scientific comparability).
-- **Epochs:**
-  - Baselines: 20 epochs (standard).
-  - Matched-Volume & Multitask: Up to 200 epochs to accommodate the 20x upsampled volume while maintaining step parity.\n
+**Hardware & Environment:**
+- Compute: Single NVIDIA A100-SXM4-80GB GPU
+- RAM: 167GB System RAM
+- Environment: Google Colab Pro
+
+**Hyperparameters & Training Configuration:**
+- Precision: bfloat16 (bf16)
+- Optimizer: AdamW
+- Effective Batch Size: 64 (physical batch size dynamically adjusted with gradient accumulation to guarantee exact parity across all runs)
+- Base Learning Rate: 5e-4 (standard seq2seq setup)
+- Epochs: 
+  - Standard (1x) baselines: 20 epochs
+  - Matched-Volume (20x) and Multitask: Scaled up to 200 epochs to accommodate the upsampled data volume and ensure exact gradient step parity.
+- Seeds: Random seed = 42 for all main experiments (Note: single-seed limitation acknowledged).\n
