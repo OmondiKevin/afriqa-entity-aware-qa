@@ -40,15 +40,15 @@ train:
   lr: 1.0e-4
   learning_rate: 1e-4
   weight_decay: 0.01
-  epochs: 20
-  early_stopping_patience: 3
+  epochs: 100
+  early_stopping_patience: 0
   overfit_epochs: 30
   warmup_steps: 50
   fp16: false
   bf16: false
   num_workers: 2
-  eval_steps: 50
-  save_steps: 50
+  eval_steps: 20
+  save_steps: 20
   save_total_limit: 1
   logging_steps: 10
 
