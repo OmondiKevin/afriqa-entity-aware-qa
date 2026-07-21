@@ -1,0 +1,30 @@
+2026-07-21 15:06:19,083 | INFO | Loading predictions from outputs/predictions/translation_pipeline_test.jsonl
+2026-07-21 15:06:19,095 | INFO | Loaded 848 rows from outputs/predictions/translation_pipeline_test.jsonl
+2026-07-21 15:06:30,210 | WARNING | Semantic similarity failed (name 'torch' is not defined); continuing with EM/F1 only
+2026-07-21 15:06:30,217 | INFO | Wrote metrics JSON to outputs/metrics/translation_pipeline_test_metrics.json
+2026-07-21 15:06:30,223 | INFO | Wrote metrics CSV to outputs/metrics/translation_pipeline_test_metrics.csv
+2026-07-21 15:06:30,223 | INFO | Overall: n=848 EM=0.1156 F1=0.1894
+2026-07-21 15:06:30,223 | INFO |   swa: n=295 EM=0.1220 F1=0.2023
+2026-07-21 15:06:30,223 | INFO |   hau: n=300 EM=0.1567 F1=0.2336
+2026-07-21 15:06:30,223 | INFO |   yor: n=253 EM=0.0593 F1=0.1218
+2026-07-21 15:06:30,224 | INFO | Done.
+2026-07-21 15:21:12,918 | ERROR | Predictions file not found: outputs/predictions/baseline_byt5_test.jsonl
+2026-07-21 16:30:05,627 | INFO | Loading predictions from outputs/predictions/baseline_byt5_test_v2.jsonl
+2026-07-21 16:30:07,183 | INFO | Loaded 848 rows from outputs/predictions/baseline_byt5_test_v2.jsonl
+2026-07-21 16:30:27,028 | WARNING | Semantic similarity failed (name 'torch' is not defined); continuing with EM/F1 only
+2026-07-21 16:30:27,042 | INFO | Wrote metrics JSON to outputs/metrics/baseline_byt5_test_v2_metrics.json
+2026-07-21 16:30:27,048 | INFO | Wrote metrics CSV to outputs/metrics/baseline_byt5_test_v2_metrics.csv
+2026-07-21 16:30:27,048 | INFO | Overall: n=848 EM=0.0248 F1=0.0726
+2026-07-21 16:30:27,048 | INFO |   swa: n=295 EM=0.0034 F1=0.0578
+2026-07-21 16:30:27,048 | INFO |   hau: n=300 EM=0.0167 F1=0.0456
+2026-07-21 16:30:27,048 | INFO |   yor: n=253 EM=0.0593 F1=0.1218
+2026-07-21 16:30:27,048 | INFO | Done.
+2026-07-21 16:34:09,191 | INFO | Loading predictions from outputs/predictions/baseline_byt5_test_v2.jsonl
+2026-07-21 16:34:10,812 | INFO | Loaded 848 rows from outputs/predictions/baseline_byt5_test_v2.jsonl
+2026-07-21 16:34:51,577 | INFO | Wrote metrics JSON to outputs/metrics/baseline_byt5_test_v2_metrics.json
+2026-07-21 16:34:52,726 | INFO | Wrote metrics CSV to outputs/metrics/baseline_byt5_test_v2_metrics.csv
+2026-07-21 16:34:52,726 | INFO | Overall: n=848 EM=0.0248 F1=0.0726 semantic=0.3265
+2026-07-21 16:34:52,726 | INFO |   swa: n=295 EM=0.0034 F1=0.0578 semantic=0.2968
+2026-07-21 16:34:52,726 | INFO |   hau: n=300 EM=0.0167 F1=0.0456 semantic=0.3170
+2026-07-21 16:34:52,727 | INFO |   yor: n=253 EM=0.0593 F1=0.1218 semantic=0.3724
+2026-07-21 16:34:52,727 | INFO | Done.

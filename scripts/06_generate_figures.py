@@ -21,13 +21,14 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
 
-METRICS_DIR = Path("outputs_colab/metrics")
+METRICS_DIR = Path("outputs/metrics")
 FIGURES_DIR = Path("outputs/figures")
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 # Config order and display labels
 CONFIGS = [
     ("baseline_mt5_test_metrics", "Baseline\nmT5 (1x)"),
+    ("baseline_byt5_test_v2_metrics", "Baseline\nByT5 (1x)"),
     ("matchedqa_mt5_test_metrics", "Matched-Vol\nmT5 (20x)"),
     ("multitask_mt5_test_qa_only_metrics", "Multitask\nmT5"),
     ("multitask_mt5_lora_test_qa_only_metrics", "LoRA\nmT5"),
@@ -39,6 +40,7 @@ CONFIGS = [
 # For short labels in tight plots
 CONFIGS_SHORT = [
     ("baseline_mt5_test_metrics", "Base mT5"),
+    ("baseline_byt5_test_v2_metrics", "Base ByT5"),
     ("matchedqa_mt5_test_metrics", "MV mT5"),
     ("multitask_mt5_test_qa_only_metrics", "MT mT5"),
     ("multitask_mt5_lora_test_qa_only_metrics", "LoRA mT5"),
@@ -186,7 +188,7 @@ def fig3_delta_decomposition(data: dict) -> None:
 
     configs = [
         ("mT5", "baseline_mt5_test_metrics", "matchedqa_mt5_test_metrics", "multitask_mt5_test_qa_only_metrics"),
-        ("ByT5", "baseline_byt5_test_metrics", "matchedqa_byt5_test_metrics", "multitask_byt5_test_qa_only_metrics"),
+        ("ByT5", "baseline_byt5_test_v2_metrics", "matchedqa_byt5_test_metrics", "multitask_byt5_test_qa_only_metrics"),
     ]
 
     for ax_idx, (arch, baseline_key, matched_key, multitask_key) in enumerate(configs):

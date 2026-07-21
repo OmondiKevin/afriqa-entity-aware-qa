@@ -1,0 +1,37 @@
+2026-03-12 08:22:02,244 | INFO | Tokenization: max_source_length=256, max_target_length=128
+2026-03-12 08:22:02,245 | INFO | Loading JSONL from data/processed/qa_seq2seq_swa_hau_yor
+2026-03-12 08:22:02,578 | INFO | Train: 470, Validation: 222
+2026-03-12 08:22:02,578 | INFO | Loading model and tokenizer: google/mt5-base
+2026-03-12 08:22:12,771 | INFO | Adafactor + gradient checkpointing enabled for low-memory training
+2026-03-12 08:22:12,772 | INFO | Training: learning_rate=0.0005, lr_scheduler_type=linear, optim=adafactor
+2026-03-12 08:22:13,104 | INFO | max_grad_norm=1.0
+2026-03-12 08:22:13,104 | INFO | Enabling early stopping with patience=3
+2026-03-12 08:22:17,378 | INFO | Starting training...
+2026-03-12 08:22:17,378 | INFO | Trainer args: learning_rate=5.00e-04, lr_scheduler_type=SchedulerType.LINEAR, optim=OptimizerNames.ADAFACTOR (constant scheduler => no decay)
+2026-03-12 08:31:30,301 | INFO | Tokenization: max_source_length=256, max_target_length=128
+2026-03-12 08:31:30,302 | INFO | Loading JSONL from data/processed/qa_seq2seq_swa_hau_yor
+2026-03-12 08:31:30,623 | INFO | Train: 470, Validation: 222
+2026-03-12 08:31:30,623 | INFO | Loading model and tokenizer: google/mt5-base
+2026-03-12 08:31:35,195 | INFO | Adafactor + gradient checkpointing enabled for low-memory training
+2026-03-12 08:31:35,195 | INFO | Training: learning_rate=0.0001, lr_scheduler_type=linear, optim=adafactor
+2026-03-12 08:31:35,480 | INFO | max_grad_norm=1.0
+2026-03-12 08:31:35,481 | INFO | Enabling early stopping with patience=3
+2026-03-12 08:31:39,473 | INFO | Starting training...
+2026-03-12 08:31:39,474 | INFO | Trainer args: learning_rate=1.00e-04, lr_scheduler_type=SchedulerType.LINEAR, optim=OptimizerNames.ADAFACTOR (constant scheduler => no decay)
+2026-03-12 08:35:18,545 | INFO | Saved checkpoint to outputs/checkpoints/baseline_mt5
+2026-03-12 08:35:18,550 | INFO | Loading and tokenizing from data/processed/qa_seq2seq_swa_hau_yor (max_source=256, max_target=128)
+2026-03-12 08:35:23,564 | INFO | [tokenize debug] decoded input: question: A wace shekara aka fara samun mace a matsayin kataimakiyar shugaban kasar amurka? context: Harris sought the 2...
+2026-03-12 08:35:23,564 | INFO | [tokenize debug] decoded label (ignoring -100): 2021
+2026-03-12 08:35:23,564 | INFO | [tokenize debug] labels: -100 count=126, total=128
+2026-03-12 08:35:23,564 | INFO | Generating predictions on 848 examples
+2026-03-12 08:35:24,369 | INFO | [example 1] input: question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was f...
+2026-03-12 08:35:24,369 | INFO | [example 1] target (gold): Webuye
+2026-03-12 08:35:24,370 | INFO | [example 1] prediction: Alfred Sambu
+2026-03-12 08:35:24,370 | INFO | [example 2] input: question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Fo...
+2026-03-12 08:35:24,370 | INFO | [example 2] target (gold): Oginga Odinga
+2026-03-12 08:35:24,370 | INFO | [example 2] prediction: Restoration of Democracy
+2026-03-12 08:35:24,370 | INFO | [example 3] input: question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes correspo...
+2026-03-12 08:35:24,371 | INFO | [example 3] target (gold): Mt Petro
+2026-03-12 08:35:24,371 | INFO | [example 3] prediction: ''I Sommi Pontefici Romani
+2026-03-12 08:36:09,737 | INFO | Saved 848 predictions to outputs/predictions/baseline_mt5_test.jsonl
+2026-03-12 08:36:09,737 | INFO | Done.

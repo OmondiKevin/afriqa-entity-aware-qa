@@ -15,17 +15,19 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-PREDICTIONS_DIR = Path("outputs_colab/predictions")
+PREDICTIONS_DIR = Path("outputs/predictions")
 OUTPUT_DIR = Path("outputs/analysis")
 
 CONFIGS = [
     ("baseline_mt5_test", "Baseline mT5 (1x)"),
+    ("baseline_byt5_test_v2", "Baseline ByT5 (1x)"),
     ("matchedqa_mt5_test", "Matched-Vol mT5 (20x)"),
     ("matchedqa_byt5_test", "Matched-Vol ByT5 (20x)"),
     ("multitask_mt5_test", "Multitask mT5"),
     ("multitask_byt5_test", "Multitask ByT5"),
     ("multitask_mt5_lora_test", "LoRA mT5"),
     ("multitask_byt5_lora_test", "LoRA ByT5"),
+    ("translation_pipeline_test", "Translation Pipeline"),
 ]
 
 LANGUAGES = ["swa", "hau", "yor"]

@@ -1,0 +1,28 @@
+2026-03-13 12:21:28,038 | INFO | Tokenization: max_source_length=256, max_target_length=128
+2026-03-13 12:21:28,039 | INFO | Loading JSONL from data/processed/qa_seq2seq_swa_hau_yor
+2026-03-13 12:21:28,377 | INFO | Matched-volume mode enabled: upsampled QA train split from 470 to 9400 (factor=20); NER supervision is disabled.
+2026-03-13 12:21:28,377 | INFO | Train: 9400, Validation: 222
+2026-03-13 12:21:28,377 | INFO | Loading model and tokenizer: google/mt5-base
+2026-03-13 12:21:39,060 | INFO | Adafactor + gradient checkpointing enabled for low-memory training
+2026-03-13 12:21:39,060 | INFO | Training: learning_rate=0.0001, lr_scheduler_type=linear, optim=adafactor
+2026-03-13 12:21:39,373 | INFO | max_grad_norm=1.0
+2026-03-13 12:21:39,374 | INFO | Enabling early stopping with patience=3
+2026-03-13 12:21:44,938 | INFO | Starting training...
+2026-03-13 12:21:44,938 | INFO | Trainer args: learning_rate=1.00e-04, lr_scheduler_type=SchedulerType.LINEAR, optim=OptimizerNames.ADAFACTOR (constant scheduler => no decay)
+2026-03-13 12:28:29,183 | INFO | Saved checkpoint to outputs/checkpoints/matchedqa_mt5
+2026-03-13 12:28:29,188 | INFO | Loading and tokenizing from data/processed/qa_seq2seq_swa_hau_yor (max_source=256, max_target=128)
+2026-03-13 12:28:34,546 | INFO | [tokenize debug] decoded input: question: A wace shekara aka fara samun mace a matsayin kataimakiyar shugaban kasar amurka? context: Harris sought the 2...
+2026-03-13 12:28:34,547 | INFO | [tokenize debug] decoded label (ignoring -100): 2021
+2026-03-13 12:28:34,547 | INFO | [tokenize debug] labels: -100 count=126, total=128
+2026-03-13 12:28:34,548 | INFO | Generating predictions on 848 examples
+2026-03-13 12:28:35,628 | INFO | [example 1] input: question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was f...
+2026-03-13 12:28:35,628 | INFO | [example 1] target (gold): Webuye
+2026-03-13 12:28:35,628 | INFO | [example 1] prediction: 1992
+2026-03-13 12:28:35,629 | INFO | [example 2] input: question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Fo...
+2026-03-13 12:28:35,629 | INFO | [example 2] target (gold): Oginga Odinga
+2026-03-13 12:28:35,629 | INFO | [example 2] prediction: Jaramogi Oginga Odinga
+2026-03-13 12:28:35,629 | INFO | [example 3] input: question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes correspo...
+2026-03-13 12:28:35,629 | INFO | [example 3] target (gold): Mt Petro
+2026-03-13 12:28:35,630 | INFO | [example 3] prediction: 2001
+2026-03-13 12:29:18,942 | INFO | Saved 848 predictions to outputs/predictions/matchedqa_mt5_test.jsonl
+2026-03-13 12:29:18,942 | INFO | Done.

@@ -1,0 +1,21 @@
+2026-03-12 16:08:22,387 | ERROR | Predictions file not found: outputs/predictions/multitask_mt5_lora_test.jsonl
+2026-03-12 17:37:39,671 | INFO | Loading predictions from outputs/predictions/multitask_mt5_lora_test.jsonl
+2026-03-12 17:37:40,299 | INFO | Loaded 6328 rows from outputs/predictions/multitask_mt5_lora_test.jsonl
+2026-03-12 17:37:40,301 | INFO | Filtered to 848 QA-only rows (--qa_only passed)
+2026-03-12 17:38:04,600 | INFO | Wrote metrics JSON to outputs/metrics/multitask_mt5_lora_test_qa_only_metrics.json
+2026-03-12 17:38:04,609 | INFO | Wrote metrics CSV to outputs/metrics/multitask_mt5_lora_test_qa_only_metrics.csv
+2026-03-12 17:38:04,609 | INFO | Overall: n=848 EM=0.1639 F1=0.2000 semantic=0.3981
+2026-03-12 17:38:04,610 | INFO |   swa: n=295 EM=0.1288 F1=0.1580 semantic=0.3586
+2026-03-12 17:38:04,610 | INFO |   hau: n=300 EM=0.2000 F1=0.2224 semantic=0.4226
+2026-03-12 17:38:04,610 | INFO |   yor: n=253 EM=0.1621 F1=0.2224 semantic=0.4149
+2026-03-12 17:38:04,610 | INFO | Done.
+2026-03-12 20:04:50,490 | INFO | Loading predictions from outputs/predictions/multitask_mt5_lora_test.jsonl
+2026-03-12 20:04:51,205 | INFO | Loaded 6328 rows from outputs/predictions/multitask_mt5_lora_test.jsonl
+2026-03-12 20:04:51,207 | INFO | Filtered to 848 QA-only rows (--qa_only passed)
+2026-03-12 20:05:15,577 | INFO | Wrote metrics JSON to outputs/metrics/multitask_mt5_lora_test_qa_only_metrics.json
+2026-03-12 20:05:15,999 | INFO | Wrote metrics CSV to outputs/metrics/multitask_mt5_lora_test_qa_only_metrics.csv
+2026-03-12 20:05:15,999 | INFO | Overall: n=848 EM=0.1639 F1=0.2000 semantic=0.3981
+2026-03-12 20:05:15,999 | INFO |   swa: n=295 EM=0.1288 F1=0.1580 semantic=0.3586
+2026-03-12 20:05:15,999 | INFO |   hau: n=300 EM=0.2000 F1=0.2224 semantic=0.4226
+2026-03-12 20:05:15,999 | INFO |   yor: n=253 EM=0.1621 F1=0.2224 semantic=0.4149
+2026-03-12 20:05:15,999 | INFO | Done.

@@ -1,0 +1,51 @@
+{
+  "copied": [
+    {
+      "file": "metrics/translation_pipeline_test_metrics.csv",
+      "reason": "New file"
+    },
+    {
+      "file": "metrics/translation_pipeline_test_metrics.json",
+      "reason": "New file"
+    },
+    {
+      "file": "metrics/baseline_byt5_test_v2_metrics.csv",
+      "reason": "New file"
+    },
+    {
+      "file": "metrics/baseline_byt5_test_v2_metrics.json",
+      "reason": "New file"
+    },
+    {
+      "file": "logs/00_download_and_subset.log",
+      "reason": "New file"
+    },
+    {
+      "file": "logs/02_train_baseline_byt5_v2.log",
+      "reason": "New file"
+    },
+    {
+      "file": "logs/02b_eval_translation_pipeline.log",
+      "reason": "New file"
+    },
+    {
+      "file": "logs/01_prepare_qa_data.log",
+      "reason": "New file"
+    },
+    {
+      "file": "logs/04_eval_predictions.log",
+      "reason": "New file"
+    },
+    {
+      "file": "predictions/baseline_byt5_test_v2.jsonl",
+      "reason": "New file"
+    },
+    {
+      "file": "predictions/translation_pipeline_test.jsonl",
+      "reason": "New file"
+    }
+  ],
+  "skipped": [],
+  "replaced": [],
+  "errors": []
+}

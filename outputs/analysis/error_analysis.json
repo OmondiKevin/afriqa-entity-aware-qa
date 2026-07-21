@@ -1,0 +1,4950 @@
+{
+  "baseline_mt5_test": {
+    "n": 848,
+    "overall": {
+      "empty": {
+        "count": 2,
+        "pct": 0.0023584905660377358
+      },
+      "exact_match": {
+        "count": 27,
+        "pct": 0.031839622641509434
+      },
+      "high_partial": {
+        "count": 23,
+        "pct": 0.027122641509433963
+      },
+      "low_partial": {
+        "count": 51,
+        "pct": 0.060141509433962265
+      },
+      "wrong": {
+        "count": 745,
+        "pct": 0.8785377358490566
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 9,
+          "pct": 0.03
+        },
+        "high_partial": {
+          "count": 7,
+          "pct": 0.023333333333333334
+        },
+        "low_partial": {
+          "count": 12,
+          "pct": 0.04
+        },
+        "wrong": {
+          "count": 272,
+          "pct": 0.9066666666666666
+        }
+      },
+      "swa": {
+        "empty": {
+          "count": 2,
+          "pct": 0.006779661016949152
+        },
+        "exact_match": {
+          "count": 5,
+          "pct": 0.01694915254237288
+        },
+        "high_partial": {
+          "count": 8,
+          "pct": 0.02711864406779661
+        },
+        "low_partial": {
+          "count": 15,
+          "pct": 0.05084745762711865
+        },
+        "wrong": {
+          "count": 265,
+          "pct": 0.8983050847457628
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 13,
+          "pct": 0.05138339920948617
+        },
+        "high_partial": {
+          "count": 8,
+          "pct": 0.03162055335968379
+        },
+        "low_partial": {
+          "count": 24,
+          "pct": 0.09486166007905138
+        },
+        "wrong": {
+          "count": 208,
+          "pct": 0.8221343873517787
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "0",
+            "input": "question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was first elected as a Me",
+            "gold": "Webuye",
+            "pred": "Alfred Sambu",
+            "f1": 0.0
+          },
+          {
+            "id": "1",
+            "input": "question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Forum for the Restorat",
+            "gold": "Oginga Odinga",
+            "pred": "Restoration of Democracy",
+            "f1": 0.0
+          },
+          {
+            "id": "2",
+            "input": "question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes corresponds to that given in",
+            "gold": "Mt Petro",
+            "pred": "''I Sommi Pontefici Romani",
+            "f1": 0.0
+          },
+          {
+            "id": "3",
+            "input": "question: Je,kampuni ya Blizzard Entertainment inapatikana nchi gani? context: Blizzard Entertainment, Inc. is an Americ",
+            "gold": "Irvine, California",
+            "pred": "Silicon &amp; Synapse, Inc",
+            "f1": 0.0
+          },
+          {
+            "id": "4",
+            "input": "question: Je,rais wa kwanza wa Kongo alifahamika kama nani? context: Joseph Kasa-Vubu, alternatively Joseph Kasavubu, ( ",
+            "gold": "Joseph Kasa-Vubu",
+            "pred": "Democratic Republic of the Congo",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "295",
+            "input": "question: Awane yanki jahar Anambra take a Nijeriya? context: Anambra State  is a Nigerian state, located in the southea",
+            "gold": "gabas ta kudu",
+            "pred": "a Nigerian state",
+            "f1": 0.0
+          },
+          {
+            "id": "296",
+            "input": "question: A wane gari babban Ofishin Al jazeera yake? context: Al Jazeera (Arabic: \u0627\u0644\u062c\u0632\u064a\u0631\u0629, romanized: al-jazi\u0304rah, IPA:",
+            "gold": "Doha",
+            "pred": "a wane gari babban Ofishin Al Jazeera Media Network",
+            "f1": 0.0
+          },
+          {
+            "id": "297",
+            "input": "question: Wanene farkon mataimakin shugaban jami'ar Lagos? context: Eni Njoku (6 November 1917 \u2013 22 December 1974) was a",
+            "gold": "Eni Njoku",
+            "pred": "a Nigerian Botanist",
+            "f1": 0.0
+          },
+          {
+            "id": "298",
+            "input": "question: Shin \u0199asashe nawa ne suka raba iyaka da Saudi Arabiya? context: Saudi Arabia is bounded by seven countries and",
+            "gold": "bakwai",
+            "pred": "Yemen",
+            "f1": 0.0
+          },
+          {
+            "id": "299",
+            "input": "question: A wace shekara aka haifi Chioma Opara? context: Chioma Opara (born 23 May 1951 in Jos, Nigeria) is a Nigerian ",
+            "gold": "1951",
+            "pred": "a wace shekara aka haifi Chioma Opara",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "595",
+            "input": "question: \u1eccm\u1ecd \u1ecddun melo ni Cosmas Maduka nigbati o f\u1eb9 iyawo r\u1eb9 Charity? context: The startup also failed sooner than exp",
+            "gold": "21",
+            "pred": "Charity",
+            "f1": 0.0
+          },
+          {
+            "id": "596",
+            "input": "question: Igbawo ni Popu John Paul II ku ? context: Pope John Paul II (Latin: Ioannes Paulus II; Italian: Giovanni Paolo",
+            "gold": "2005",
+            "pred": "a Vatican City State",
+            "f1": 0.0
+          },
+          {
+            "id": "597",
+            "input": "question: Ta l\u1eb9ni to j\u1eb9 gomina ti Eko nigba ti w\u1ecdn pari kik\u1ecd National Arts Theatre l'Eko? context: The building of the N",
+            "gold": "Olu\u1e63\u1eb9gun \u1ecdbasanj\u1ecd",
+            "pred": "R\u1eb9\u0300n\u0300 Obasanjo\u0300",
+            "f1": 0.0
+          },
+          {
+            "id": "598",
+            "input": "question: Ipinl\u1eb9 wo l'Am\u1eb9rika ni Wikimedia Foundation k\u1ecd olu ile i\u1e63\u1eb9 w\u1ecdn si? context: Wikimedia Foundation, Inc. (WMF, a",
+            "gold": "California",
+            "pred": "Wikimedia Foundation, Inc",
+            "f1": 0.0
+          },
+          {
+            "id": "599",
+            "input": "question: Eroja pataki wo ni aw\u1ecdn ara Igbo fi maa n se ounj\u1eb9 abacha ? context: Abacha is popular in the Eastern part of ",
+            "gold": "Gbaguda",
+            "pred": "aw\u1ecdn ara Igbo ti aw\u1ecdn ara Igbo",
+            "f1": 0.0
+          }
+        ]
+      },
+      "high_partial": {
+        "swa": [
+          {
+            "id": "8",
+            "input": "question: Waziri mkuu wa Israeli ajulikana kama nani? context: Naftali Bennett (Hebrew: \u05e0\u05b7\u05e4\u05b0\u05ea\u05b8\u05bc\u05dc\u05b4\u05d9 \u05d1\u05b6\u05bc\u05e0\u05b6\u05d8, Transliterate",
+            "gold": "Naftali Bennett",
+            "pred": "Hebrew: Naftali Bennett",
+            "f1": 0.8
+          },
+          {
+            "id": "10",
+            "input": "question: Je,ni shirika gani la serikali inasimamia bandari ya Mombasa? context: Kenya Ports Authority (KPA) is a state ",
+            "gold": "Kenya Ports Authority",
+            "pred": "eh Kenya Ports Authority (KPA)",
+            "f1": 0.75
+          },
+          {
+            "id": "12",
+            "input": "question: Je,gavana wa kwanza wa kaunti ya Laikipia aliitwa nani? context: Joshua Wakahora Irungu (born 2 February 1970)",
+            "gold": "Joshua Irungu",
+            "pred": "Joshua Wakahora Irungu",
+            "f1": 0.8
+          },
+          {
+            "id": "46",
+            "input": "question: Sultan wa kwanza wa Zanzibar anaitwaje? context: The sultans of Zanzibar () were the rulers of the Sultanate o",
+            "gold": "Majid bin Said",
+            "pred": "Rubani bin Said",
+            "f1": 0.667
+          },
+          {
+            "id": "74",
+            "input": "question: Rais wa Marekani mwaka wa 1964 anaitwa nani? context: The 1964 United States elections were held in the United",
+            "gold": "Lyndon B. Johnson",
+            "pred": "Democratic Party of President Lyndon B. Johnson",
+            "f1": 0.6
+          }
+        ],
+        "hau": [
+          {
+            "id": "305",
+            "input": "question: Wanene ya bada umarnin gina katangar China? context: The history of the Great Wall of China began when fortifi",
+            "gold": "Qin Shi Huang",
+            "pred": "emperor Qin Shi Huang",
+            "f1": 0.857
+          },
+          {
+            "id": "319",
+            "input": "question: Yaya sunan Album din wizkid na farko? context: Ayodeji Ibrahim Balogun (born 16 July 1990), known professional",
+            "gold": "Superstar",
+            "pred": "Superstar (2011)",
+            "f1": 0.667
+          },
+          {
+            "id": "403",
+            "input": "question: Wanene ya lashe zaben Amruka da ya wuce? context: The 2020 United States presidential election was the 59th qu",
+            "gold": "Joe Biden",
+            "pred": "Republican president Joe Biden",
+            "f1": 0.667
+          },
+          {
+            "id": "437",
+            "input": "question: Wanene shugaban hadaddiyar Daular Larabawa a shekarar 1990? context: The United Arab Emirates military was for",
+            "gold": "Zayed bin Sultan Al Nahyan",
+            "pred": "Mohammed bin Sultan Al Nahyan Al Nahyan Al Nahyan",
+            "f1": 0.571
+          },
+          {
+            "id": "440",
+            "input": "question: Ya sunan mutumin da ya kirkiri fasahar bincike ta Google? context: Google was founded on September 4, 1998, by",
+            "gold": "Larry Page da Sergey Brin",
+            "pred": "Larry Page",
+            "f1": 0.571
+          }
+        ],
+        "yor": [
+          {
+            "id": "609",
+            "input": "question: \u1eccdun wo ni w\u1ecdn da ile \u1eb9k\u1ecd Queen's college yaba sil\u1eb9 ? context: Queen's College, Lagos, is a government-owned g",
+            "gold": "1927",
+            "pred": "\u1ecddun 1927",
+            "f1": 0.667
+          },
+          {
+            "id": "661",
+            "input": "question: \u1eccdun wo ni ijoba apapo oril\u1eb9-ede Naijiria fun ile-ise Coscharis ni iwe ase lati ma gbe oko wole? context: The ",
+            "gold": "1982",
+            "pred": "\u1ecddun 1982",
+            "f1": 0.667
+          },
+          {
+            "id": "668",
+            "input": "question: Ki l'oruk\u1ecd \u1ecdm\u1ecd ik\u1eb9hin Muhammad Ali? context: On August 17, 1967, Ali married Belinda Boyd. Born into a Chicago",
+            "gold": "Muhammad Ali Jr.",
+            "pred": "\u1ecdm\u1ecd ik\u1eb9hin Muhammad Ali",
+            "f1": 0.571
+          },
+          {
+            "id": "676",
+            "input": "question: eto wo lo n \u1e63e alamojuto aw\u1ecdn \u1ecdm\u1ecd orukan ? context: An orphanage is a residential institution, total instituti",
+            "gold": "ile aw\u1ecdn \u1ecdm\u1ecd alailobi",
+            "pred": "aw\u1ecdn \u1ecdm\u1ecd orukan",
+            "f1": 0.571
+          },
+          {
+            "id": "682",
+            "input": "question: Ta lo j\u1eb9 Gomina Ipinl\u1eb9 Benue saaju Aper Aku? context: Aper Aku was appointed as Chairman of Kwande Local Gover",
+            "gold": "Abdullahi Shelleng",
+            "pred": "Abdullahi Shelleng, Benue State governor",
+            "f1": 0.571
+          }
+        ]
+      },
+      "exact_match": {
+        "swa": [
+          {
+            "id": "18",
+            "input": "question: Je, kanisa la kwanza la Kikatoliki nchini Tanzania linaitwaje? context: Holy Ghost Mission is located in Bagam",
+            "gold": "Holy Ghost Mission",
+            "pred": "Holy Ghost Mission",
+            "f1": 1.0
+          },
+          {
+            "id": "114",
+            "input": "question: Betri ya gari ilitengenezwa kwanza nchi gani? context: The lead\u2013acid battery is a type of rechargeable battery",
+            "gold": "1859",
+            "pred": "1859",
+            "f1": 1.0
+          },
+          {
+            "id": "127",
+            "input": "question: Mwandishi wa kitabu cha Fifty shades of Grey anaitwa nani? context: Erika Mitchell (born 7 March 1963), known ",
+            "gold": "Erika Mitchell",
+            "pred": "Erika Mitchell",
+            "f1": 1.0
+          },
+          {
+            "id": "199",
+            "input": "question: Je,nani mwanzilishi wa kundi la Mara GROUP? context: Ashish J. Thakkar is a Rwandan-based entrepreneur. He is ",
+            "gold": "Ashish J. Thakkar",
+            "pred": "ashish J. Thakkar",
+            "f1": 1.0
+          },
+          {
+            "id": "202",
+            "input": "question: Rais wa Niger ni nani? context: Mohamed Bazoum (Arabic: \u0645\u062d\u0645\u062f \u0628\u0627\u0632\u0648\u0645) is a Nigerien politician who is the curren",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "360",
+            "input": "question: Wanene shugaban jamhuriyar Nijar a 2022? context: Mohamed Bazoum (), is a Nigerien politician who is the curre",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          },
+          {
+            "id": "363",
+            "input": "question: Wanene shugaban Italy a 2021? context: Sergio Mattarella (; born 23 July 1941) is an Italian politician, juris",
+            "gold": "Sergio Mattarella",
+            "pred": "Sergio Mattarella",
+            "f1": 1.0
+          },
+          {
+            "id": "378",
+            "input": "question: Wane gari ne aka fi hako gwal a duniya? context: Gold mining in Nevada, a state of the United States, is a maj",
+            "gold": "Nevada",
+            "pred": "Nevada",
+            "f1": 1.0
+          },
+          {
+            "id": "413",
+            "input": "question: Menene sunan shugaban France a 2021? context: The incumbent is Emmanuel Macron, who succeeded Fran\u00e7ois Holland",
+            "gold": "Emmanuel Macron",
+            "pred": "Emmanuel Macron",
+            "f1": 1.0
+          },
+          {
+            "id": "426",
+            "input": "question: A wace shekara ce aka fara buga wasan \u0199wallon \u0199afa na duniya? context: The 1872 association football match bet",
+            "gold": "1872",
+            "pred": "1872",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "629",
+            "input": "question: Kini owo osise ni oril\u1eb9 Jamaica ? context: The Jamaican dollar (sign: $; code: JMD) has been the currency of J",
+            "gold": "Jamaican dollar",
+            "pred": "Jamaican dollar",
+            "f1": 1.0
+          },
+          {
+            "id": "647",
+            "input": "question: \u1eccdun wo ni a bi Mahilia Jackson? context: Mahalia Jackson (/m\u0259\u02c8he\u026ali\u0259/ m\u0259-HAY-lee-\u0259; born Mahala Jackson; Octo",
+            "gold": "\u1eccdun 1911",
+            "pred": "\u1ecddun 1911",
+            "f1": 1.0
+          },
+          {
+            "id": "656",
+            "input": "question: Ibo ni olu ilu Senegal? context: Dakar  is the capital and largest city of Senegal. The city of Dakar proper h",
+            "gold": "Dakar",
+            "pred": "Dakar",
+            "f1": 1.0
+          },
+          {
+            "id": "665",
+            "input": "question: Tani iyawo ti Don Jazzy f\u1eb9 ri? context: Don Jazzy married Michelle Jackson in 2003. He claims they both had is",
+            "gold": "Michelle Jackson",
+            "pred": "Michelle Jackson",
+            "f1": 1.0
+          },
+          {
+            "id": "679",
+            "input": "question: \u1eccdun wo ni Jonah David Jang kuro ni i\u1e63\u1eb9 ologun ti Naijiria? context: He voluntarily retired from the Nigeria A",
+            "gold": "\u1ecddun 1990",
+            "pred": "\u1ecddun 1990",
+            "f1": 1.0
+          }
+        ]
+      },
+      "low_partial": {
+        "swa": [
+          {
+            "id": "19",
+            "input": "question: Je,nyama ya kuku iko katika kundi ipi ya nyama? context: Chicken is the most common type of poultry in the wor",
+            "gold": "kuku",
+            "pred": "nyama ya kuku",
+            "f1": 0.5
+          },
+          {
+            "id": "20",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Facebook? context: Facebook is an online social media and social ",
+            "gold": "Mark Zuckerberg pamoja na wanafunzi wenzake wa Harvard College ambao pia walishiriki chumba, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz na Chris Hughes",
+            "pred": "Harvard College",
+            "f1": 0.167
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Ruwani Oludhe Omondi Oludhe",
+            "f1": 0.5
+          },
+          {
+            "id": "32",
+            "input": "question: Je,Osama bin Mohammed bin Awad bin Laden alikuwa na watoto wangapi? context: At age 17 in 1974, bin Laden marr",
+            "gold": "kati ya 20 na 26",
+            "pred": "alikuwa na watoto wangapi",
+            "f1": 0.222
+          },
+          {
+            "id": "79",
+            "input": "question: Je,Dr Dre alizaliwa lini? context: Andre Romelle Young (born February 18, 1965), known professionally as Dr. D",
+            "gold": "Februari 18, 1965",
+            "pred": "R. Romelle Young (born February 18, 1965)",
+            "f1": 0.4
+          }
+        ],
+        "hau": [
+          {
+            "id": "316",
+            "input": "question: Menene lamba atomic na Zinare? context: Gold is a chemical element with the symbol Au (from ) and atomic numbe",
+            "gold": "79",
+            "pred": "atomic number 79",
+            "f1": 0.5
+          },
+          {
+            "id": "337",
+            "input": "question: Yan wasa nawa ne a \u0198wallon kwando? context: Basketball is a team sport in which two teams, most commonly of fi",
+            "gold": "\u0198ungiyoyi  biyu wanda yawancin 'yan wasa biyar a kowanne",
+            "pred": "a \u0199wallon kwando",
+            "f1": 0.167
+          },
+          {
+            "id": "369",
+            "input": "question: Wanene shugaban FIFA na farko? context: The first president of FIFA was Robert Gu\u00e9rin. Gu\u00e9rin was replaced in ",
+            "gold": "Robert Gu\u00e9rin",
+            "pred": "R. Gu\u00e9rin",
+            "f1": 0.5
+          },
+          {
+            "id": "397",
+            "input": "question: Me ake kira lokacin da marubuci ya rubuta game da kansa? context: Self-insertion is a literary device in which",
+            "gold": "Shigar da kai",
+            "pred": "lokacin da marubucin ya rubuta game da kansa",
+            "f1": 0.182
+          },
+          {
+            "id": "459",
+            "input": "question: Kimanin mutane nawa ne suke yin whatsapp? context: The client application was created by WhatsApp Inc. of Moun",
+            "gold": "sama da mutane biliyan 2 na duniya a Febrairu 2020",
+            "pred": "February 2020",
+            "f1": 0.167
+          }
+        ],
+        "yor": [
+          {
+            "id": "602",
+            "input": "question: Aarin \u1ecddun wo ni ogun ab\u1eb9le fi s\u1eb9l\u1eb9 ni oril\u1eb9-ede Naijiria? context: The Nigerian Civil War (6 July 1967 \u2013 15 J",
+            "gold": "6 Ag\u1eb9m\u1ecd 1967 \u2013 15 \u1e63\u1eb9\u1eb9r\u1eb9 1970",
+            "pred": "\u1ecddun 1967",
+            "f1": 0.25
+          },
+          {
+            "id": "603",
+            "input": "question: \u1eccd\u1ecd \u1eb9gb\u1eb9 wo ni Ebenezer Obey ti k\u1ecds\u1eb9 orin kiko? context: Ebenezer Obey began his professional career in the mi",
+            "gold": "\u1eb8gb\u1eb9\u0301 olo\u0301rin Fatai Rolling-Dollar",
+            "pred": "\u1eb8gb\u1eb9 \u1eb8gb\u1eb9 \u1eb8gb\u1eb9 \u1eb8gb\u1eb9",
+            "f1": 0.25
+          },
+          {
+            "id": "614",
+            "input": "question: Ki ni asteroidi n \u1e63e? context: In mathematics, an astroid is a particular type of roulette curve: a hypocycloi",
+            "gold": "Astroid j\u1eb9 ila matimatiki pato: o j\u1eb9 hypocycloid to ni ibi iyipada me\u1eb9rin.",
+            "pred": "a hypocycloid with four cusps",
+            "f1": 0.111
+          },
+          {
+            "id": "616",
+            "input": "question: Bawo ni ij\u1ecd katoliki \u1e63e b\u1eb9r\u1eb9? context: The tradition of the Catholic Church claims the Catholic Church began w",
+            "gold": "Asa ti ij\u1ecd katoliki s\u1ecd pe ij\u1ecd Katoliki b\u1eb9r\u1eb9 p\u1eb9lu Jesu Krisiti ati aw\u1ecdn \u1eb9k\u1ecd r\u1eb9",
+            "pred": "ij\u1ecd ij\u1ecd ij\u1ecd ij\u1ecd ij\u1ecd",
+            "f1": 0.095
+          },
+          {
+            "id": "617",
+            "input": "question: Ilu wo lo tobi jul\u1ecd ni orile ede Haiti ? context: Haiti has many mountains. There are only some coastal plains",
+            "gold": "Port-au-Prince",
+            "pred": "Haiti's metropolitan area of Port-au-Prince",
+            "f1": 0.333
+          }
+        ]
+      },
+      "empty": {
+        "swa": [
+          {
+            "id": "157",
+            "input": "question: Hekalu la Parthenon lilijengwa mwaka gani? context: The Parthenon (; , , ; , , ) is a former temple on the Ath",
+            "gold": "447 BK",
+            "pred": "'/ , , , , , ,",
+            "f1": 0.0
+          },
+          {
+            "id": "246",
+            "input": "question: Mji mkuu wa Papua Guinea Mpya unaitwa aje? context: Papua New Guinea (abbreviated PNG; , ; ; ), officially the",
+            "gold": "Port Moresby",
+            "pred": "'/ ; , , , , ,",
+            "f1": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "baseline_byt5_test_v2": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 21,
+        "pct": 0.024764150943396228
+      },
+      "high_partial": {
+        "count": 24,
+        "pct": 0.02830188679245283
+      },
+      "low_partial": {
+        "count": 63,
+        "pct": 0.07429245283018868
+      },
+      "wrong": {
+        "count": 740,
+        "pct": 0.8726415094339622
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 5,
+          "pct": 0.016666666666666666
+        },
+        "high_partial": {
+          "count": 4,
+          "pct": 0.013333333333333334
+        },
+        "low_partial": {
+          "count": 15,
+          "pct": 0.05
+        },
+        "wrong": {
+          "count": 276,
+          "pct": 0.92
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 1,
+          "pct": 0.003389830508474576
+        },
+        "high_partial": {
+          "count": 10,
+          "pct": 0.03389830508474576
+        },
+        "low_partial": {
+          "count": 25,
+          "pct": 0.0847457627118644
+        },
+        "wrong": {
+          "count": 259,
+          "pct": 0.8779661016949153
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 15,
+          "pct": 0.05928853754940711
+        },
+        "high_partial": {
+          "count": 10,
+          "pct": 0.039525691699604744
+        },
+        "low_partial": {
+          "count": 23,
+          "pct": 0.09090909090909091
+        },
+        "wrong": {
+          "count": 205,
+          "pct": 0.8102766798418972
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "0",
+            "input": "question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was first elected as a Me",
+            "gold": "Webuye",
+            "pred": "usikari Nazi Ko",
+            "f1": 0.0
+          },
+          {
+            "id": "1",
+            "input": "question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Forum for the Restorat",
+            "gold": "Oginga Odinga",
+            "pred": "ugust 1991",
+            "f1": 0.0
+          },
+          {
+            "id": "2",
+            "input": "question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes corresponds to that given in",
+            "gold": "Mt Petro",
+            "pred": "umu wa kwanza",
+            "f1": 0.0
+          },
+          {
+            "id": "3",
+            "input": "question: Je,kampuni ya Blizzard Entertainment inapatikana nchi gani? context: Blizzard Entertainment, Inc. is an Americ",
+            "gold": "Irvine, California",
+            "pred": "uniyar Californ",
+            "f1": 0.0
+          },
+          {
+            "id": "4",
+            "input": "question: Je,rais wa kwanza wa Kongo alifahamika kama nani? context: Joseph Kasa-Vubu, alternatively Joseph Kasavubu, ( ",
+            "gold": "Joseph Kasa-Vubu",
+            "pred": "arabu ya Kongo",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "295",
+            "input": "question: Awane yanki jahar Anambra take a Nijeriya? context: Anambra State  is a Nigerian state, located in the southea",
+            "gold": "gabas ta kudu",
+            "pred": "arewa",
+            "f1": 0.0
+          },
+          {
+            "id": "296",
+            "input": "question: A wane gari babban Ofishin Al jazeera yake? context: Al Jazeera (Arabic: \u0627\u0644\u062c\u0632\u064a\u0631\u0629, romanized: al-jazi\u0304rah, IPA:",
+            "gold": "Doha",
+            "pred": "Al Jazeera",
+            "f1": 0.0
+          },
+          {
+            "id": "297",
+            "input": "question: Wanene farkon mataimakin shugaban jami'ar Lagos? context: Eni Njoku (6 November 1917 \u2013 22 December 1974) was a",
+            "gold": "Eni Njoku",
+            "pred": "arewar Najeriya",
+            "f1": 0.0
+          },
+          {
+            "id": "298",
+            "input": "question: Shin \u0199asashe nawa ne suka raba iyaka da Saudi Arabiya? context: Saudi Arabia is bounded by seven countries and",
+            "gold": "bakwai",
+            "pred": "Aqaba da Red Sea",
+            "f1": 0.0
+          },
+          {
+            "id": "301",
+            "input": "question: A wace shekara aka kirkiri wutar lantarki? context: Electricity would remain little more than an intellectual ",
+            "gold": "Austria",
+            "pred": "an 1600",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "595",
+            "input": "question: \u1eccm\u1ecd \u1ecddun melo ni Cosmas Maduka nigbati o f\u1eb9 iyawo r\u1eb9 Charity? context: The startup also failed sooner than exp",
+            "gold": "21",
+            "pred": "\u1ecddun 1977",
+            "f1": 0.0
+          },
+          {
+            "id": "596",
+            "input": "question: Igbawo ni Popu John Paul II ku ? context: Pope John Paul II (Latin: Ioannes Paulus II; Italian: Giovanni Paolo",
+            "gold": "2005",
+            "pred": "\u1ecddun 1920",
+            "f1": 0.0
+          },
+          {
+            "id": "597",
+            "input": "question: Ta l\u1eb9ni to j\u1eb9 gomina ti Eko nigba ti w\u1ecdn pari kik\u1ecd National Arts Theatre l'Eko? context: The building of the N",
+            "gold": "Olu\u1e63\u1eb9gun \u1ecdbasanj\u1ecd",
+            "pred": "\u1eb9ni Yakubu Go",
+            "f1": 0.0
+          },
+          {
+            "id": "598",
+            "input": "question: Ipinl\u1eb9 wo l'Am\u1eb9rika ni Wikimedia Foundation k\u1ecd olu ile i\u1e63\u1eb9 w\u1ecdn si? context: Wikimedia Foundation, Inc. (WMF, a",
+            "gold": "California",
+            "pred": "Am\u1eb9rika",
+            "f1": 0.0
+          },
+          {
+            "id": "599",
+            "input": "question: Eroja pataki wo ni aw\u1ecdn ara Igbo fi maa n se ounj\u1eb9 abacha ? context: Abacha is popular in the Eastern part of ",
+            "gold": "Gbaguda",
+            "pred": "aw\u1ecdn ara Igbo",
+            "f1": 0.0
+          }
+        ]
+      },
+      "high_partial": {
+        "swa": [
+          {
+            "id": "9",
+            "input": "question: Kocha mkuu wa timu ya soka ya Argentina mwaka 2017 anaitwa nani? context: On 20 May 2017, the Argentine Footba",
+            "gold": "Sampaoli",
+            "pred": "ani Sampaoli",
+            "f1": 0.667
+          },
+          {
+            "id": "40",
+            "input": "question: Je, Jua Cali alianza mziki mwaka upi? context: His first recorded track was Ruka, released in 2001, and was fo",
+            "gold": "2001",
+            "pred": "waka 2001",
+            "f1": 0.667
+          },
+          {
+            "id": "150",
+            "input": "question: Kalenda inayotumika katika nchi ya Ethiopia iliandikwa na nani? context: Bishop Anianos preferred the Annuncia",
+            "gold": "Bishop Anianos",
+            "pred": "anianos",
+            "f1": 0.667
+          },
+          {
+            "id": "168",
+            "input": "question: Je,Burundi ilpata uhuru mwaka upi? context: Burundi gained independence in 1962 and initially had a monarchy, ",
+            "gold": "1962",
+            "pred": "waka 1962",
+            "f1": 0.667
+          },
+          {
+            "id": "172",
+            "input": "question: Kampuni ya Apple Inc ilianzishwa mwaka gani? context: Apple Computer Company was founded on April 1, 1976, by ",
+            "gold": "Aprili 1, 1976",
+            "pred": "anuari 1, 1976",
+            "f1": 0.667
+          }
+        ],
+        "hau": [
+          {
+            "id": "299",
+            "input": "question: A wace shekara aka haifi Chioma Opara? context: Chioma Opara (born 23 May 1951 in Jos, Nigeria) is a Nigerian ",
+            "gold": "1951",
+            "pred": "an 1951",
+            "f1": 0.667
+          },
+          {
+            "id": "321",
+            "input": "question: Shin kamfanin jarida nawa ne a Malaysia? context: There are over 30 newspapers and tabloids published mainly i",
+            "gold": "30",
+            "pred": "an 30",
+            "f1": 0.667
+          },
+          {
+            "id": "356",
+            "input": "question: Kasashe nawa ne a afrika? context: Today, Africa contains 54 sovereign countries, most of which have borders t",
+            "gold": "54",
+            "pred": "asashe 54",
+            "f1": 0.667
+          },
+          {
+            "id": "583",
+            "input": "question: Kasashe nawa ne suke amfani da larabci a gobnatance a nahiyar Afrika? context: As of 2018, there are 23 sovere",
+            "gold": "23",
+            "pred": "asashe 23",
+            "f1": 0.667
+          }
+        ],
+        "yor": [
+          {
+            "id": "609",
+            "input": "question: \u1eccdun wo ni w\u1ecdn da ile \u1eb9k\u1ecd Queen's college yaba sil\u1eb9 ? context: Queen's College, Lagos, is a government-owned g",
+            "gold": "1927",
+            "pred": "\u1ecddun 1927",
+            "f1": 0.667
+          },
+          {
+            "id": "661",
+            "input": "question: \u1eccdun wo ni ijoba apapo oril\u1eb9-ede Naijiria fun ile-ise Coscharis ni iwe ase lati ma gbe oko wole? context: The ",
+            "gold": "1982",
+            "pred": "\u1ecddun 1982",
+            "f1": 0.667
+          },
+          {
+            "id": "673",
+            "input": "question: Nigba wo ni Moses Orim\u1ecdlade b\u1eb9r\u1eb9 ijo Kerubu ati Serafu? context: The Eternal Sacred Order of Cherubim and Sera",
+            "gold": "1925",
+            "pred": "\u1ecddun 1925",
+            "f1": 0.667
+          },
+          {
+            "id": "676",
+            "input": "question: eto wo lo n \u1e63e alamojuto aw\u1ecdn \u1ecdm\u1ecd orukan ? context: An orphanage is a residential institution, total instituti",
+            "gold": "ile aw\u1ecdn \u1ecdm\u1ecd alailobi",
+            "pred": "aw\u1ecdn \u1ecdm\u1ecd",
+            "f1": 0.667
+          },
+          {
+            "id": "680",
+            "input": "question: Tani osere ak\u1ecdk\u1ecd ti \u1eb9gb\u1eb9 Mo' Hits Records ni? context: Mo'Hits Records (popularly called Mo'Hits) was a Nigeri",
+            "gold": "D'banj",
+            "pred": "\u1eb9gb\u1eb9 D'banj",
+            "f1": 0.667
+          }
+        ]
+      },
+      "low_partial": {
+        "swa": [
+          {
+            "id": "19",
+            "input": "question: Je,nyama ya kuku iko katika kundi ipi ya nyama? context: Chicken is the most common type of poultry in the wor",
+            "gold": "kuku",
+            "pred": "alama ya kuku",
+            "f1": 0.5
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "ama cha Stephen",
+            "f1": 0.286
+          },
+          {
+            "id": "28",
+            "input": "question: Je dhahabu inapatika kwa wingi nchi gani Afrika? context: This is a list of countries by gold production in 20",
+            "gold": "Afrika Kusini",
+            "pred": "asili ya Afrika",
+            "f1": 0.4
+          },
+          {
+            "id": "29",
+            "input": "question: Kituo cha televisheni ya CNN kilianza mwaka upi? context: The Cable News Network launched at 5:00 p.m. Eastern",
+            "gold": "1980",
+            "pred": "umuhimu wa 1980",
+            "f1": 0.5
+          },
+          {
+            "id": "32",
+            "input": "question: Je,Osama bin Mohammed bin Awad bin Laden alikuwa na watoto wangapi? context: At age 17 in 1974, bin Laden marr",
+            "gold": "kati ya 20 na 26",
+            "pred": "alikuwa na wato",
+            "f1": 0.25
+          }
+        ],
+        "hau": [
+          {
+            "id": "300",
+            "input": "question: Wace jami'a ce mafi tsufa a yankin Asia? context: The oldest universities, colleges, vocational schools and th",
+            "gold": "Jami'ar Santo Tomas",
+            "pred": "ankin Santo Tom",
+            "f1": 0.333
+          },
+          {
+            "id": "326",
+            "input": "question: Menene yawan jama'ar kasar China a shekarar 2021? context: The demographics of China demonstrate a large popul",
+            "gold": "biliyan 1.413",
+            "pred": "iliyan 1.413 bi",
+            "f1": 0.4
+          },
+          {
+            "id": "369",
+            "input": "question: Wanene shugaban FIFA na farko? context: The first president of FIFA was Robert Gu\u00e9rin. Gu\u00e9rin was replaced in ",
+            "gold": "Robert Gu\u00e9rin",
+            "pred": "uwar Robert Gu",
+            "f1": 0.4
+          },
+          {
+            "id": "378",
+            "input": "question: Wane gari ne aka fi hako gwal a duniya? context: Gold mining in Nevada, a state of the United States, is a maj",
+            "gold": "Nevada",
+            "pred": "ari na Nevada",
+            "f1": 0.5
+          },
+          {
+            "id": "392",
+            "input": "question: Wace kasa ce ta halarta auren jinsi a Afrika? context: Same-sex marriage in South Africa has been legal since ",
+            "gold": "Afrika ta kudu",
+            "pred": "Afrika",
+            "f1": 0.5
+          }
+        ],
+        "yor": [
+          {
+            "id": "602",
+            "input": "question: Aarin \u1ecddun wo ni ogun ab\u1eb9le fi s\u1eb9l\u1eb9 ni oril\u1eb9-ede Naijiria? context: The Nigerian Civil War (6 July 1967 \u2013 15 J",
+            "gold": "6 Ag\u1eb9m\u1ecd 1967 \u2013 15 \u1e63\u1eb9\u1eb9r\u1eb9 1970",
+            "pred": "\u1ecddun 1967",
+            "f1": 0.25
+          },
+          {
+            "id": "622",
+            "input": "question: Ij\u1ecd wo l\u1ecd bi Pasit\u1ecd Enoch Adeboye? context: Enoch Adejare Adeboye was born on 2nd of March 1942, He is a Niger",
+            "gold": "\u1eccj\u1ecd 2, O\u1e63u \u1eb8r\u1eb9na, \u1ecddun 1942",
+            "pred": "\u1ecddun 1942",
+            "f1": 0.5
+          },
+          {
+            "id": "630",
+            "input": "question: \u1eccj\u1ecd kelo ninu \u1ecds\u1eb9 ni w\u1ecdn n b\u1ecd Sango? context: Strong devotion to \u1e62\u00e0ng\u00f3 led to Yoruba religions in Trinidad and",
+            "gold": "\u1ecdj\u1ecd\u0301 kaa\u0300ru\u0301n",
+            "pred": "\u1ecdj\u1ecd k\u1eb9rin",
+            "f1": 0.5
+          },
+          {
+            "id": "634",
+            "input": "question: \u1eccj\u1ecd wo ni Stella Obasanjo di ologbe? context: Stella Obasanjo died a few weeks before her 60th birthday from c",
+            "gold": "23 \u1ecc\u0300wa\u0300wa\u0300 2005",
+            "pred": "\u1ecddun 2005",
+            "f1": 0.4
+          },
+          {
+            "id": "642",
+            "input": "question: Ori oke wo ni o tobi jul\u1ecd ninu ori oke Kilimanjaro ati ori oke everest ? context: High elevations on mountains",
+            "gold": "ori oke ti o ga jul\u1ecd ni gbogbo agbaye ni Oke Everest",
+            "pred": "ori oke Kiliman",
+            "f1": 0.267
+          }
+        ]
+      },
+      "exact_match": {
+        "swa": [
+          {
+            "id": "142",
+            "input": "question: Je, nani alizindua kompyuta ya kupakata? context: The Osborne 1 is considered the first true mobile computer b",
+            "gold": "Adam Osborne",
+            "pred": "Adam Osborne",
+            "f1": 1.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "343",
+            "input": "question: Shin maza na yin jinin al'ada? context: There are many cultural aspects surrounding how societies view menstru",
+            "gold": "a'a",
+            "pred": "a'a",
+            "f1": 1.0
+          },
+          {
+            "id": "379",
+            "input": "question: A wace nahiya aka fara kitso? context: Depictions of women with cornrows have been found in Stone Age painting",
+            "gold": "Afrika",
+            "pred": "Afrika",
+            "f1": 1.0
+          },
+          {
+            "id": "436",
+            "input": "question: Wace nahiya ce tafi girma a nahiyoyin da muke dasu? context: A continent is any of several large landmasses. G",
+            "gold": "Asiya",
+            "pred": "asiya",
+            "f1": 1.0
+          },
+          {
+            "id": "471",
+            "input": "question: A shekarar 2020, wane attajiri ne mafi arziki a Nigeria? context: Aliko Dangote GCON (born 10 April 1957) is a",
+            "gold": "Aliko Dangote",
+            "pred": "Aliko Dangote",
+            "f1": 1.0
+          },
+          {
+            "id": "496",
+            "input": "question: Menene sunan album din Ohemaa Mercy na farko? context: Ohemaa Mercy released her first album in the latter par",
+            "gold": "Adamfo Papa",
+            "pred": "Adamfo Papa",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "611",
+            "input": "question: Ipinl\u1eb9 wo ni Ibukun Awosika ti sinru ilu Naijiria? context: While on her compulsory one-year National Youth Se",
+            "gold": "I\u0300pi\u0301nl\u1eb9\u0300 Kano",
+            "pred": "ipinl\u1eb9 Kano",
+            "f1": 1.0
+          },
+          {
+            "id": "636",
+            "input": "question: \u1eccdun wo ni a bi John Burdon Sanderson Haldane FRS? context: Haldane was born in Oxford in 1892. His father was",
+            "gold": "\u1eccdun 1892",
+            "pred": "\u1ecddun 1892",
+            "f1": 1.0
+          },
+          {
+            "id": "647",
+            "input": "question: \u1eccdun wo ni a bi Mahilia Jackson? context: Mahalia Jackson (/m\u0259\u02c8he\u026ali\u0259/ m\u0259-HAY-lee-\u0259; born Mahala Jackson; Octo",
+            "gold": "\u1eccdun 1911",
+            "pred": "\u1ecddun 1911",
+            "f1": 1.0
+          },
+          {
+            "id": "664",
+            "input": "question: \u1eccdun wo ni w\u1ecdn bi Ludwig Lazarus Zamenhof? context: Zamenhof was born on 15 December 1859,[b] the son of Mark ",
+            "gold": "\u1eccdun 1859",
+            "pred": "\u1ecddun 1859",
+            "f1": 1.0
+          },
+          {
+            "id": "679",
+            "input": "question: \u1eccdun wo ni Jonah David Jang kuro ni i\u1e63\u1eb9 ologun ti Naijiria? context: He voluntarily retired from the Nigeria A",
+            "gold": "\u1ecddun 1990",
+            "pred": "\u1ecddun 1990",
+            "f1": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "matchedqa_mt5_test": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 167,
+        "pct": 0.19693396226415094
+      },
+      "high_partial": {
+        "count": 31,
+        "pct": 0.036556603773584904
+      },
+      "low_partial": {
+        "count": 29,
+        "pct": 0.03419811320754717
+      },
+      "wrong": {
+        "count": 621,
+        "pct": 0.7323113207547169
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 68,
+          "pct": 0.22666666666666666
+        },
+        "high_partial": {
+          "count": 11,
+          "pct": 0.03666666666666667
+        },
+        "low_partial": {
+          "count": 5,
+          "pct": 0.016666666666666666
+        },
+        "wrong": {
+          "count": 216,
+          "pct": 0.72
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 52,
+          "pct": 0.17627118644067796
+        },
+        "high_partial": {
+          "count": 10,
+          "pct": 0.03389830508474576
+        },
+        "low_partial": {
+          "count": 9,
+          "pct": 0.030508474576271188
+        },
+        "wrong": {
+          "count": 224,
+          "pct": 0.7593220338983051
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 47,
+          "pct": 0.1857707509881423
+        },
+        "high_partial": {
+          "count": 10,
+          "pct": 0.039525691699604744
+        },
+        "low_partial": {
+          "count": 15,
+          "pct": 0.05928853754940711
+        },
+        "wrong": {
+          "count": 181,
+          "pct": 0.7154150197628458
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "0",
+            "input": "question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was first elected as a Me",
+            "gold": "Webuye",
+            "pred": "1992",
+            "f1": 0.0
+          },
+          {
+            "id": "2",
+            "input": "question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes corresponds to that given in",
+            "gold": "Mt Petro",
+            "pred": "2001",
+            "f1": 0.0
+          },
+          {
+            "id": "3",
+            "input": "question: Je,kampuni ya Blizzard Entertainment inapatikana nchi gani? context: Blizzard Entertainment, Inc. is an Americ",
+            "gold": "Irvine, California",
+            "pred": "Silicon &amp; Synapse, Inc",
+            "f1": 0.0
+          },
+          {
+            "id": "5",
+            "input": "question: Je,Marekani hufanya sensa baada ya kila miaka ngapi? context: The United States census (plural censuses or cen",
+            "gold": "kila baada ya miaka 10",
+            "pred": "1790",
+            "f1": 0.0
+          },
+          {
+            "id": "7",
+            "input": "question: Je ubaguzi wa rangi wa kisheria nchini Afrika Kusini uliisha mwak upi? context: ational sanctions, including a",
+            "gold": "Mwaka wa 1990",
+            "pred": "eh",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "295",
+            "input": "question: Awane yanki jahar Anambra take a Nijeriya? context: Anambra State  is a Nigerian state, located in the southea",
+            "gold": "gabas ta kudu",
+            "pred": "Delta State",
+            "f1": 0.0
+          },
+          {
+            "id": "296",
+            "input": "question: A wane gari babban Ofishin Al jazeera yake? context: Al Jazeera (Arabic: \u0627\u0644\u062c\u0632\u064a\u0631\u0629, romanized: al-jazi\u0304rah, IPA:",
+            "gold": "Doha",
+            "pred": "Al Jazeera",
+            "f1": 0.0
+          },
+          {
+            "id": "298",
+            "input": "question: Shin \u0199asashe nawa ne suka raba iyaka da Saudi Arabiya? context: Saudi Arabia is bounded by seven countries and",
+            "gold": "bakwai",
+            "pred": "a'a",
+            "f1": 0.0
+          },
+          {
+            "id": "299",
+            "input": "question: A wace shekara aka haifi Chioma Opara? context: Chioma Opara (born 23 May 1951 in Jos, Nigeria) is a Nigerian ",
+            "gold": "1951",
+            "pred": "a'a",
+            "f1": 0.0
+          },
+          {
+            "id": "301",
+            "input": "question: A wace shekara aka kirkiri wutar lantarki? context: Electricity would remain little more than an intellectual ",
+            "gold": "Austria",
+            "pred": "William Gilbert",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "595",
+            "input": "question: \u1eccm\u1ecd \u1ecddun melo ni Cosmas Maduka nigbati o f\u1eb9 iyawo r\u1eb9 Charity? context: The startup also failed sooner than exp",
+            "gold": "21",
+            "pred": "\u1ecddun 1982",
+            "f1": 0.0
+          },
+          {
+            "id": "596",
+            "input": "question: Igbawo ni Popu John Paul II ku ? context: Pope John Paul II (Latin: Ioannes Paulus II; Italian: Giovanni Paolo",
+            "gold": "2005",
+            "pred": "Karol J\u00f3zef Wojty\u0142a",
+            "f1": 0.0
+          },
+          {
+            "id": "597",
+            "input": "question: Ta l\u1eb9ni to j\u1eb9 gomina ti Eko nigba ti w\u1ecdn pari kik\u1ecd National Arts Theatre l'Eko? context: The building of the N",
+            "gold": "Olu\u1e63\u1eb9gun \u1ecdbasanj\u1ecd",
+            "pred": "General Yakubu Gowon",
+            "f1": 0.0
+          },
+          {
+            "id": "598",
+            "input": "question: Ipinl\u1eb9 wo l'Am\u1eb9rika ni Wikimedia Foundation k\u1ecd olu ile i\u1e63\u1eb9 w\u1ecdn si? context: Wikimedia Foundation, Inc. (WMF, a",
+            "gold": "California",
+            "pred": "San Francisco",
+            "f1": 0.0
+          },
+          {
+            "id": "599",
+            "input": "question: Eroja pataki wo ni aw\u1ecdn ara Igbo fi maa n se ounj\u1eb9 abacha ? context: Abacha is popular in the Eastern part of ",
+            "gold": "Gbaguda",
+            "pred": "\u1ecdj\u1ecd \u1ecdj\u1ecd \u1ecdj\u1ecd \u1ecdj\u1ecd \u1ecdj\u1ecd",
+            "f1": 0.0
+          }
+        ]
+      },
+      "high_partial": {
+        "swa": [
+          {
+            "id": "1",
+            "input": "question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Forum for the Restorat",
+            "gold": "Oginga Odinga",
+            "pred": "Jaramogi Oginga Odinga",
+            "f1": 0.8
+          },
+          {
+            "id": "6",
+            "input": "question: Daktari wa kwanza wa ubongo anaitwa nani? context: Sir William Macewen, CB, FRS, FRCS (/m\u0259\u02c8kju\u02d0\u026an/; 22 June 18",
+            "gold": "William Macewen",
+            "pred": "Sir William Macewen",
+            "f1": 0.8
+          },
+          {
+            "id": "12",
+            "input": "question: Je,gavana wa kwanza wa kaunti ya Laikipia aliitwa nani? context: Joshua Wakahora Irungu (born 2 February 1970)",
+            "gold": "Joshua Irungu",
+            "pred": "Joshua Wakhora Irungu",
+            "f1": 0.8
+          },
+          {
+            "id": "23",
+            "input": "question: Je,kampuni ya The Hertz ina makao makuu yake wapi? context: The Hertz Corporation, a subsidiary of Hertz Globa",
+            "gold": "Florida",
+            "pred": "Estero, Florida",
+            "f1": 0.667
+          },
+          {
+            "id": "54",
+            "input": "question: Dini la kiislamu lilianza mwaka upi? context: Muslims regard Islam as a return to the original faith of the Ab",
+            "gold": "610 KK",
+            "pred": "610",
+            "f1": 0.667
+          }
+        ],
+        "hau": [
+          {
+            "id": "300",
+            "input": "question: Wace jami'a ce mafi tsufa a yankin Asia? context: The oldest universities, colleges, vocational schools and th",
+            "gold": "Jami'ar Santo Tomas",
+            "pred": "Santo Tomas",
+            "f1": 0.8
+          },
+          {
+            "id": "326",
+            "input": "question: Menene yawan jama'ar kasar China a shekarar 2021? context: The demographics of China demonstrate a large popul",
+            "gold": "biliyan 1.413",
+            "pred": "1.413 biliyan",
+            "f1": 1.0
+          },
+          {
+            "id": "336",
+            "input": "question: Menene sunan jami'ar farko da aka kafa a Najeriya? context: The University of Ibadan (UI) is a public research",
+            "gold": "Jami'ar Ibadan",
+            "pred": "Ibadan",
+            "f1": 0.667
+          },
+          {
+            "id": "385",
+            "input": "question: Wane birni ne mafi \u0199an\u0199anta a cikin Tanzaniya a 2021? context: The population distribution in Tanzania is unev",
+            "gold": "Katavi",
+            "pred": "Katavi Region",
+            "f1": 0.667
+          },
+          {
+            "id": "413",
+            "input": "question: Menene sunan shugaban France a 2021? context: The incumbent is Emmanuel Macron, who succeeded Fran\u00e7ois Holland",
+            "gold": "Emmanuel Macron",
+            "pred": "Macron",
+            "f1": 0.667
+          }
+        ],
+        "yor": [
+          {
+            "id": "651",
+            "input": "question: Ta ni igbakeji aar\u1eb9 Buhari ni aye ologun? context: General Muhammadu Buhari made Idiagbon his second-in-comman",
+            "gold": "Tunde Idiagbon",
+            "pred": "Idiagbon",
+            "f1": 0.667
+          },
+          {
+            "id": "661",
+            "input": "question: \u1eccdun wo ni ijoba apapo oril\u1eb9-ede Naijiria fun ile-ise Coscharis ni iwe ase lati ma gbe oko wole? context: The ",
+            "gold": "1982",
+            "pred": "\u1ecddun 1982",
+            "f1": 0.667
+          },
+          {
+            "id": "667",
+            "input": "question: Ipo ologun wo ni Gomina t\u1eb9l\u1eb9, Jonah David Jang, wa nigba ti o fi i\u1e63\u1eb9 ologun Naijiria sil\u1eb9? context: Air Commod",
+            "gold": "Air Commodore",
+            "pred": "Air Commodore Jonah David Jang",
+            "f1": 0.571
+          },
+          {
+            "id": "672",
+            "input": "question: Ipinle wo ni oril\u1eb9-ede Amerika ni ilu Cleveland wa? context: Cleveland (/\u02c8kli\u02d0vl\u0259nd/ KLEEV-l\u0259nd), officially t",
+            "gold": "Ohio",
+            "pred": "Northeast Ohio",
+            "f1": 0.667
+          },
+          {
+            "id": "686",
+            "input": "question: Kinni oruk\u1ecd \u1eb9ni to j\u1eb9 \u1ecdba ilu Iwo ni ipinl\u1eb9 \u1eccsun l'\u1ecddun 2021? context: 9 November 2015 until present Oba Abdul",
+            "gold": "Oba Abdulrasheed Adewale Akanbi",
+            "pred": "Oba Abdulrasheed Adewale Akanbi Ilufemiloye Telu 1",
+            "f1": 0.727
+          }
+        ]
+      },
+      "exact_match": {
+        "swa": [
+          {
+            "id": "4",
+            "input": "question: Je,rais wa kwanza wa Kongo alifahamika kama nani? context: Joseph Kasa-Vubu, alternatively Joseph Kasavubu, ( ",
+            "gold": "Joseph Kasa-Vubu",
+            "pred": "Joseph Kasa-Vubu",
+            "f1": 1.0
+          },
+          {
+            "id": "8",
+            "input": "question: Waziri mkuu wa Israeli ajulikana kama nani? context: Naftali Bennett (Hebrew: \u05e0\u05b7\u05e4\u05b0\u05ea\u05b8\u05bc\u05dc\u05b4\u05d9 \u05d1\u05b6\u05bc\u05e0\u05b6\u05d8, Transliterate",
+            "gold": "Naftali Bennett",
+            "pred": "Naftali Bennett",
+            "f1": 1.0
+          },
+          {
+            "id": "10",
+            "input": "question: Je,ni shirika gani la serikali inasimamia bandari ya Mombasa? context: Kenya Ports Authority (KPA) is a state ",
+            "gold": "Kenya Ports Authority",
+            "pred": "Kenya Ports Authority",
+            "f1": 1.0
+          },
+          {
+            "id": "14",
+            "input": "question: Wingu la Oort liligunduliwa mwaka gani? context: The Oort cloud (/\u0254\u02d0rt, \u028a\u0259rt/), sometimes called the \u00d6pik\u2013Oort",
+            "gold": "1950",
+            "pred": "1950",
+            "f1": 1.0
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Stephen Wilfred Omondi Oludhe",
+            "f1": 1.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "297",
+            "input": "question: Wanene farkon mataimakin shugaban jami'ar Lagos? context: Eni Njoku (6 November 1917 \u2013 22 December 1974) was a",
+            "gold": "Eni Njoku",
+            "pred": "Eni Njoku",
+            "f1": 1.0
+          },
+          {
+            "id": "305",
+            "input": "question: Wanene ya bada umarnin gina katangar China? context: The history of the Great Wall of China began when fortifi",
+            "gold": "Qin Shi Huang",
+            "pred": "Qin Shi Huang",
+            "f1": 1.0
+          },
+          {
+            "id": "309",
+            "input": "question: Menene sunan babban garin Zimbabwe? context: Zimbabwe (/z\u026am\u02c8b\u0251\u02d0bwe\u026a, -wi/), officially the Republic of Zimbabw",
+            "gold": "Harare",
+            "pred": "Harare",
+            "f1": 1.0
+          },
+          {
+            "id": "313",
+            "input": "question: Jami'a nawa ce a Kanada? context: As of 2021[update], there are 97 universities in Canada, offering education ",
+            "gold": "97",
+            "pred": "97",
+            "f1": 1.0
+          },
+          {
+            "id": "320",
+            "input": "question: Wanene ya jagoranci fim din Titanic? context: James Francis Cameron (born August 16, 1954) is a Canadian filmm",
+            "gold": "James Francis Cameron",
+            "pred": "James Francis Cameron",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "600",
+            "input": "question: Ta lo'darii apa kinni fiimu Transformers? context: Transformers is a series of American science fiction action",
+            "gold": "Michael Bay",
+            "pred": "Michael Bay",
+            "f1": 1.0
+          },
+          {
+            "id": "601",
+            "input": "question: Ta l\u1eb9ni to da orin-iyin ti oril\u1eb9-ede Am\u1eb9rika? context: Francis Scott Key (August 1, 1779January 11, 1843) was ",
+            "gold": "Francis Scott Key",
+            "pred": "Francis Scott Key",
+            "f1": 1.0
+          },
+          {
+            "id": "608",
+            "input": "question: Ta l\u1eb9ni to da Coca-cola sil\u1eb9? context: Originally marketed as a temperance drink and intended as a patent medi",
+            "gold": "John Stith Pemberton",
+            "pred": "John Stith Pemberton",
+            "f1": 1.0
+          },
+          {
+            "id": "612",
+            "input": "question: Ta ni oludasil\u1eb9 Mount Zion Movies ? context: Mike Abayomi BamiloyeListen is a Nigerian gospel film actor, dram",
+            "gold": "Mike Abayomi Bamiloye",
+            "pred": "Mike Abayomi Bamiloye",
+            "f1": 1.0
+          },
+          {
+            "id": "618",
+            "input": "question: Ta ni \u1ecdba ak\u1ecdk\u1ecd ij\u1ecdba Tooro ni Uganda ? context: The Tooro Kingdom evolved out of a breakaway segment of Bunyo",
+            "gold": "Omukama Kaboyo Olimi I",
+            "pred": "Omukama Kaboyo Olimi I",
+            "f1": 1.0
+          }
+        ]
+      },
+      "low_partial": {
+        "swa": [
+          {
+            "id": "26",
+            "input": "question: Rais wa Meksiko alihudhuria chuo kikuu gani? context: Salinas attended the National Autonomous University of M",
+            "gold": "Chuo Kikuu cha Kitaifa uhuru cha Mexico",
+            "pred": "National Autonomous University of Mexico",
+            "f1": 0.167
+          },
+          {
+            "id": "81",
+            "input": "question: Baba yake Elizabeti aliitwa nani? context: George VI (Albert Frederick Arthur George; 14 December 1895\u00a0\u2013 6 Feb",
+            "gold": "George VI",
+            "pred": "Frederick Arthur George",
+            "f1": 0.4
+          },
+          {
+            "id": "157",
+            "input": "question: Hekalu la Parthenon lilijengwa mwaka gani? context: The Parthenon (; , , ; , , ) is a former temple on the Ath",
+            "gold": "447 BK",
+            "pred": "447 BC",
+            "f1": 0.5
+          },
+          {
+            "id": "172",
+            "input": "question: Kampuni ya Apple Inc ilianzishwa mwaka gani? context: Apple Computer Company was founded on April 1, 1976, by ",
+            "gold": "Aprili 1, 1976",
+            "pred": "1976",
+            "f1": 0.5
+          },
+          {
+            "id": "189",
+            "input": "question: Je,stesheni kubwa kabisa ya reli duniani ni gani? context: Terminus stations in large cities are by far the bi",
+            "gold": "Grand Central Terminal in New York City",
+            "pred": "New York",
+            "f1": 0.444
+          }
+        ],
+        "hau": [
+          {
+            "id": "304",
+            "input": "question: A wace shekara aka haifi shugaba Muhammadu Buhari? context: Muhammadu Buhari GCFR (born 17 December 1942) is a",
+            "gold": "1942",
+            "pred": "17 December 1942",
+            "f1": 0.5
+          },
+          {
+            "id": "347",
+            "input": "question: Shin zafi a Dubai ya kan kai nawa bisa ma'aunin selshiyos? context: The urban heat island effect does take its",
+            "gold": "49.0 \u00b0C",
+            "pred": "49 \u00b0C (120 \u00b0F)",
+            "f1": 0.333
+          },
+          {
+            "id": "360",
+            "input": "question: Wanene shugaban jamhuriyar Nijar a 2022? context: Mohamed Bazoum (), is a Nigerien politician who is the curre",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohammed Bazoum",
+            "f1": 0.5
+          },
+          {
+            "id": "411",
+            "input": "question: Wace kabila ce tafi yawa a jamhuriyyar Nijar? context: The official population count of the various ethnic gro",
+            "gold": "Hausa",
+            "pred": "Hausa, Fulani, Yoruba da Igbo",
+            "f1": 0.333
+          },
+          {
+            "id": "424",
+            "input": "question: Wane sauro ne yake sa zazzabin cizon sauro? context: Malaria is caused by single-celled microorganisms of the ",
+            "gold": "sauron Anopheles",
+            "pred": "Anopheles mosquitoes",
+            "f1": 0.5
+          }
+        ],
+        "yor": [
+          {
+            "id": "623",
+            "input": "question: Ibo ni w\u1ecdn ti sin aar\u1eb9 t\u1eb9l\u1eb9 Nelson Mandela ? context: Mandela's body lay in state at the Union Buildings in Pr",
+            "gold": "Union building ni Pretoria",
+            "pred": "Pretoria",
+            "f1": 0.4
+          },
+          {
+            "id": "642",
+            "input": "question: Ori oke wo ni o tobi jul\u1ecd ninu ori oke Kilimanjaro ati ori oke everest ? context: High elevations on mountains",
+            "gold": "ori oke ti o ga jul\u1ecd ni gbogbo agbaye ni Oke Everest",
+            "pred": "Everest",
+            "f1": 0.154
+          },
+          {
+            "id": "660",
+            "input": "question: department wo ni Dora Akunyili ti \u1e63i\u1e63e bi \u1ecdga patapata ni 2007 ? context: She was appointed NAFDAC DG in 2001 ",
+            "gold": "Aj\u1ecd to n mojuto akoso ohun jij\u1eb9 ati mimu loril\u1eb9ede Naijiria (NAFDAC)",
+            "pred": "NAFDAC DG",
+            "f1": 0.143
+          },
+          {
+            "id": "712",
+            "input": "question: Kinni k\u1eb9mikal pataki ti n \u1e63i\u1e63\u1eb9 ninu bili\u1e63i? context: Liquid bleach, often called just bleach, is a common chem",
+            "gold": "calcium hypochlorite",
+            "pred": "sodium hypochlorite",
+            "f1": 0.5
+          },
+          {
+            "id": "722",
+            "input": "question: Ni igba wo ni kede is\u1eb9l\u1eb9 ak\u1ecdk\u1ecd Covid-19 ni oril\u1eb9-ede Naijiria? context: The COVID-19 pandemic in Nigeria was a",
+            "gold": "27 E\u0300re\u0300le\u0301 2021",
+            "pred": "27 February 2020",
+            "f1": 0.333
+          }
+        ]
+      }
+    }
+  },
+  "matchedqa_byt5_test": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 186,
+        "pct": 0.21933962264150944
+      },
+      "high_partial": {
+        "count": 54,
+        "pct": 0.06367924528301887
+      },
+      "low_partial": {
+        "count": 59,
+        "pct": 0.0695754716981132
+      },
+      "wrong": {
+        "count": 549,
+        "pct": 0.6474056603773585
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 83,
+          "pct": 0.27666666666666667
+        },
+        "high_partial": {
+          "count": 15,
+          "pct": 0.05
+        },
+        "low_partial": {
+          "count": 15,
+          "pct": 0.05
+        },
+        "wrong": {
+          "count": 187,
+          "pct": 0.6233333333333333
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 53,
+          "pct": 0.17966101694915254
+        },
+        "high_partial": {
+          "count": 21,
+          "pct": 0.0711864406779661
+        },
+        "low_partial": {
+          "count": 19,
+          "pct": 0.06440677966101695
+        },
+        "wrong": {
+          "count": 202,
+          "pct": 0.6847457627118644
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 50,
+          "pct": 0.1976284584980237
+        },
+        "high_partial": {
+          "count": 18,
+          "pct": 0.07114624505928854
+        },
+        "low_partial": {
+          "count": 25,
+          "pct": 0.09881422924901186
+        },
+        "wrong": {
+          "count": 160,
+          "pct": 0.6324110671936759
+        }
+      }
+    },
+    "examples": {
+      "exact_match": {
+        "swa": [
+          {
+            "id": "0",
+            "input": "question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was first elected as a Me",
+            "gold": "Webuye",
+            "pred": "Webuye",
+            "f1": 1.0
+          },
+          {
+            "id": "1",
+            "input": "question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Forum for the Restorat",
+            "gold": "Oginga Odinga",
+            "pred": "Oginga Odinga",
+            "f1": 1.0
+          },
+          {
+            "id": "4",
+            "input": "question: Je,rais wa kwanza wa Kongo alifahamika kama nani? context: Joseph Kasa-Vubu, alternatively Joseph Kasavubu, ( ",
+            "gold": "Joseph Kasa-Vubu",
+            "pred": "Joseph Kasa-Vubu",
+            "f1": 1.0
+          },
+          {
+            "id": "8",
+            "input": "question: Waziri mkuu wa Israeli ajulikana kama nani? context: Naftali Bennett (Hebrew: \u05e0\u05b7\u05e4\u05b0\u05ea\u05b8\u05bc\u05dc\u05b4\u05d9 \u05d1\u05b6\u05bc\u05e0\u05b6\u05d8, Transliterate",
+            "gold": "Naftali Bennett",
+            "pred": "Naftali Bennett",
+            "f1": 1.0
+          },
+          {
+            "id": "9",
+            "input": "question: Kocha mkuu wa timu ya soka ya Argentina mwaka 2017 anaitwa nani? context: On 20 May 2017, the Argentine Footba",
+            "gold": "Sampaoli",
+            "pred": "Sampaoli",
+            "f1": 1.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "297",
+            "input": "question: Wanene farkon mataimakin shugaban jami'ar Lagos? context: Eni Njoku (6 November 1917 \u2013 22 December 1974) was a",
+            "gold": "Eni Njoku",
+            "pred": "Eni Njoku",
+            "f1": 1.0
+          },
+          {
+            "id": "299",
+            "input": "question: A wace shekara aka haifi Chioma Opara? context: Chioma Opara (born 23 May 1951 in Jos, Nigeria) is a Nigerian ",
+            "gold": "1951",
+            "pred": "1951",
+            "f1": 1.0
+          },
+          {
+            "id": "302",
+            "input": "question: A wace shekara aka wallafa littafin magana jari ce na farko? context: Magana Jari Ce Hausa pronunciation [maga",
+            "gold": "1937",
+            "pred": "1937",
+            "f1": 1.0
+          },
+          {
+            "id": "304",
+            "input": "question: A wace shekara aka haifi shugaba Muhammadu Buhari? context: Muhammadu Buhari GCFR (born 17 December 1942) is a",
+            "gold": "1942",
+            "pred": "1942",
+            "f1": 1.0
+          },
+          {
+            "id": "305",
+            "input": "question: Wanene ya bada umarnin gina katangar China? context: The history of the Great Wall of China began when fortifi",
+            "gold": "Qin Shi Huang",
+            "pred": "Qin Shi Huang",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "606",
+            "input": "question: ilu wo lati bi Samuel Ajayi Crowther ? context: Samuel Crowther (c.\u20091809 \u2013 31 December 1891), was a Yoruba lin",
+            "gold": "Osogun",
+            "pred": "Osogun",
+            "f1": 1.0
+          },
+          {
+            "id": "617",
+            "input": "question: Ilu wo lo tobi jul\u1ecd ni orile ede Haiti ? context: Haiti has many mountains. There are only some coastal plains",
+            "gold": "Port-au-Prince",
+            "pred": "Port-au-Prince",
+            "f1": 1.0
+          },
+          {
+            "id": "626",
+            "input": "question: \u1e63e ile iwe giga ti Lautech ni \u1eb9ka ni ilu Ogbomosho? context: The School Main campus is located at Ogbomoso Nor",
+            "gold": "yes",
+            "pred": "yes",
+            "f1": 1.0
+          },
+          {
+            "id": "628",
+            "input": "question: Agb\u1eb9gb\u1eb9 melo ni w\u1ecdn pin oril\u1eb9-ede Sierra Leone si? context: The provinces of Sierra Leone are divided into 16 ",
+            "gold": "16",
+            "pred": "16",
+            "f1": 1.0
+          },
+          {
+            "id": "632",
+            "input": "question: kiloruk\u1ecd emperor alak\u1ecd\u1ecdk\u1ecd ni oril\u1eb9 ede China? context: Qin Shi Huang (Chinese: \u79e6\u59cb\u7687, pronunciation (help\u00b7info);",
+            "gold": "Qin Shi Huang",
+            "pred": "Qin Shi Huang",
+            "f1": 1.0
+          }
+        ]
+      },
+      "wrong": {
+        "swa": [
+          {
+            "id": "2",
+            "input": "question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes corresponds to that given in",
+            "gold": "Mt Petro",
+            "pred": "Annuario Pontifi",
+            "f1": 0.0
+          },
+          {
+            "id": "5",
+            "input": "question: Je,Marekani hufanya sensa baada ya kila miaka ngapi? context: The United States census (plural censuses or cen",
+            "gold": "kila baada ya miaka 10",
+            "pred": "23",
+            "f1": 0.0
+          },
+          {
+            "id": "7",
+            "input": "question: Je ubaguzi wa rangi wa kisheria nchini Afrika Kusini uliisha mwak upi? context: ational sanctions, including a",
+            "gold": "Mwaka wa 1990",
+            "pred": "National Party",
+            "f1": 0.0
+          },
+          {
+            "id": "10",
+            "input": "question: Je,ni shirika gani la serikali inasimamia bandari ya Mombasa? context: Kenya Ports Authority (KPA) is a state ",
+            "gold": "Kenya Ports Authority",
+            "pred": "Kilindini",
+            "f1": 0.0
+          },
+          {
+            "id": "11",
+            "input": "question: Gereza la kwanza lilifunguliwa wapi? context: The Romans were among the first to use prisons as a form of puni",
+            "gold": "Roma",
+            "pred": "Mamertine Prison",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "295",
+            "input": "question: Awane yanki jahar Anambra take a Nijeriya? context: Anambra State  is a Nigerian state, located in the southea",
+            "gold": "gabas ta kudu",
+            "pred": "bahagwayen mutan",
+            "f1": 0.0
+          },
+          {
+            "id": "296",
+            "input": "question: A wane gari babban Ofishin Al jazeera yake? context: Al Jazeera (Arabic: \u0627\u0644\u062c\u0632\u064a\u0631\u0629, romanized: al-jazi\u0304rah, IPA:",
+            "gold": "Doha",
+            "pred": "Al Jazeera",
+            "f1": 0.0
+          },
+          {
+            "id": "298",
+            "input": "question: Shin \u0199asashe nawa ne suka raba iyaka da Saudi Arabiya? context: Saudi Arabia is bounded by seven countries and",
+            "gold": "bakwai",
+            "pred": "eh",
+            "f1": 0.0
+          },
+          {
+            "id": "300",
+            "input": "question: Wace jami'a ce mafi tsufa a yankin Asia? context: The oldest universities, colleges, vocational schools and th",
+            "gold": "Jami'ar Santo Tomas",
+            "pred": "Spain",
+            "f1": 0.0
+          },
+          {
+            "id": "301",
+            "input": "question: A wace shekara aka kirkiri wutar lantarki? context: Electricity would remain little more than an intellectual ",
+            "gold": "Austria",
+            "pred": "1646",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "595",
+            "input": "question: \u1eccm\u1ecd \u1ecddun melo ni Cosmas Maduka nigbati o f\u1eb9 iyawo r\u1eb9 Charity? context: The startup also failed sooner than exp",
+            "gold": "21",
+            "pred": "1977",
+            "f1": 0.0
+          },
+          {
+            "id": "596",
+            "input": "question: Igbawo ni Popu John Paul II ku ? context: Pope John Paul II (Latin: Ioannes Paulus II; Italian: Giovanni Paolo",
+            "gold": "2005",
+            "pred": "2 \u1ecc\u0300wa\u0300wa\u0300",
+            "f1": 0.0
+          },
+          {
+            "id": "597",
+            "input": "question: Ta l\u1eb9ni to j\u1eb9 gomina ti Eko nigba ti w\u1ecdn pari kik\u1ecd National Arts Theatre l'Eko? context: The building of the N",
+            "gold": "Olu\u1e63\u1eb9gun \u1ecdbasanj\u1ecd",
+            "pred": "General Yakubu G",
+            "f1": 0.0
+          },
+          {
+            "id": "598",
+            "input": "question: Ipinl\u1eb9 wo l'Am\u1eb9rika ni Wikimedia Foundation k\u1ecd olu ile i\u1e63\u1eb9 w\u1ecdn si? context: Wikimedia Foundation, Inc. (WMF, a",
+            "gold": "California",
+            "pred": "Il\u1eb9 Francisco",
+            "f1": 0.0
+          },
+          {
+            "id": "599",
+            "input": "question: Eroja pataki wo ni aw\u1ecdn ara Igbo fi maa n se ounj\u1eb9 abacha ? context: Abacha is popular in the Eastern part of ",
+            "gold": "Gbaguda",
+            "pred": "\u1eb8\u0300k\u1ecd\u0301 ni\u0301",
+            "f1": 0.0
+          }
+        ]
+      },
+      "high_partial": {
+        "swa": [
+          {
+            "id": "3",
+            "input": "question: Je,kampuni ya Blizzard Entertainment inapatikana nchi gani? context: Blizzard Entertainment, Inc. is an Americ",
+            "gold": "Irvine, California",
+            "pred": "Irvine",
+            "f1": 0.667
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Stephen Wilfred",
+            "f1": 0.667
+          },
+          {
+            "id": "37",
+            "input": "question: Balbu ilitengenezwa na nani? context: Thomas Alva Edison (February 11, 1847October 18, 1931) was an American i",
+            "gold": "Thomas Alva Edison",
+            "pred": "Thomas Alva Edis",
+            "f1": 0.667
+          },
+          {
+            "id": "46",
+            "input": "question: Sultan wa kwanza wa Zanzibar anaitwaje? context: The sultans of Zanzibar () were the rulers of the Sultanate o",
+            "gold": "Majid bin Said",
+            "pred": "Said bin Sultan",
+            "f1": 0.667
+          },
+          {
+            "id": "70",
+            "input": "question: Kipchoge Keino alianza riadha mwaka gani? context: He began his international career at the 1962 Commonwealth ",
+            "gold": "1962",
+            "pred": "ma\u0301ka\u0301n 1962",
+            "f1": 0.667
+          }
+        ],
+        "hau": [
+          {
+            "id": "320",
+            "input": "question: Wanene ya jagoranci fim din Titanic? context: James Francis Cameron (born August 16, 1954) is a Canadian filmm",
+            "gold": "James Francis Cameron",
+            "pred": "James Francis Ca",
+            "f1": 0.667
+          },
+          {
+            "id": "330",
+            "input": "question: Wane gini ne mafi tsaho a duniya? context: The international non-profit organization Council on Tall Buildings",
+            "gold": "Burj Khalifa",
+            "pred": "Burj Khalifa na",
+            "f1": 0.8
+          },
+          {
+            "id": "348",
+            "input": "question: Wanene gwamnan jahar maiduguri a yanxu? context: Babagana Umara Zulum (born August 25, 1969) is a Nigerian pro",
+            "gold": "Babagana Umara Zulum",
+            "pred": "Babagana Umara Z",
+            "f1": 0.667
+          },
+          {
+            "id": "353",
+            "input": "question: Wacece muryar Cinderella ta farko? context: Jacqueline Ruth Woods (May 5, 1929 \u2013 July 1, 2010) better known as",
+            "gold": "Jacqueline Ruth Woods",
+            "pred": "Jacqueline Ruth",
+            "f1": 0.8
+          },
+          {
+            "id": "417",
+            "input": "question: Wanene ya kirkiri kamfanin Apple mai kera wayoyi? context: Apple was founded as Apple Computer Company on Apri",
+            "gold": "Steve Jobs",
+            "pred": "Steve Jobs, Stev",
+            "f1": 0.8
+          }
+        ],
+        "yor": [
+          {
+            "id": "601",
+            "input": "question: Ta l\u1eb9ni to da orin-iyin ti oril\u1eb9-ede Am\u1eb9rika? context: Francis Scott Key (August 1, 1779January 11, 1843) was ",
+            "gold": "Francis Scott Key",
+            "pred": "Francis Scott Ke",
+            "f1": 0.667
+          },
+          {
+            "id": "608",
+            "input": "question: Ta l\u1eb9ni to da Coca-cola sil\u1eb9? context: Originally marketed as a temperance drink and intended as a patent medi",
+            "gold": "John Stith Pemberton",
+            "pred": "John Stith Pembe",
+            "f1": 0.667
+          },
+          {
+            "id": "609",
+            "input": "question: \u1eccdun wo ni w\u1ecdn da ile \u1eb9k\u1ecd Queen's college yaba sil\u1eb9 ? context: Queen's College, Lagos, is a government-owned g",
+            "gold": "1927",
+            "pred": "\u1ecddun 1927",
+            "f1": 0.667
+          },
+          {
+            "id": "612",
+            "input": "question: Ta ni oludasil\u1eb9 Mount Zion Movies ? context: Mike Abayomi BamiloyeListen is a Nigerian gospel film actor, dram",
+            "gold": "Mike Abayomi Bamiloye",
+            "pred": "Mike Abayomi Bam",
+            "f1": 0.667
+          },
+          {
+            "id": "618",
+            "input": "question: Ta ni \u1ecdba ak\u1ecdk\u1ecd ij\u1ecdba Tooro ni Uganda ? context: The Tooro Kingdom evolved out of a breakaway segment of Bunyo",
+            "gold": "Omukama Kaboyo Olimi I",
+            "pred": "Omukama Kaboyo O",
+            "f1": 0.571
+          }
+        ]
+      },
+      "low_partial": {
+        "swa": [
+          {
+            "id": "6",
+            "input": "question: Daktari wa kwanza wa ubongo anaitwa nani? context: Sir William Macewen, CB, FRS, FRCS (/m\u0259\u02c8kju\u02d0\u026an/; 22 June 18",
+            "gold": "William Macewen",
+            "pred": "Sir William Mace",
+            "f1": 0.4
+          },
+          {
+            "id": "12",
+            "input": "question: Je,gavana wa kwanza wa kaunti ya Laikipia aliitwa nani? context: Joshua Wakahora Irungu (born 2 February 1970)",
+            "gold": "Joshua Irungu",
+            "pred": "Joshua Wakahora",
+            "f1": 0.5
+          },
+          {
+            "id": "20",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Facebook? context: Facebook is an online social media and social ",
+            "gold": "Mark Zuckerberg pamoja na wanafunzi wenzake wa Harvard College ambao pia walishiriki chumba, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz na Chris Hughes",
+            "pred": "Mark Zuckerberg",
+            "f1": 0.167
+          },
+          {
+            "id": "61",
+            "input": "question: Kalenda ya Gregori ilivumbuliwa na nani? context: The Gregorian calendar is the calendar used in most of the w",
+            "gold": "Papa Gregory XIII",
+            "pred": "Pope Gregory XII",
+            "f1": 0.333
+          },
+          {
+            "id": "99",
+            "input": "question: Je,Jules Feiffer aliandika vitabu ngapi? context: He has written more than 35 books, plays and screenplays. Hi",
+            "gold": "zaidi ya 35",
+            "pred": "bi\u0300tabu\u0301 35",
+            "f1": 0.4
+          }
+        ],
+        "hau": [
+          {
+            "id": "326",
+            "input": "question: Menene yawan jama'ar kasar China a shekarar 2021? context: The demographics of China demonstrate a large popul",
+            "gold": "biliyan 1.413",
+            "pred": "1.413 bilion",
+            "f1": 0.5
+          },
+          {
+            "id": "363",
+            "input": "question: Wanene shugaban Italy a 2021? context: Sergio Mattarella (; born 23 July 1941) is an Italian politician, juris",
+            "gold": "Sergio Mattarella",
+            "pred": "Sergio Mattarell",
+            "f1": 0.5
+          },
+          {
+            "id": "369",
+            "input": "question: Wanene shugaban FIFA na farko? context: The first president of FIFA was Robert Gu\u00e9rin. Gu\u00e9rin was replaced in ",
+            "gold": "Robert Gu\u00e9rin",
+            "pred": "Robert Guerin",
+            "f1": 0.5
+          },
+          {
+            "id": "393",
+            "input": "question: Menene sunan babban filin jirgin sama a Malaysia? context: Kuala Lumpur International Airport (KLIA) (IATA: KU",
+            "gold": "Kuala Lumpur International Airport (KLIA)",
+            "pred": "Kuala Lumpur Int",
+            "f1": 0.5
+          },
+          {
+            "id": "398",
+            "input": "question: Menene girman Nijar a kilomita? context: Niger is a landlocked nation in West Africa located along the border ",
+            "gold": "miliyan 1.267 murabba'in kilomita",
+            "pred": "kilomita",
+            "f1": 0.4
+          }
+        ],
+        "yor": [
+          {
+            "id": "602",
+            "input": "question: Aarin \u1ecddun wo ni ogun ab\u1eb9le fi s\u1eb9l\u1eb9 ni oril\u1eb9-ede Naijiria? context: The Nigerian Civil War (6 July 1967 \u2013 15 J",
+            "gold": "6 Ag\u1eb9m\u1ecd 1967 \u2013 15 \u1e63\u1eb9\u1eb9r\u1eb9 1970",
+            "pred": "1970",
+            "f1": 0.286
+          },
+          {
+            "id": "610",
+            "input": "question: Fiimu agbelewo wo ni Tunde Kelani k\u1ecdk\u1ecd se agbejade? context: In the 1970s, Kelani worked as a BBC TV and Reute",
+            "gold": "The Dilema of Rev. Father Michael",
+            "pred": "The Dilemma of R",
+            "f1": 0.4
+          },
+          {
+            "id": "625",
+            "input": "question: iwe wo ni olukowe Anichebe k\u1ecd k\u1eb9yin? context: n 2012, Achebe published There Was a Country: A Personal History",
+            "gold": "There Was a Country: A Personal History of Biafra",
+            "pred": "There Was a Coun",
+            "f1": 0.462
+          },
+          {
+            "id": "630",
+            "input": "question: \u1eccj\u1ecd kelo ninu \u1ecds\u1eb9 ni w\u1ecdn n b\u1ecd Sango? context: Strong devotion to \u1e62\u00e0ng\u00f3 led to Yoruba religions in Trinidad and",
+            "gold": "\u1ecdj\u1ecd\u0301 kaa\u0300ru\u0301n",
+            "pred": "\u1ecdj\u1ecd kejila",
+            "f1": 0.5
+          },
+          {
+            "id": "634",
+            "input": "question: \u1eccj\u1ecd wo ni Stella Obasanjo di ologbe? context: Stella Obasanjo died a few weeks before her 60th birthday from c",
+            "gold": "23 \u1ecc\u0300wa\u0300wa\u0300 2005",
+            "pred": "23 \u1e63\u1eb9\u1eb9r\u1eb9",
+            "f1": 0.4
+          }
+        ]
+      }
+    }
+  },
+  "multitask_mt5_test": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 178,
+        "pct": 0.2099056603773585
+      },
+      "high_partial": {
+        "count": 39,
+        "pct": 0.045990566037735846
+      },
+      "low_partial": {
+        "count": 38,
+        "pct": 0.04481132075471698
+      },
+      "ner_leakage": {
+        "count": 15,
+        "pct": 0.01768867924528302
+      },
+      "wrong": {
+        "count": 578,
+        "pct": 0.6816037735849056
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 83,
+          "pct": 0.27666666666666667
+        },
+        "high_partial": {
+          "count": 8,
+          "pct": 0.02666666666666667
+        },
+        "low_partial": {
+          "count": 5,
+          "pct": 0.016666666666666666
+        },
+        "ner_leakage": {
+          "count": 4,
+          "pct": 0.013333333333333334
+        },
+        "wrong": {
+          "count": 200,
+          "pct": 0.6666666666666666
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 52,
+          "pct": 0.17627118644067796
+        },
+        "high_partial": {
+          "count": 12,
+          "pct": 0.04067796610169491
+        },
+        "low_partial": {
+          "count": 12,
+          "pct": 0.04067796610169491
+        },
+        "ner_leakage": {
+          "count": 6,
+          "pct": 0.020338983050847456
+        },
+        "wrong": {
+          "count": 213,
+          "pct": 0.7220338983050848
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 43,
+          "pct": 0.16996047430830039
+        },
+        "high_partial": {
+          "count": 19,
+          "pct": 0.07509881422924901
+        },
+        "low_partial": {
+          "count": 21,
+          "pct": 0.08300395256916997
+        },
+        "ner_leakage": {
+          "count": 5,
+          "pct": 0.019762845849802372
+        },
+        "wrong": {
+          "count": 165,
+          "pct": 0.6521739130434783
+        }
+      }
+    },
+    "examples": {
+      "low_partial": {
+        "swa": [
+          {
+            "id": "151",
+            "input": "question: Steven Kanumba alizaliwa mwaka upi? context: Steven Charles Kanumba (8 January 1984 \u2013 7 April 2012) was a Tanz",
+            "gold": "1984",
+            "pred": "\u1ecddun 1984 - 7 April 2012",
+            "f1": 0.333
+          },
+          {
+            "id": "60",
+            "input": "question: Vita vya Xenophobia vilianza mwaka gani Afrika Kusini? context: Prior to 1994, immigrants from elsewhere faced",
+            "gold": "Kabla ya mwaka wa 1994",
+            "pred": "1994",
+            "f1": 0.333
+          },
+          {
+            "id": "20",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Facebook? context: Facebook is an online social media and social ",
+            "gold": "Mark Zuckerberg pamoja na wanafunzi wenzake wa Harvard College ambao pia walishiriki chumba, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz na Chris Hughes",
+            "pred": "Mark Zuckerberg",
+            "f1": 0.167
+          },
+          {
+            "id": "171",
+            "input": "question: Je, sehemu ya kwanza ya Bibilia iliandikwa mwaka gani? context: Much of the Hebrew Bible/Old Testament may hav",
+            "gold": "5th century BCE",
+            "pred": "BCE",
+            "f1": 0.5
+          },
+          {
+            "id": "111",
+            "input": "question: Je,utawala wa kifalme iliisha lini nchini Italia? context: The monarchy of Italy () was the system of governme",
+            "gold": "1946",
+            "pred": "1861 to 1946",
+            "f1": 0.5
+          }
+        ],
+        "hau": [
+          {
+            "id": "340",
+            "input": "question: A wace shekara Shehu Usman Dan fodiyo ya rasu? context: Usman \u018aan Fodio, (Arabic: \u0639\u062b\u0645\u0627\u0646 \u0628\u0646 \u0641\u0648\u062f\u064a, romanized: \u02bfU",
+            "gold": "1817",
+            "pred": "1754 da 20 April 1817)",
+            "f1": 0.333
+          },
+          {
+            "id": "383",
+            "input": "question: Mutane nawa ne a Rasha? context: Russia, the largest country in the world by area, had a population of 142.8 m",
+            "gold": "miliyan 145.5",
+            "pred": "142.8 miliyan",
+            "f1": 0.5
+          },
+          {
+            "id": "515",
+            "input": "question: Yaushe aka kashe Muammar Gaddafi? context: Muammar Gaddafi, the deposed leader of Libya, was captured and kill",
+            "gold": "20 Octoba 2011",
+            "pred": "2011",
+            "f1": 0.5
+          },
+          {
+            "id": "417",
+            "input": "question: Wanene ya kirkiri kamfanin Apple mai kera wayoyi? context: Apple was founded as Apple Computer Company on Apri",
+            "gold": "Steve Jobs",
+            "pred": "Steve Jobs, Steve Wozniak, Ronald Wayne",
+            "f1": 0.5
+          },
+          {
+            "id": "544",
+            "input": "question: A wace shekara ce Shuaibu Amodu ya mutu? context: Shuaibu Amodu (18 April 1958 \u2013 10 June 2016) was a Nigerian ",
+            "gold": "2016",
+            "pred": "1958 da 10 June 2016",
+            "f1": 0.333
+          }
+        ],
+        "yor": [
+          {
+            "id": "833",
+            "input": "question: \u1eccj\u1ecd wo ni oril\u1eb9-ede Ghana gba ominira? context: The Independence Day is celebrated on March 6 every year. Inde",
+            "gold": "\u1ecdj\u1ecd k\u1eb9fa o\u1e63u k\u1eb9ta \u1ecddun 1957",
+            "pred": "1957",
+            "f1": 0.286
+          },
+          {
+            "id": "680",
+            "input": "question: Tani osere ak\u1ecdk\u1ecd ti \u1eb9gb\u1eb9 Mo' Hits Records ni? context: Mo'Hits Records (popularly called Mo'Hits) was a Nigeri",
+            "gold": "D'banj",
+            "pred": "D'banj, Don Jazzy",
+            "f1": 0.5
+          },
+          {
+            "id": "728",
+            "input": "question: Tani o tum\u1ecd orin oril\u1eb9-ede Naijiria si ede Yoruba? context: Adebayo Faleti has acted, written, and produced a ",
+            "gold": "Ade\u0301ba\u0301y\u1ecd\u0300 Fa\u0301le\u0301ti\u0301",
+            "pred": "Adebayo Faleti",
+            "f1": 0.5
+          },
+          {
+            "id": "722",
+            "input": "question: Ni igba wo ni kede is\u1eb9l\u1eb9 ak\u1ecdk\u1ecd Covid-19 ni oril\u1eb9-ede Naijiria? context: The COVID-19 pandemic in Nigeria was a",
+            "gold": "27 E\u0300re\u0300le\u0301 2021",
+            "pred": "27 February 2020",
+            "f1": 0.333
+          },
+          {
+            "id": "663",
+            "input": "question: \u1eccm\u1ecd \u1eb9gb\u1eb9 o\u1e63elu wo ni John Forbes Kerry? context: John Forbes Kerry (born December 11, 1943) is an American att",
+            "gold": "\u1eb8gb\u1eb9 Olominira",
+            "pred": "\u1eb8gb\u1eb9 Democratic Party",
+            "f1": 0.4
+          }
+        ]
+      },
+      "wrong": {
+        "hau": [
+          {
+            "id": "412",
+            "input": "question: Shin ana ha\u0199o gwal a Malaysia? context: Mining is one of the main industries in Malaysia. Malaysia produces ag",
+            "gold": "eh",
+            "pred": "Malaysia",
+            "f1": 0.0
+          },
+          {
+            "id": "537",
+            "input": "question: Nawa wasula nawa yaren Hausa suke da shi? context: Hausa is a tonal language. Each of its five vowels may have",
+            "gold": "biyar",
+            "pred": "a'a",
+            "f1": 0.0
+          },
+          {
+            "id": "360",
+            "input": "question: Wanene shugaban jamhuriyar Nijar a 2022? context: Mohamed Bazoum (), is a Nigerien politician who is the curre",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mahamane Ousmane",
+            "f1": 0.0
+          },
+          {
+            "id": "536",
+            "input": "question: wane addini ne mafi rinjaye a Afrika ta kudu? context: Religion in South Africa is dominated by various branch",
+            "gold": "kiristanci",
+            "pred": "South Africa",
+            "f1": 0.0
+          },
+          {
+            "id": "505",
+            "input": "question: A wace shekara aka kifar da gobnatin Sadam Hussein na Iraki? context: Saddam Hussein Abd al-Majid al-Tikriti (",
+            "gold": "2003",
+            "pred": "1967",
+            "f1": 0.0
+          }
+        ],
+        "swa": [
+          {
+            "id": "113",
+            "input": "question: Kifaa cha kuongeza oksijeni hospitalini kinaitwaje? context: Treatments are flexible enough to be used in hosp",
+            "gold": "kanula za pua",
+            "pred": "eh",
+            "f1": 0.0
+          },
+          {
+            "id": "250",
+            "input": "question: Je,mercedes benz ni gari yenye asili ya nchi gani? context: Mercedes-Benz AG (a Mercedes-Benz Group subsidiary",
+            "gold": "Ujerumani",
+            "pred": "Stuttgart, Baden-W\u00fcrttemberg, Germany",
+            "f1": 0.0
+          },
+          {
+            "id": "54",
+            "input": "question: Dini la kiislamu lilianza mwaka upi? context: Muslims regard Islam as a return to the original faith of the Ab",
+            "gold": "610 KK",
+            "pred": "\u02beAb\u016b \u1e6c\u0101lib ibn \u02bfAbd al-Mu",
+            "f1": 0.0
+          },
+          {
+            "id": "140",
+            "input": "question: Je,Victor Wanyama alichezea Tottenham kwa muda upi? context: On 23 June 2016, Premier League club Tottenham Ho",
+            "gold": "miaka mitano",
+            "pred": "Tottenham Hotspur",
+            "f1": 0.0
+          },
+          {
+            "id": "31",
+            "input": "question: Kuna kabila ngapi nchini Tanzania? context: There are more than 100 distinct ethnic groups and tribes in Tanza",
+            "gold": "zaidi ya 100",
+            "pred": "Sukuma",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "843",
+            "input": "question: Toonu cashu melo ni w\u1ecdn gbejade lagbaye l\u1ecddun 2019? context: In 2019, four million tonnes of cashew nuts were ",
+            "gold": "four million",
+            "pred": "Ivory Coast, India",
+            "f1": 0.0
+          },
+          {
+            "id": "776",
+            "input": "question: Iyawo meloo ni anabi Muhammad f\u1eb9 nigba aye r\u1eb9? context: According to an account by Anas bin Malik, \"The Prophe",
+            "gold": "m\u1eb9san",
+            "pred": "Ay\u1eb9y\u1eb9y\u1eb9",
+            "f1": 0.0
+          },
+          {
+            "id": "674",
+            "input": "question: Nj\u1eb9 arabirin Maya Angelou gba \u1eb9bun Nobeli ? context: African-American writer and poet Maya Angelou (1928\u20132014)",
+            "gold": "b\u1eb9\u1eb9k\u1ecd",
+            "pred": "b\u1eb9\u1eb9ni",
+            "f1": 0.0
+          },
+          {
+            "id": "729",
+            "input": "question: Saa melo ni Angela Mikel fi tuk\u1ecd oril\u1eb9-ede Germany? context: A YouGov survey published in late December 2017 f",
+            "gold": "\u1eb8\u0300\u0300m\u1eb9\u1eb9\u0300rin",
+            "pred": "Angela Mikel",
+            "f1": 0.0
+          },
+          {
+            "id": "686",
+            "input": "question: Kinni oruk\u1ecd \u1eb9ni to j\u1eb9 \u1ecdba ilu Iwo ni ipinl\u1eb9 \u1eccsun l'\u1ecddun 2021? context: 9 November 2015 until present Oba Abdul",
+            "gold": "Oba Abdulrasheed Adewale Akanbi",
+            "pred": "\u1eccdun 2015",
+            "f1": 0.0
+          }
+        ]
+      },
+      "high_partial": {
+        "hau": [
+          {
+            "id": "451",
+            "input": "question: Wacece gwamna mace ta farko a Najeriya? context: Dame Virginia Ngozi Etiaba (born 11 November 1942) was the Go",
+            "gold": "Dame Virginia Ngozi Etiaba",
+            "pred": "Virginia Ngozi Etiaba",
+            "f1": 0.857
+          },
+          {
+            "id": "477",
+            "input": "question: Menene addinin mutanen Isreal? context: Religion in Israel is manifested primarily in Judaism, the ethnic reli",
+            "gold": "Judaism",
+            "pred": "Orthodox Judaism",
+            "f1": 0.667
+          },
+          {
+            "id": "393",
+            "input": "question: Menene sunan babban filin jirgin sama a Malaysia? context: Kuala Lumpur International Airport (KLIA) (IATA: KU",
+            "gold": "Kuala Lumpur International Airport (KLIA)",
+            "pred": "Kuala Lumpur International Airport",
+            "f1": 0.889
+          },
+          {
+            "id": "448",
+            "input": "question: Waye Shugaban Jami'ar Lagos? context: Oluwatoyin Temitayo Ogundipe (born 31 May 1960) is a  Nigerian academic ",
+            "gold": "Oluwatoyin Temitayo Ogundipe",
+            "pred": "Temitayo Ogundipe",
+            "f1": 0.8
+          },
+          {
+            "id": "538",
+            "input": "question: Wace jamia ce ta farko jihar kano? context: Bayero University Kano (BUK) is a university situated in Kano, Kan",
+            "gold": "Jami'ar Bayero Kano",
+            "pred": "Bayero University Kano",
+            "f1": 0.667
+          }
+        ],
+        "yor": [
+          {
+            "id": "742",
+            "input": "question: \u1eccdun wo ni a da \u1eb9gbe All Progressives Congress sil\u1eb9? context: The All Progressives Congress (APC) is one of th",
+            "gold": "\u1eccdun 2013",
+            "pred": "2013",
+            "f1": 0.667
+          },
+          {
+            "id": "716",
+            "input": "question: talo dari er\u00e9 Muvhango? context: Ndlovu created Murendeni, the first Tshivenda TV drama based in Thathe, Limpo",
+            "gold": "Duma Ndlovu",
+            "pred": "Ndlovu",
+            "f1": 0.667
+          },
+          {
+            "id": "741",
+            "input": "question: Tani \u1eb9ni to kere ju l\u1ecdj\u1ecd ori to ti j\u1eb9 oga olopa oril\u1eb9-ede Naijiria? context: Sunday Adedayo Adewusi (6 Decembe",
+            "gold": "Sunday Ade\u0301day\u1ecd\u0300 Ade\u0301wu\u0300si\u0300",
+            "pred": "Sunday Adedayo Adewusi",
+            "f1": 0.667
+          },
+          {
+            "id": "836",
+            "input": "question: Ni odun wo ni a da ilu Virginia sil\u1eb9? context: On May 15, 1776, the Convention declared Virginia's independenc",
+            "gold": "\u1eccdun 1776",
+            "pred": "1776",
+            "f1": 0.667
+          },
+          {
+            "id": "768",
+            "input": "question: Ibo ni ibujoko ile-i\u1e63\u1eb9 microsoft ni Amerika? context: Microsoft Corporation is an American multinational techn",
+            "gold": "Redmond",
+            "pred": "Redmond, Washington",
+            "f1": 0.667
+          }
+        ],
+        "swa": [
+          {
+            "id": "178",
+            "input": "question: Je,Ben J. Hanson alizaliwa lini? context: John Hanson (\u00a0\u2013 November 15, 1783) was a Founding Father of the Unit",
+            "gold": "1783",
+            "pred": "\u1eccdun 1783",
+            "f1": 0.667
+          },
+          {
+            "id": "173",
+            "input": "question: Wikipedia inapatikana katika lugha ngapi? context: This page contains information about all 334 languages for ",
+            "gold": "lugha 334",
+            "pred": "334",
+            "f1": 0.667
+          },
+          {
+            "id": "208",
+            "input": "question: Je,nani mwanzilishi wa nyimbo ya taarab nchini Kenya? context: Taarab is a music genre popular in Tanzania and",
+            "gold": "Sultan Seyyid Barghash bin Said",
+            "pred": "Seyyid Barghash bin Said",
+            "f1": 0.889
+          },
+          {
+            "id": "206",
+            "input": "question: Rais wa C\u00f4te d'Ivoire mwaka wa 2019 ni nani? context: Alassane Dramane Ouattara (US; French pronunciation: [al",
+            "gold": "Alassane Dramane Quattara",
+            "pred": "Alassane Dramane Ouattara",
+            "f1": 0.667
+          },
+          {
+            "id": "277",
+            "input": "question: Nani mwelekezi wa filamu ya Lion King? context: The Lion King is a 1994 American animated musical drama film p",
+            "gold": "Roger Allers na Rob Minkoff",
+            "pred": "Roger Allers, Rob Minkoff, Irene Mecchi, Jonathan Roberts",
+            "f1": 0.615
+          }
+        ]
+      },
+      "exact_match": {
+        "swa": [
+          {
+            "id": "71",
+            "input": "question: Nani alikuwa mfalme wa kwanza wa China? context: Qin Shi Huang (Chinese: \u79e6\u59cb\u7687, pronunciation (help\u00b7info); 259\u20132",
+            "gold": "Qin Shi Huang",
+            "pred": "Qin Shi Huang",
+            "f1": 1.0
+          },
+          {
+            "id": "84",
+            "input": "question: Je,Mohammed Gulam Dewji alikuwa mbunge wa jimbo gani nchini Tanzania? context: Dewji was born in Ipembe, Singi",
+            "gold": "Singida",
+            "pred": "Singida",
+            "f1": 1.0
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Stephen Wilfred Omondi Oludhe",
+            "f1": 1.0
+          },
+          {
+            "id": "91",
+            "input": "question: Je, stesheni ya kwanza ya televisheni nchini Marekani ni ipi? context: In 1928, WRGB (then W2XB) was started a",
+            "gold": "WRGB",
+            "pred": "WRGB",
+            "f1": 1.0
+          },
+          {
+            "id": "284",
+            "input": "question: Je,mji mkuu wa Niger ni upi? context: Niamey (French pronunciation: \u200b[njam\u025b]) is the capital and largest city ",
+            "gold": "Niamey",
+            "pred": "Niamey",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "725",
+            "input": "question: \u1eccdun wo ni Nnamdi Azikwe faye sil\u1eb9? context: After the war, Azikiwe was chancellor of the University of Lagos ",
+            "gold": "\u1eccdun 1996",
+            "pred": "\u1eccdun 1996",
+            "f1": 1.0
+          },
+          {
+            "id": "783",
+            "input": "question: \u1eccdun wo ni a bi Stella Damascus? context: Stella Damascus // (listen) (born April 24, 1978) is a Nigerian actr",
+            "gold": "\u1eccdun 1978",
+            "pred": "\u1ecddun 1978",
+            "f1": 1.0
+          },
+          {
+            "id": "782",
+            "input": "question: \u1eb8gb\u1eb9 b\u1ecd\u1ecdlu af\u1eb9s\u1eb9gba wo ni Alex Iwobi sis\u1eb9 pelu l\u1ecddun 2019? context: On 8 August 2019, Iwobi signed a five-year",
+            "gold": "Everton",
+            "pred": "Everton",
+            "f1": 1.0
+          },
+          {
+            "id": "682",
+            "input": "question: Ta lo j\u1eb9 Gomina Ipinl\u1eb9 Benue saaju Aper Aku? context: Aper Aku was appointed as Chairman of Kwande Local Gover",
+            "gold": "Abdullahi Shelleng",
+            "pred": "Abdullahi Shelleng",
+            "f1": 1.0
+          },
+          {
+            "id": "773",
+            "input": "question: Ta ni \u1eb9ni ak\u1ecdk\u1ecd ti o gba ami \u1eb9y\u1eb9 Nobel ninu K\u1eb9misitiri? context: The first Nobel Prize in Chemistry was awarde",
+            "gold": "Jacobus Henricus van 't Hoff",
+            "pred": "Jacobus Henricus van 't Hoff",
+            "f1": 1.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "310",
+            "input": "question: A wace jaha garin Ningi yake? context: Ningi is a town, a local government area, and an emirate in Bauchi Stat",
+            "gold": "Bauchi",
+            "pred": "Bauchi",
+            "f1": 1.0
+          },
+          {
+            "id": "296",
+            "input": "question: A wane gari babban Ofishin Al jazeera yake? context: Al Jazeera (Arabic: \u0627\u0644\u062c\u0632\u064a\u0631\u0629, romanized: al-jazi\u0304rah, IPA:",
+            "gold": "Doha",
+            "pred": "Doha",
+            "f1": 1.0
+          },
+          {
+            "id": "440",
+            "input": "question: Ya sunan mutumin da ya kirkiri fasahar bincike ta Google? context: Google was founded on September 4, 1998, by",
+            "gold": "Larry Page da Sergey Brin",
+            "pred": "Larry Page da Sergey Brin",
+            "f1": 1.0
+          },
+          {
+            "id": "500",
+            "input": "question: Wanene mace ta farko da aka zaba a cikin jihohin a America? context: After Kansas granted women the right to v",
+            "gold": "Susanna Madora Salter",
+            "pred": "Susanna Madora Salter",
+            "f1": 1.0
+          },
+          {
+            "id": "437",
+            "input": "question: Wanene shugaban hadaddiyar Daular Larabawa a shekarar 1990? context: The United Arab Emirates military was for",
+            "gold": "Zayed bin Sultan Al Nahyan",
+            "pred": "Zayed bin Sultan Al Nahyan",
+            "f1": 1.0
+          }
+        ]
+      },
+      "ner_leakage": {
+        "yor": [
+          {
+            "id": "743",
+            "input": "question: \u1e63e oril\u1eb9 ede Uganda fi egbe ti orile ede Rwanda? context: Uganda (Yuganda in Ugandan languages), officially th",
+            "gold": "yes",
+            "pred": "LOC: Kampala",
+            "f1": 0.0
+          },
+          {
+            "id": "750",
+            "input": "question: Ta ni o ni owo ju ni agbaye ni \u1ecddun 2021? context: Jeffrey Preston Bezos (/\u02c8be\u026azo\u028as/ BAY-zohss; n\u00e9 Jorgensen; ",
+            "gold": "Jeff Bezos",
+            "pred": "PER: Jeffrey Preston Bezos",
+            "f1": 0.333
+          },
+          {
+            "id": "739",
+            "input": "question: Nigba wo ni south Korea ati North Korea pinya? context: The division of Korea began with the defeat of Japan i",
+            "gold": "15 August 1948",
+            "pred": "Moscow Conference of Foreign Ministers, DATE: December 1945",
+            "f1": 0.0
+          },
+          {
+            "id": "834",
+            "input": "question: Ki l'oruk\u1ecd omo ak\u1ecdk\u1ecd ti \u1ecdm\u1ecd\u1ecdba Harry ati Meghan Markle? context: Archie Harrison Mountbatten-Windsor was born ",
+            "gold": "Archie Harrison Mountbatten-Windsor",
+            "pred": "PER: Archie Harrison Mountbatten-Windsor",
+            "f1": 0.857
+          },
+          {
+            "id": "802",
+            "input": "question: Orin wo ni Wizkid ati Drake j\u1ecd k\u1ecd? context: In 2016, Wizkid achieved international recognition following his c",
+            "gold": "Come Closer",
+            "pred": "2017, ORG: RCA Records",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "478",
+            "input": "question: Mutane nawa ne a kungiyar BTS? context: BTS' lyrics have also addressed topics outside youth culture specifica",
+            "gold": "bakwai",
+            "pred": "PER: Park Geun-hye",
+            "f1": 0.0
+          },
+          {
+            "id": "487",
+            "input": "question: Yaushe aka kafa jihar Gombe a Najeriya? context: Gombe State () is a state in northeastern Nigeria, bordered t",
+            "gold": "1 Octoba 1996",
+            "pred": "LOC: Borno da Yobe",
+            "f1": 0.0
+          },
+          {
+            "id": "578",
+            "input": "question: Ya sunan baban garin Nepal? context: Nepal (English: /n\u026a\u02c8p\u0254\u02d0l/; Nepali: \u0928\u0947\u092a\u093e\u0932 [nepal]), formerly the Federal D",
+            "gold": "Kathmandu",
+            "pred": "LOC: Kathmandu",
+            "f1": 0.667
+          },
+          {
+            "id": "508",
+            "input": "question: Aina Lesotho take? context: Lesotho (/l\u0259\u02c8su\u02d0tu\u02d0/ (listen) l\u0259-SOO-too), officially the Kingdom of Lesotho, is a",
+            "gold": "Afrika",
+            "pred": "LOC: South Africa",
+            "f1": 0.0
+          }
+        ],
+        "swa": [
+          {
+            "id": "123",
+            "input": "question: Mji mkuu wa Sudan unaitwa aje? context: Sudan (), officially the Republic of the Sudan (Arabic: \u062c\u0645\u0647\u0648\u0631\u064a\u0629 \u0627\u0644\u0633\u0648\u062f\u0627",
+            "gold": "Khatoum",
+            "pred": "LOC: Khartoum",
+            "f1": 0.0
+          },
+          {
+            "id": "1",
+            "input": "question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Forum for the Restorat",
+            "gold": "Oginga Odinga",
+            "pred": "ORG: Forum for the Restoration of Democracy, ORG",
+            "f1": 0.0
+          },
+          {
+            "id": "274",
+            "input": "question: Publius Vergilius Maro aliandika mashauri yenye mada gani? context: The ten Eclogues present traditional pasto",
+            "gold": "mada za jadi za kichungaji",
+            "pred": "PER: Publius Vergilius Maro",
+            "f1": 0.0
+          },
+          {
+            "id": "165",
+            "input": "question: Keyshia Miesha Cole ana watoto wangapi? context: On March 21, 2014, during an interview, Cole announced and co",
+            "gold": "Cole alimza mwanawe wa pili Agosti 1, 2019",
+            "pred": "PER: Niko Khale",
+            "f1": 0.0
+          },
+          {
+            "id": "180",
+            "input": "question: Je,Paul Emil von Lettow-Vorbeck alikuwa na watoto wangapi? context: After his return from Africa, Lettow-Vorbe",
+            "gold": "Wawili wa kiume na wawili wa kike",
+            "pred": "PER: R\u00fcdiger (1921\u20131940)",
+            "f1": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "multitask_byt5_test": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 163,
+        "pct": 0.19221698113207547
+      },
+      "high_partial": {
+        "count": 64,
+        "pct": 0.07547169811320754
+      },
+      "low_partial": {
+        "count": 56,
+        "pct": 0.0660377358490566
+      },
+      "ner_leakage": {
+        "count": 3,
+        "pct": 0.003537735849056604
+      },
+      "wrong": {
+        "count": 562,
+        "pct": 0.6627358490566038
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 68,
+          "pct": 0.22666666666666666
+        },
+        "high_partial": {
+          "count": 19,
+          "pct": 0.06333333333333334
+        },
+        "low_partial": {
+          "count": 14,
+          "pct": 0.04666666666666667
+        },
+        "ner_leakage": {
+          "count": 1,
+          "pct": 0.0033333333333333335
+        },
+        "wrong": {
+          "count": 198,
+          "pct": 0.66
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 56,
+          "pct": 0.18983050847457628
+        },
+        "high_partial": {
+          "count": 23,
+          "pct": 0.07796610169491526
+        },
+        "low_partial": {
+          "count": 16,
+          "pct": 0.05423728813559322
+        },
+        "ner_leakage": {
+          "count": 1,
+          "pct": 0.003389830508474576
+        },
+        "wrong": {
+          "count": 199,
+          "pct": 0.6745762711864407
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 39,
+          "pct": 0.1541501976284585
+        },
+        "high_partial": {
+          "count": 22,
+          "pct": 0.08695652173913043
+        },
+        "low_partial": {
+          "count": 26,
+          "pct": 0.10276679841897234
+        },
+        "ner_leakage": {
+          "count": 1,
+          "pct": 0.003952569169960474
+        },
+        "wrong": {
+          "count": 165,
+          "pct": 0.6521739130434783
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "151",
+            "input": "question: Steven Kanumba alizaliwa mwaka upi? context: Steven Charles Kanumba (8 January 1984 \u2013 7 April 2012) was a Tanz",
+            "gold": "1984",
+            "pred": "Sukuma",
+            "f1": 0.0
+          },
+          {
+            "id": "113",
+            "input": "question: Kifaa cha kuongeza oksijeni hospitalini kinaitwaje? context: Treatments are flexible enough to be used in hosp",
+            "gold": "kanula za pua",
+            "pred": "oksijeni",
+            "f1": 0.0
+          },
+          {
+            "id": "250",
+            "input": "question: Je,mercedes benz ni gari yenye asili ya nchi gani? context: Mercedes-Benz AG (a Mercedes-Benz Group subsidiary",
+            "gold": "Ujerumani",
+            "pred": "Stuttgart, Baden",
+            "f1": 0.0
+          },
+          {
+            "id": "54",
+            "input": "question: Dini la kiislamu lilianza mwaka upi? context: Muslims regard Islam as a return to the original faith of the Ab",
+            "gold": "610 KK",
+            "pred": "Adam, Noah, Abra",
+            "f1": 0.0
+          },
+          {
+            "id": "140",
+            "input": "question: Je,Victor Wanyama alichezea Tottenham kwa muda upi? context: On 23 June 2016, Premier League club Tottenham Ho",
+            "gold": "miaka mitano",
+            "pred": "Crystal Palace",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "412",
+            "input": "question: Shin ana ha\u0199o gwal a Malaysia? context: Mining is one of the main industries in Malaysia. Malaysia produces ag",
+            "gold": "eh",
+            "pred": "Mining",
+            "f1": 0.0
+          },
+          {
+            "id": "537",
+            "input": "question: Nawa wasula nawa yaren Hausa suke da shi? context: Hausa is a tonal language. Each of its five vowels may have",
+            "gold": "biyar",
+            "pred": "yaren Hausa",
+            "f1": 0.0
+          },
+          {
+            "id": "536",
+            "input": "question: wane addini ne mafi rinjaye a Afrika ta kudu? context: Religion in South Africa is dominated by various branch",
+            "gold": "kiristanci",
+            "pred": "Christianity",
+            "f1": 0.0
+          },
+          {
+            "id": "505",
+            "input": "question: A wace shekara aka kifar da gobnatin Sadam Hussein na Iraki? context: Saddam Hussein Abd al-Majid al-Tikriti (",
+            "gold": "2003",
+            "pred": "Dam Hussein Abd",
+            "f1": 0.0
+          },
+          {
+            "id": "405",
+            "input": "question: Mecece sana'ar Michael Kaase a yanxu? context: The United States diplomatic cables leak turned out that the dr",
+            "gold": "manomin shinkafa",
+            "pred": "Pfizer",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "843",
+            "input": "question: Toonu cashu melo ni w\u1ecdn gbejade lagbaye l\u1ecddun 2019? context: In 2019, four million tonnes of cashew nuts were ",
+            "gold": "four million",
+            "pred": "Ivory Coast, Ind",
+            "f1": 0.0
+          },
+          {
+            "id": "776",
+            "input": "question: Iyawo meloo ni anabi Muhammad f\u1eb9 nigba aye r\u1eb9? context: According to an account by Anas bin Malik, \"The Prophe",
+            "gold": "m\u1eb9san",
+            "pred": "Anas bin Malik",
+            "f1": 0.0
+          },
+          {
+            "id": "674",
+            "input": "question: Nj\u1eb9 arabirin Maya Angelou gba \u1eb9bun Nobeli ? context: African-American writer and poet Maya Angelou (1928\u20132014)",
+            "gold": "b\u1eb9\u1eb9k\u1ecd",
+            "pred": "Wake Forest Univ",
+            "f1": 0.0
+          },
+          {
+            "id": "729",
+            "input": "question: Saa melo ni Angela Mikel fi tuk\u1ecd oril\u1eb9-ede Germany? context: A YouGov survey published in late December 2017 f",
+            "gold": "\u1eb8\u0300\u0300m\u1eb9\u1eb9\u0300rin",
+            "pred": "Social Democrats",
+            "f1": 0.0
+          },
+          {
+            "id": "743",
+            "input": "question: \u1e63e oril\u1eb9 ede Uganda fi egbe ti orile ede Rwanda? context: Uganda (Yuganda in Ugandan languages), officially th",
+            "gold": "yes",
+            "pred": "Kampala",
+            "f1": 0.0
+          }
+        ]
+      },
+      "exact_match": {
+        "hau": [
+          {
+            "id": "360",
+            "input": "question: Wanene shugaban jamhuriyar Nijar a 2022? context: Mohamed Bazoum (), is a Nigerien politician who is the curre",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          },
+          {
+            "id": "331",
+            "input": "question: Menene sunan kogi mafi tsaho a Afirika? context: The Nile[lower-alpha 2] is a major north-flowing river in nor",
+            "gold": "Nile",
+            "pred": "Nile",
+            "f1": 1.0
+          },
+          {
+            "id": "340",
+            "input": "question: A wace shekara Shehu Usman Dan fodiyo ya rasu? context: Usman \u018aan Fodio, (Arabic: \u0639\u062b\u0645\u0627\u0646 \u0628\u0646 \u0641\u0648\u062f\u064a, romanized: \u02bfU",
+            "gold": "1817",
+            "pred": "1817",
+            "f1": 1.0
+          },
+          {
+            "id": "334",
+            "input": "question: A wace shekara Aljeriya ta sami yancin kai? context: Upon independence in 1962, 900,000 European-Algerians (Pi",
+            "gold": "1962",
+            "pred": "1962",
+            "f1": 1.0
+          },
+          {
+            "id": "503",
+            "input": "question: Wane yafi kowa kudi a masu dora bidiyo a youtube? context: In March 2014, Kjellberg made an estimated $140,000",
+            "gold": "Kjellberg",
+            "pred": "Kjellberg",
+            "f1": 1.0
+          }
+        ],
+        "swa": [
+          {
+            "id": "71",
+            "input": "question: Nani alikuwa mfalme wa kwanza wa China? context: Qin Shi Huang (Chinese: \u79e6\u59cb\u7687, pronunciation (help\u00b7info); 259\u20132",
+            "gold": "Qin Shi Huang",
+            "pred": "Qin Shi Huang",
+            "f1": 1.0
+          },
+          {
+            "id": "91",
+            "input": "question: Je, stesheni ya kwanza ya televisheni nchini Marekani ni ipi? context: In 1928, WRGB (then W2XB) was started a",
+            "gold": "WRGB",
+            "pred": "WRGB",
+            "f1": 1.0
+          },
+          {
+            "id": "67",
+            "input": "question: Rais wa Afghanistan anaitwa aje? context: The president of the Islamic Republic of Afghanistan was constitutio",
+            "gold": "Ashraf Ghani",
+            "pred": "Ashraf Ghani",
+            "f1": 1.0
+          },
+          {
+            "id": "42",
+            "input": "question: Je,mji mkuu wa Hungary ni upi? context: Hungary has a population of 9.7 million, mostly ethnic Hungarians and ",
+            "gold": "Budapest",
+            "pred": "Budapest",
+            "f1": 1.0
+          },
+          {
+            "id": "202",
+            "input": "question: Rais wa Niger ni nani? context: Mohamed Bazoum (Arabic: \u0645\u062d\u0645\u062f \u0628\u0627\u0632\u0648\u0645) is a Nigerien politician who is the curren",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "783",
+            "input": "question: \u1eccdun wo ni a bi Stella Damascus? context: Stella Damascus // (listen) (born April 24, 1978) is a Nigerian actr",
+            "gold": "\u1eccdun 1978",
+            "pred": "\u1eccdun 1978",
+            "f1": 1.0
+          },
+          {
+            "id": "782",
+            "input": "question: \u1eb8gb\u1eb9 b\u1ecd\u1ecdlu af\u1eb9s\u1eb9gba wo ni Alex Iwobi sis\u1eb9 pelu l\u1ecddun 2019? context: On 8 August 2019, Iwobi signed a five-year",
+            "gold": "Everton",
+            "pred": "Everton",
+            "f1": 1.0
+          },
+          {
+            "id": "742",
+            "input": "question: \u1eccdun wo ni a da \u1eb9gbe All Progressives Congress sil\u1eb9? context: The All Progressives Congress (APC) is one of th",
+            "gold": "\u1eccdun 2013",
+            "pred": "\u1eccdun 2013",
+            "f1": 1.0
+          },
+          {
+            "id": "723",
+            "input": "question: Iwe wo ni Charles Olson k\u1ecdk\u1ecd k\u1ecd? context: Olson's first book, Call Me Ishmael (1947), a study of Herman Melvil",
+            "gold": "Call Me Ishmael",
+            "pred": "Call Me Ishmael",
+            "f1": 1.0
+          },
+          {
+            "id": "779",
+            "input": "question: Adugbo wo ni \u1ecdgba NPA (Nigerian Ports Authority) ni ipinl\u1eb9 eko ? context: Apapa is a Local Government Area in ",
+            "gold": "Apapa",
+            "pred": "Apapa",
+            "f1": 1.0
+          }
+        ]
+      },
+      "high_partial": {
+        "hau": [
+          {
+            "id": "451",
+            "input": "question: Wacece gwamna mace ta farko a Najeriya? context: Dame Virginia Ngozi Etiaba (born 11 November 1942) was the Go",
+            "gold": "Dame Virginia Ngozi Etiaba",
+            "pred": "Virginia Ngozi E",
+            "f1": 0.571
+          },
+          {
+            "id": "440",
+            "input": "question: Ya sunan mutumin da ya kirkiri fasahar bincike ta Google? context: Google was founded on September 4, 1998, by",
+            "gold": "Larry Page da Sergey Brin",
+            "pred": "Larry Page da Se",
+            "f1": 0.667
+          },
+          {
+            "id": "500",
+            "input": "question: Wanene mace ta farko da aka zaba a cikin jihohin a America? context: After Kansas granted women the right to v",
+            "gold": "Susanna Madora Salter",
+            "pred": "Susanna Madora S",
+            "f1": 0.667
+          },
+          {
+            "id": "368",
+            "input": "question: Jami'oin gobnatin jiha nawa ne a Jihar Kano din Nigeria? context: Kano State is home to five universities: one",
+            "gold": "biyu",
+            "pred": "biyu university",
+            "f1": 0.667
+          },
+          {
+            "id": "515",
+            "input": "question: Yaushe aka kashe Muammar Gaddafi? context: Muammar Gaddafi, the deposed leader of Libya, was captured and kill",
+            "gold": "20 Octoba 2011",
+            "pred": "20 October 2011",
+            "f1": 0.667
+          }
+        ],
+        "swa": [
+          {
+            "id": "84",
+            "input": "question: Je,Mohammed Gulam Dewji alikuwa mbunge wa jimbo gani nchini Tanzania? context: Dewji was born in Ipembe, Singi",
+            "gold": "Singida",
+            "pred": "Ipembe, Singida",
+            "f1": 0.667
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Stephen Wilfred",
+            "f1": 0.667
+          },
+          {
+            "id": "173",
+            "input": "question: Wikipedia inapatikana katika lugha ngapi? context: This page contains information about all 334 languages for ",
+            "gold": "lugha 334",
+            "pred": "334",
+            "f1": 0.667
+          },
+          {
+            "id": "269",
+            "input": "question: Rais wa 20 wa Marekani anaitwa nani? context: James Abram Garfield (November 19, 1831 \u2013 September 19, 1881) wa",
+            "gold": "James Abram Garfield",
+            "pred": "James Abram Garf",
+            "f1": 0.667
+          },
+          {
+            "id": "263",
+            "input": "question: Kieran Trippier alijiunga na Tottenham Hotspur mwaka upi? context: On 19 June 2015, Trippier signed for Premie",
+            "gold": "Juni 19 2015",
+            "pred": "19 June 2015",
+            "f1": 0.667
+          }
+        ],
+        "yor": [
+          {
+            "id": "773",
+            "input": "question: Ta ni \u1eb9ni ak\u1ecdk\u1ecd ti o gba ami \u1eb9y\u1eb9 Nobel ninu K\u1eb9misitiri? context: The first Nobel Prize in Chemistry was awarde",
+            "gold": "Jacobus Henricus van 't Hoff",
+            "pred": "Jacobus Henricus",
+            "f1": 0.571
+          },
+          {
+            "id": "652",
+            "input": "question: Tani Aar\u1eb9 oril\u1eb9-ede Sierra Leone nigbati ogun abele \u1ecddun 1992 b\u1eb9r\u1eb9? context: Unfortunately, Momoh's efforts at",
+            "gold": "Joseph Momoh",
+            "pred": "Momoh",
+            "f1": 0.667
+          },
+          {
+            "id": "836",
+            "input": "question: Ni odun wo ni a da ilu Virginia sil\u1eb9? context: On May 15, 1776, the Convention declared Virginia's independenc",
+            "gold": "\u1eccdun 1776",
+            "pred": "1776",
+            "f1": 0.667
+          },
+          {
+            "id": "820",
+            "input": "question: Ta lo j\u1eb9 Igbakeji Aare JF Kennedy ? context: On November 22, 1963, Kennedy was assassinated in Dallas. His vic",
+            "gold": "Lyndon B. Johnson",
+            "pred": "Lyndon B. Johnso",
+            "f1": 0.667
+          },
+          {
+            "id": "732",
+            "input": "question: Ni \u1ecddun wo ni Muyiwa Ademola b\u1eb9r\u1eb9 I ni \u1e63e ere sinima? context: He joined the Nigerian film industry through Ch",
+            "gold": "\u1eccdun 1991",
+            "pred": "1991",
+            "f1": 0.667
+          }
+        ]
+      },
+      "low_partial": {
+        "yor": [
+          {
+            "id": "725",
+            "input": "question: \u1eccdun wo ni Nnamdi Azikwe faye sil\u1eb9? context: After the war, Azikiwe was chancellor of the University of Lagos ",
+            "gold": "\u1eccdun 1996",
+            "pred": "\u1eccdun 1972, 197",
+            "f1": 0.4
+          },
+          {
+            "id": "686",
+            "input": "question: Kinni oruk\u1ecd \u1eb9ni to j\u1eb9 \u1ecdba ilu Iwo ni ipinl\u1eb9 \u1eccsun l'\u1ecddun 2021? context: 9 November 2015 until present Oba Abdul",
+            "gold": "Oba Abdulrasheed Adewale Akanbi",
+            "pred": "Abdulrasheed Ade",
+            "f1": 0.333
+          },
+          {
+            "id": "833",
+            "input": "question: \u1eccj\u1ecd wo ni oril\u1eb9-ede Ghana gba ominira? context: The Independence Day is celebrated on March 6 every year. Inde",
+            "gold": "\u1ecdj\u1ecd k\u1eb9fa o\u1e63u k\u1eb9ta \u1ecddun 1957",
+            "pred": "\u1eccj\u1ecd 6",
+            "f1": 0.25
+          },
+          {
+            "id": "682",
+            "input": "question: Ta lo j\u1eb9 Gomina Ipinl\u1eb9 Benue saaju Aper Aku? context: Aper Aku was appointed as Chairman of Kwande Local Gover",
+            "gold": "Abdullahi Shelleng",
+            "pred": "Abdullahi Shelle",
+            "f1": 0.5
+          },
+          {
+            "id": "680",
+            "input": "question: Tani osere ak\u1ecdk\u1ecd ti \u1eb9gb\u1eb9 Mo' Hits Records ni? context: Mo'Hits Records (popularly called Mo'Hits) was a Nigeri",
+            "gold": "D'banj",
+            "pred": "D'banj, Don Jazz",
+            "f1": 0.5
+          }
+        ],
+        "swa": [
+          {
+            "id": "213",
+            "input": "question: Je,siku ya madaraka huadhimishwa lini nchini Kenya? context: Madaraka Day (\"Internal self rule\" or \"Self-Gover",
+            "gold": "Juni 1",
+            "pred": "1 June of every",
+            "f1": 0.333
+          },
+          {
+            "id": "60",
+            "input": "question: Vita vya Xenophobia vilianza mwaka gani Afrika Kusini? context: Prior to 1994, immigrants from elsewhere faced",
+            "gold": "Kabla ya mwaka wa 1994",
+            "pred": "1994",
+            "f1": 0.333
+          },
+          {
+            "id": "61",
+            "input": "question: Kalenda ya Gregori ilivumbuliwa na nani? context: The Gregorian calendar is the calendar used in most of the w",
+            "gold": "Papa Gregory XIII",
+            "pred": "Pope Gregory XII",
+            "f1": 0.333
+          },
+          {
+            "id": "28",
+            "input": "question: Je dhahabu inapatika kwa wingi nchi gani Afrika? context: This is a list of countries by gold production in 20",
+            "gold": "Afrika Kusini",
+            "pred": "South Afrika",
+            "f1": 0.5
+          },
+          {
+            "id": "52",
+            "input": "question: Je,jina ya sayansi ya spinach ni ipi? context: Spinach (Spinacia oleracea) is a leafy green flowering plant na",
+            "gold": "Spinacia oleracea",
+            "pred": "Spinacia olerace",
+            "f1": 0.5
+          }
+        ],
+        "hau": [
+          {
+            "id": "310",
+            "input": "question: A wace jaha garin Ningi yake? context: Ningi is a town, a local government area, and an emirate in Bauchi Stat",
+            "gold": "Bauchi",
+            "pred": "Bauchi State, Ni",
+            "f1": 0.5
+          },
+          {
+            "id": "393",
+            "input": "question: Menene sunan babban filin jirgin sama a Malaysia? context: Kuala Lumpur International Airport (KLIA) (IATA: KU",
+            "gold": "Kuala Lumpur International Airport (KLIA)",
+            "pred": "Kuala Lumpur Int",
+            "f1": 0.5
+          },
+          {
+            "id": "528",
+            "input": "question: Wanene ya wallafa littafin Merchant of Venice? context: The Merchant of Venice is a 16th-century play written ",
+            "gold": "William Shakespeare",
+            "pred": "William Shakespe",
+            "f1": 0.5
+          },
+          {
+            "id": "533",
+            "input": "question: Wanda ya kafa cibiyar sadarwa ta Haqqani? context: The Haqqani network is an Afghan Islamist guerrilla insurge",
+            "gold": "Jalaluddin Haqqani",
+            "pred": "Jalaluddin Haqqa",
+            "f1": 0.5
+          },
+          {
+            "id": "567",
+            "input": "question: A wace Jaha aka haifi Patience Goodluck Jonathan? context: Patience Jonathan was born in Port Harcourt, where ",
+            "gold": "Rivers",
+            "pred": "Rivers State Col",
+            "f1": 0.5
+          }
+        ]
+      },
+      "ner_leakage": {
+        "yor": [
+          {
+            "id": "633",
+            "input": "question: Ki ni oruk\u1ecd orin ti Westlife k\u1ecdk\u1ecd gbejade ? context: Westlife signed to RCA in November 1998 and immediately f",
+            "gold": "Swear It Again",
+            "pred": "RCA, DATE: 1998",
+            "f1": 0.0
+          }
+        ],
+        "swa": [
+          {
+            "id": "33",
+            "input": "question: Je mtoto aliye tumboni anaweza pimwa DNA? context: It is possible to determine who the biological father of th",
+            "gold": "ndio",
+            "pred": "CVS, ORG: Amnio",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "514",
+            "input": "question: Wace jam'iya ce ke mulki a jahar Ondo? context: The 2020 Ondo State gubernatorial election occurred on October",
+            "gold": "APC",
+            "pred": "APC, PER: Rotimi",
+            "f1": 0.5
+          }
+        ]
+      }
+    }
+  },
+  "multitask_mt5_lora_test": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 139,
+        "pct": 0.16391509433962265
+      },
+      "high_partial": {
+        "count": 29,
+        "pct": 0.03419811320754717
+      },
+      "low_partial": {
+        "count": 27,
+        "pct": 0.031839622641509434
+      },
+      "wrong": {
+        "count": 653,
+        "pct": 0.7700471698113207
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 60,
+          "pct": 0.2
+        },
+        "high_partial": {
+          "count": 8,
+          "pct": 0.02666666666666667
+        },
+        "low_partial": {
+          "count": 3,
+          "pct": 0.01
+        },
+        "wrong": {
+          "count": 229,
+          "pct": 0.7633333333333333
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 38,
+          "pct": 0.1288135593220339
+        },
+        "high_partial": {
+          "count": 9,
+          "pct": 0.030508474576271188
+        },
+        "low_partial": {
+          "count": 4,
+          "pct": 0.013559322033898305
+        },
+        "wrong": {
+          "count": 244,
+          "pct": 0.8271186440677966
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 41,
+          "pct": 0.16205533596837945
+        },
+        "high_partial": {
+          "count": 12,
+          "pct": 0.04743083003952569
+        },
+        "low_partial": {
+          "count": 20,
+          "pct": 0.07905138339920949
+        },
+        "wrong": {
+          "count": 180,
+          "pct": 0.7114624505928854
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "151",
+            "input": "question: Steven Kanumba alizaliwa mwaka upi? context: Steven Charles Kanumba (8 January 1984 \u2013 7 April 2012) was a Tanz",
+            "gold": "1984",
+            "pred": "Sukuma",
+            "f1": 0.0
+          },
+          {
+            "id": "113",
+            "input": "question: Kifaa cha kuongeza oksijeni hospitalini kinaitwaje? context: Treatments are flexible enough to be used in hosp",
+            "gold": "kanula za pua",
+            "pred": "eh",
+            "f1": 0.0
+          },
+          {
+            "id": "250",
+            "input": "question: Je,mercedes benz ni gari yenye asili ya nchi gani? context: Mercedes-Benz AG (a Mercedes-Benz Group subsidiary",
+            "gold": "Ujerumani",
+            "pred": "Stuttgart, Baden-W\u00fcrttemberg",
+            "f1": 0.0
+          },
+          {
+            "id": "54",
+            "input": "question: Dini la kiislamu lilianza mwaka upi? context: Muslims regard Islam as a return to the original faith of the Ab",
+            "gold": "610 KK",
+            "pred": "\u02beAb\u016b \u1e6c\u0101lib ibn \u02bfAbd al-Mu",
+            "f1": 0.0
+          },
+          {
+            "id": "140",
+            "input": "question: Je,Victor Wanyama alichezea Tottenham kwa muda upi? context: On 23 June 2016, Premier League club Tottenham Ho",
+            "gold": "miaka mitano",
+            "pred": "Tottenham Hotspur",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "412",
+            "input": "question: Shin ana ha\u0199o gwal a Malaysia? context: Mining is one of the main industries in Malaysia. Malaysia produces ag",
+            "gold": "eh",
+            "pred": "bauxite",
+            "f1": 0.0
+          },
+          {
+            "id": "537",
+            "input": "question: Nawa wasula nawa yaren Hausa suke da shi? context: Hausa is a tonal language. Each of its five vowels may have",
+            "gold": "biyar",
+            "pred": "a'a",
+            "f1": 0.0
+          },
+          {
+            "id": "536",
+            "input": "question: wane addini ne mafi rinjaye a Afrika ta kudu? context: Religion in South Africa is dominated by various branch",
+            "gold": "kiristanci",
+            "pred": "eh",
+            "f1": 0.0
+          },
+          {
+            "id": "505",
+            "input": "question: A wace shekara aka kifar da gobnatin Sadam Hussein na Iraki? context: Saddam Hussein Abd al-Majid al-Tikriti (",
+            "gold": "2003",
+            "pred": "S\u0323adda\u0304m H\u0323usayn \u02bfAbd al-Maji",
+            "f1": 0.0
+          },
+          {
+            "id": "310",
+            "input": "question: A wace jaha garin Ningi yake? context: Ningi is a town, a local government area, and an emirate in Bauchi Stat",
+            "gold": "Bauchi",
+            "pred": "eh",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "843",
+            "input": "question: Toonu cashu melo ni w\u1ecdn gbejade lagbaye l\u1ecddun 2019? context: In 2019, four million tonnes of cashew nuts were ",
+            "gold": "four million",
+            "pred": "Ivory Coast, India",
+            "f1": 0.0
+          },
+          {
+            "id": "776",
+            "input": "question: Iyawo meloo ni anabi Muhammad f\u1eb9 nigba aye r\u1eb9? context: According to an account by Anas bin Malik, \"The Prophe",
+            "gold": "m\u1eb9san",
+            "pred": "\u1ecdj\u1ecd \u1ecdj\u1ecd \u1ecdj\u1ecd \u1ecdj\u1ecd \u1ecdj\u1ecd",
+            "f1": 0.0
+          },
+          {
+            "id": "674",
+            "input": "question: Nj\u1eb9 arabirin Maya Angelou gba \u1eb9bun Nobeli ? context: African-American writer and poet Maya Angelou (1928\u20132014)",
+            "gold": "b\u1eb9\u1eb9k\u1ecd",
+            "pred": "Reynolds Professorship of American Studies, Winston-Salem, North Carolina",
+            "f1": 0.0
+          },
+          {
+            "id": "729",
+            "input": "question: Saa melo ni Angela Mikel fi tuk\u1ecd oril\u1eb9-ede Germany? context: A YouGov survey published in late December 2017 f",
+            "gold": "\u1eb8\u0300\u0300m\u1eb9\u1eb9\u0300rin",
+            "pred": "CDU and CSU",
+            "f1": 0.0
+          },
+          {
+            "id": "686",
+            "input": "question: Kinni oruk\u1ecd \u1eb9ni to j\u1eb9 \u1ecdba ilu Iwo ni ipinl\u1eb9 \u1eccsun l'\u1ecddun 2021? context: 9 November 2015 until present Oba Abdul",
+            "gold": "Oba Abdulrasheed Adewale Akanbi",
+            "pred": "\u1eccdun 2015",
+            "f1": 0.0
+          }
+        ]
+      },
+      "exact_match": {
+        "hau": [
+          {
+            "id": "360",
+            "input": "question: Wanene shugaban jamhuriyar Nijar a 2022? context: Mohamed Bazoum (), is a Nigerien politician who is the curre",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          },
+          {
+            "id": "440",
+            "input": "question: Ya sunan mutumin da ya kirkiri fasahar bincike ta Google? context: Google was founded on September 4, 1998, by",
+            "gold": "Larry Page da Sergey Brin",
+            "pred": "Larry Page da Sergey Brin",
+            "f1": 1.0
+          },
+          {
+            "id": "500",
+            "input": "question: Wanene mace ta farko da aka zaba a cikin jihohin a America? context: After Kansas granted women the right to v",
+            "gold": "Susanna Madora Salter",
+            "pred": "Susanna Madora Salter",
+            "f1": 1.0
+          },
+          {
+            "id": "437",
+            "input": "question: Wanene shugaban hadaddiyar Daular Larabawa a shekarar 1990? context: The United Arab Emirates military was for",
+            "gold": "Zayed bin Sultan Al Nahyan",
+            "pred": "Zayed bin Sultan Al Nahyan",
+            "f1": 1.0
+          },
+          {
+            "id": "502",
+            "input": "question: Wace shekara ce Pakistan ta ware daga Indiya.. context: The partition of India in 1947 divided British India i",
+            "gold": "1947",
+            "pred": "1947",
+            "f1": 1.0
+          }
+        ],
+        "swa": [
+          {
+            "id": "71",
+            "input": "question: Nani alikuwa mfalme wa kwanza wa China? context: Qin Shi Huang (Chinese: \u79e6\u59cb\u7687, pronunciation (help\u00b7info); 259\u20132",
+            "gold": "Qin Shi Huang",
+            "pred": "Qin Shi Huang",
+            "f1": 1.0
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Stephen Wilfred Omondi Oludhe",
+            "f1": 1.0
+          },
+          {
+            "id": "284",
+            "input": "question: Je,mji mkuu wa Niger ni upi? context: Niamey (French pronunciation: \u200b[njam\u025b]) is the capital and largest city ",
+            "gold": "Niamey",
+            "pred": "Niamey",
+            "f1": 1.0
+          },
+          {
+            "id": "67",
+            "input": "question: Rais wa Afghanistan anaitwa aje? context: The president of the Islamic Republic of Afghanistan was constitutio",
+            "gold": "Ashraf Ghani",
+            "pred": "Ashraf Ghani",
+            "f1": 1.0
+          },
+          {
+            "id": "202",
+            "input": "question: Rais wa Niger ni nani? context: Mohamed Bazoum (Arabic: \u0645\u062d\u0645\u062f \u0628\u0627\u0632\u0648\u0645) is a Nigerien politician who is the curren",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "783",
+            "input": "question: \u1eccdun wo ni a bi Stella Damascus? context: Stella Damascus // (listen) (born April 24, 1978) is a Nigerian actr",
+            "gold": "\u1eccdun 1978",
+            "pred": "\u1ecddun 1978",
+            "f1": 1.0
+          },
+          {
+            "id": "742",
+            "input": "question: \u1eccdun wo ni a da \u1eb9gbe All Progressives Congress sil\u1eb9? context: The All Progressives Congress (APC) is one of th",
+            "gold": "\u1eccdun 2013",
+            "pred": "\u1ecddun 2013",
+            "f1": 1.0
+          },
+          {
+            "id": "682",
+            "input": "question: Ta lo j\u1eb9 Gomina Ipinl\u1eb9 Benue saaju Aper Aku? context: Aper Aku was appointed as Chairman of Kwande Local Gover",
+            "gold": "Abdullahi Shelleng",
+            "pred": "Abdullahi Shelleng",
+            "f1": 1.0
+          },
+          {
+            "id": "633",
+            "input": "question: Ki ni oruk\u1ecd orin ti Westlife k\u1ecdk\u1ecd gbejade ? context: Westlife signed to RCA in November 1998 and immediately f",
+            "gold": "Swear It Again",
+            "pred": "Swear It Again",
+            "f1": 1.0
+          },
+          {
+            "id": "779",
+            "input": "question: Adugbo wo ni \u1ecdgba NPA (Nigerian Ports Authority) ni ipinl\u1eb9 eko ? context: Apapa is a Local Government Area in ",
+            "gold": "Apapa",
+            "pred": "Apapa",
+            "f1": 1.0
+          }
+        ]
+      },
+      "high_partial": {
+        "hau": [
+          {
+            "id": "451",
+            "input": "question: Wacece gwamna mace ta farko a Najeriya? context: Dame Virginia Ngozi Etiaba (born 11 November 1942) was the Go",
+            "gold": "Dame Virginia Ngozi Etiaba",
+            "pred": "Virginia Ngozi Etiaba",
+            "f1": 0.857
+          },
+          {
+            "id": "477",
+            "input": "question: Menene addinin mutanen Isreal? context: Religion in Israel is manifested primarily in Judaism, the ethnic reli",
+            "gold": "Judaism",
+            "pred": "Orthodox Judaism",
+            "f1": 0.667
+          },
+          {
+            "id": "393",
+            "input": "question: Menene sunan babban filin jirgin sama a Malaysia? context: Kuala Lumpur International Airport (KLIA) (IATA: KU",
+            "gold": "Kuala Lumpur International Airport (KLIA)",
+            "pred": "Kuala Lumpur International Airport",
+            "f1": 0.889
+          },
+          {
+            "id": "471",
+            "input": "question: A shekarar 2020, wane attajiri ne mafi arziki a Nigeria? context: Aliko Dangote GCON (born 10 April 1957) is a",
+            "gold": "Aliko Dangote",
+            "pred": "Aliko Dangote GCON",
+            "f1": 0.8
+          },
+          {
+            "id": "538",
+            "input": "question: Wace jamia ce ta farko jihar kano? context: Bayero University Kano (BUK) is a university situated in Kano, Kan",
+            "gold": "Jami'ar Bayero Kano",
+            "pred": "Bayero University Kano",
+            "f1": 0.667
+          }
+        ],
+        "swa": [
+          {
+            "id": "74",
+            "input": "question: Rais wa Marekani mwaka wa 1964 anaitwa nani? context: The 1964 United States elections were held in the United",
+            "gold": "Lyndon B. Johnson",
+            "pred": "Democratic Party of President Lyndon B. Johnson",
+            "f1": 0.6
+          },
+          {
+            "id": "173",
+            "input": "question: Wikipedia inapatikana katika lugha ngapi? context: This page contains information about all 334 languages for ",
+            "gold": "lugha 334",
+            "pred": "334",
+            "f1": 0.667
+          },
+          {
+            "id": "219",
+            "input": "question: Mfalme wa Makka anaitwa nani? context: Salman bin Abdulaziz Al Saud (Arabic: \u0633\u0644\u0645\u0627\u0646 \u0628\u0646 \u0639\u0628\u062f \u0627\u0644\u0639\u0632\u06cc\u0632 \u0622\u0644 \u0633\u0639\u0648\u062f \"\", ;",
+            "gold": "Salman bin Abdulaziz Al Saud",
+            "pred": "Mohammed bin Abdulaziz Al Saud",
+            "f1": 0.8
+          },
+          {
+            "id": "282",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa You tube? context: YouTube was founded by Steve Chen, Chad Hurley, and Jawed",
+            "gold": "Steve Chen, Chad Hurley, and Jawed Karim",
+            "pred": "Steve Chen, Chad Hurley, Jawed Karim",
+            "f1": 0.923
+          },
+          {
+            "id": "232",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Twita? context: Twitter was created by Jack Dorsey, Noah Glass, B",
+            "gold": "Jack Dorsey, Noah Glass, Biz Stone, na Evan Williams",
+            "pred": "Jack Dorsey, Noah Glass, Biz Stone, Evan Williams",
+            "f1": 0.941
+          }
+        ],
+        "yor": [
+          {
+            "id": "741",
+            "input": "question: Tani \u1eb9ni to kere ju l\u1ecdj\u1ecd ori to ti j\u1eb9 oga olopa oril\u1eb9-ede Naijiria? context: Sunday Adedayo Adewusi (6 Decembe",
+            "gold": "Sunday Ade\u0301day\u1ecd\u0300 Ade\u0301wu\u0300si\u0300",
+            "pred": "Sunday Adedayo Adewusi",
+            "f1": 0.667
+          },
+          {
+            "id": "836",
+            "input": "question: Ni odun wo ni a da ilu Virginia sil\u1eb9? context: On May 15, 1776, the Convention declared Virginia's independenc",
+            "gold": "\u1eccdun 1776",
+            "pred": "1776",
+            "f1": 0.667
+          },
+          {
+            "id": "768",
+            "input": "question: Ibo ni ibujoko ile-i\u1e63\u1eb9 microsoft ni Amerika? context: Microsoft Corporation is an American multinational techn",
+            "gold": "Redmond",
+            "pred": "Redmond, Washington",
+            "f1": 0.667
+          },
+          {
+            "id": "705",
+            "input": "question: \u1eb8gb\u1eb9 o\u1e63elu wo ni Kamorudeen Adekunle wa? context: Kamorudeen Adekunle Adedibu Listen was elected Senator for t",
+            "gold": "People's Democratic Party",
+            "pred": "\u1eb8gb\u1eb9 People's Democratic Party (PDP)",
+            "f1": 0.75
+          },
+          {
+            "id": "603",
+            "input": "question: \u1eccd\u1ecd \u1eb9gb\u1eb9 wo ni Ebenezer Obey ti k\u1ecds\u1eb9 orin kiko? context: Ebenezer Obey began his professional career in the mi",
+            "gold": "\u1eb8gb\u1eb9\u0301 olo\u0301rin Fatai Rolling-Dollar",
+            "pred": "Fatai Rolling-Dollar",
+            "f1": 0.667
+          }
+        ]
+      },
+      "low_partial": {
+        "yor": [
+          {
+            "id": "725",
+            "input": "question: \u1eccdun wo ni Nnamdi Azikwe faye sil\u1eb9? context: After the war, Azikiwe was chancellor of the University of Lagos ",
+            "gold": "\u1eccdun 1996",
+            "pred": "\u1ecddun 1972",
+            "f1": 0.5
+          },
+          {
+            "id": "833",
+            "input": "question: \u1eccj\u1ecd wo ni oril\u1eb9-ede Ghana gba ominira? context: The Independence Day is celebrated on March 6 every year. Inde",
+            "gold": "\u1ecdj\u1ecd k\u1eb9fa o\u1e63u k\u1eb9ta \u1ecddun 1957",
+            "pred": "1957",
+            "f1": 0.286
+          },
+          {
+            "id": "728",
+            "input": "question: Tani o tum\u1ecd orin oril\u1eb9-ede Naijiria si ede Yoruba? context: Adebayo Faleti has acted, written, and produced a ",
+            "gold": "Ade\u0301ba\u0301y\u1ecd\u0300 Fa\u0301le\u0301ti\u0301",
+            "pred": "Adebayo Faleti",
+            "f1": 0.5
+          },
+          {
+            "id": "664",
+            "input": "question: \u1eccdun wo ni w\u1ecdn bi Ludwig Lazarus Zamenhof? context: Zamenhof was born on 15 December 1859,[b] the son of Mark ",
+            "gold": "\u1eccdun 1859",
+            "pred": "\u1ecddun 1860",
+            "f1": 0.5
+          },
+          {
+            "id": "663",
+            "input": "question: \u1eccm\u1ecd \u1eb9gb\u1eb9 o\u1e63elu wo ni John Forbes Kerry? context: John Forbes Kerry (born December 11, 1943) is an American att",
+            "gold": "\u1eb8gb\u1eb9 Olominira",
+            "pred": "\u1ecdm\u1ecd \u1eb9gb\u1eb9 o\u1e63u \u1ecddun 1943",
+            "f1": 0.286
+          }
+        ],
+        "swa": [
+          {
+            "id": "20",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Facebook? context: Facebook is an online social media and social ",
+            "gold": "Mark Zuckerberg pamoja na wanafunzi wenzake wa Harvard College ambao pia walishiriki chumba, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz na Chris Hughes",
+            "pred": "Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, Chris",
+            "f1": 0.483
+          },
+          {
+            "id": "99",
+            "input": "question: Je,Jules Feiffer aliandika vitabu ngapi? context: He has written more than 35 books, plays and screenplays. Hi",
+            "gold": "zaidi ya 35",
+            "pred": "35",
+            "f1": 0.5
+          },
+          {
+            "id": "81",
+            "input": "question: Baba yake Elizabeti aliitwa nani? context: George VI (Albert Frederick Arthur George; 14 December 1895\u00a0\u2013 6 Feb",
+            "gold": "George VI",
+            "pred": "Frederick Arthur George",
+            "f1": 0.4
+          },
+          {
+            "id": "165",
+            "input": "question: Keyshia Miesha Cole ana watoto wangapi? context: On March 21, 2014, during an interview, Cole announced and co",
+            "gold": "Cole alimza mwanawe wa pili Agosti 1, 2019",
+            "pred": "Keyshia Miesha Cole",
+            "f1": 0.182
+          }
+        ],
+        "hau": [
+          {
+            "id": "533",
+            "input": "question: Wanda ya kafa cibiyar sadarwa ta Haqqani? context: The Haqqani network is an Afghan Islamist guerrilla insurge",
+            "gold": "Jalaluddin Haqqani",
+            "pred": "Wanda ya kafa cibiyar sadarwa ta Haqqani",
+            "f1": 0.222
+          },
+          {
+            "id": "417",
+            "input": "question: Wanene ya kirkiri kamfanin Apple mai kera wayoyi? context: Apple was founded as Apple Computer Company on Apri",
+            "gold": "Steve Jobs",
+            "pred": "Steve Jobs, Steve Wozniak, Ronald Wayne",
+            "f1": 0.5
+          },
+          {
+            "id": "472",
+            "input": "question: Wane kasashe ne su ka kewaye kasar Sweden? context: Sweden is a country in Northern Europe on the Scandinavian",
+            "gold": "Norway daga yamma; Finland daga yamma maso gabaci; da tekun Baltic da bahar Bothnia",
+            "pred": "Norway",
+            "f1": 0.133
+          }
+        ]
+      }
+    }
+  },
+  "multitask_byt5_lora_test": {
+    "n": 848,
+    "overall": {
+      "exact_match": {
+        "count": 38,
+        "pct": 0.04481132075471698
+      },
+      "high_partial": {
+        "count": 42,
+        "pct": 0.049528301886792456
+      },
+      "low_partial": {
+        "count": 33,
+        "pct": 0.03891509433962264
+      },
+      "wrong": {
+        "count": 735,
+        "pct": 0.8667452830188679
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "exact_match": {
+          "count": 15,
+          "pct": 0.05
+        },
+        "high_partial": {
+          "count": 15,
+          "pct": 0.05
+        },
+        "low_partial": {
+          "count": 9,
+          "pct": 0.03
+        },
+        "wrong": {
+          "count": 261,
+          "pct": 0.87
+        }
+      },
+      "swa": {
+        "exact_match": {
+          "count": 16,
+          "pct": 0.05423728813559322
+        },
+        "high_partial": {
+          "count": 17,
+          "pct": 0.0576271186440678
+        },
+        "low_partial": {
+          "count": 11,
+          "pct": 0.03728813559322034
+        },
+        "wrong": {
+          "count": 251,
+          "pct": 0.8508474576271187
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 7,
+          "pct": 0.02766798418972332
+        },
+        "high_partial": {
+          "count": 10,
+          "pct": 0.039525691699604744
+        },
+        "low_partial": {
+          "count": 13,
+          "pct": 0.05138339920948617
+        },
+        "wrong": {
+          "count": 223,
+          "pct": 0.8814229249011858
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "151",
+            "input": "question: Steven Kanumba alizaliwa mwaka upi? context: Steven Charles Kanumba (8 January 1984 \u2013 7 April 2012) was a Tanz",
+            "gold": "1984",
+            "pred": "Elizabeth Michae",
+            "f1": 0.0
+          },
+          {
+            "id": "113",
+            "input": "question: Kifaa cha kuongeza oksijeni hospitalini kinaitwaje? context: Treatments are flexible enough to be used in hosp",
+            "gold": "kanula za pua",
+            "pred": "Hospitalini kina",
+            "f1": 0.0
+          },
+          {
+            "id": "250",
+            "input": "question: Je,mercedes benz ni gari yenye asili ya nchi gani? context: Mercedes-Benz AG (a Mercedes-Benz Group subsidiary",
+            "gold": "Ujerumani",
+            "pred": "Daimler Truck",
+            "f1": 0.0
+          },
+          {
+            "id": "54",
+            "input": "question: Dini la kiislamu lilianza mwaka upi? context: Muslims regard Islam as a return to the original faith of the Ab",
+            "gold": "610 KK",
+            "pred": "Abrahamic prophe",
+            "f1": 0.0
+          },
+          {
+            "id": "140",
+            "input": "question: Je,Victor Wanyama alichezea Tottenham kwa muda upi? context: On 23 June 2016, Premier League club Tottenham Ho",
+            "gold": "miaka mitano",
+            "pred": "Mauricio Pochett",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "412",
+            "input": "question: Shin ana ha\u0199o gwal a Malaysia? context: Mining is one of the main industries in Malaysia. Malaysia produces ag",
+            "gold": "eh",
+            "pred": "Aha\u0301o ga\u0301la\u0301",
+            "f1": 0.0
+          },
+          {
+            "id": "537",
+            "input": "question: Nawa wasula nawa yaren Hausa suke da shi? context: Hausa is a tonal language. Each of its five vowels may have",
+            "gold": "biyar",
+            "pred": "Hausa",
+            "f1": 0.0
+          },
+          {
+            "id": "536",
+            "input": "question: wane addini ne mafi rinjaye a Afrika ta kudu? context: Religion in South Africa is dominated by various branch",
+            "gold": "kiristanci",
+            "pred": "South Africa",
+            "f1": 0.0
+          },
+          {
+            "id": "505",
+            "input": "question: A wace shekara aka kifar da gobnatin Sadam Hussein na Iraki? context: Saddam Hussein Abd al-Majid al-Tikriti (",
+            "gold": "2003",
+            "pred": "Saddam Hussein A",
+            "f1": 0.0
+          },
+          {
+            "id": "405",
+            "input": "question: Mecece sana'ar Michael Kaase a yanxu? context: The United States diplomatic cables leak turned out that the dr",
+            "gold": "manomin shinkafa",
+            "pred": "Legal Practition",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "725",
+            "input": "question: \u1eccdun wo ni Nnamdi Azikwe faye sil\u1eb9? context: After the war, Azikiwe was chancellor of the University of Lagos ",
+            "gold": "\u1eccdun 1996",
+            "pred": "Azikiwe",
+            "f1": 0.0
+          },
+          {
+            "id": "843",
+            "input": "question: Toonu cashu melo ni w\u1ecdn gbejade lagbaye l\u1ecddun 2019? context: In 2019, four million tonnes of cashew nuts were ",
+            "gold": "four million",
+            "pred": "Ivory Coast and",
+            "f1": 0.0
+          },
+          {
+            "id": "776",
+            "input": "question: Iyawo meloo ni anabi Muhammad f\u1eb9 nigba aye r\u1eb9? context: According to an account by Anas bin Malik, \"The Prophe",
+            "gold": "m\u1eb9san",
+            "pred": "Anas bin Malik",
+            "f1": 0.0
+          },
+          {
+            "id": "674",
+            "input": "question: Nj\u1eb9 arabirin Maya Angelou gba \u1eb9bun Nobeli ? context: African-American writer and poet Maya Angelou (1928\u20132014)",
+            "gold": "b\u1eb9\u1eb9k\u1ecd",
+            "pred": "African American",
+            "f1": 0.0
+          },
+          {
+            "id": "729",
+            "input": "question: Saa melo ni Angela Mikel fi tuk\u1ecd oril\u1eb9-ede Germany? context: A YouGov survey published in late December 2017 f",
+            "gold": "\u1eb8\u0300\u0300m\u1eb9\u1eb9\u0300rin",
+            "pred": "Social Democrats",
+            "f1": 0.0
+          }
+        ]
+      },
+      "exact_match": {
+        "hau": [
+          {
+            "id": "360",
+            "input": "question: Wanene shugaban jamhuriyar Nijar a 2022? context: Mohamed Bazoum (), is a Nigerien politician who is the curre",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          },
+          {
+            "id": "310",
+            "input": "question: A wace jaha garin Ningi yake? context: Ningi is a town, a local government area, and an emirate in Bauchi Stat",
+            "gold": "Bauchi",
+            "pred": "Bauchi",
+            "f1": 1.0
+          },
+          {
+            "id": "435",
+            "input": "question: Wace dabba ce tafi kowacce dabba gudu? context: The fastest land animal is the cheetah. The peregrine falcon i",
+            "gold": "peregrine falcon",
+            "pred": "Peregrine falcon",
+            "f1": 1.0
+          },
+          {
+            "id": "523",
+            "input": "question: Wanene shugaban kamfanin motoci na Volkswagen? context: Herbert Diess (born 24 October 1958) is a German-born,",
+            "gold": "Herbert Diess",
+            "pred": "Herbert Diess",
+            "f1": 1.0
+          },
+          {
+            "id": "297",
+            "input": "question: Wanene farkon mataimakin shugaban jami'ar Lagos? context: Eni Njoku (6 November 1917 \u2013 22 December 1974) was a",
+            "gold": "Eni Njoku",
+            "pred": "Eni Njoku",
+            "f1": 1.0
+          }
+        ],
+        "swa": [
+          {
+            "id": "284",
+            "input": "question: Je,mji mkuu wa Niger ni upi? context: Niamey (French pronunciation: \u200b[njam\u025b]) is the capital and largest city ",
+            "gold": "Niamey",
+            "pred": "Niamey",
+            "f1": 1.0
+          },
+          {
+            "id": "202",
+            "input": "question: Rais wa Niger ni nani? context: Mohamed Bazoum (Arabic: \u0645\u062d\u0645\u062f \u0628\u0627\u0632\u0648\u0645) is a Nigerien politician who is the curren",
+            "gold": "Mohamed Bazoum",
+            "pred": "Mohamed Bazoum",
+            "f1": 1.0
+          },
+          {
+            "id": "224",
+            "input": "question: Je,gavana wa kwanza wa kaunti ya Nyeri aliitwa nani? context: Nderitu Gachagua (29 July 1952 \u2013 24 February 201",
+            "gold": "Nderitu Gachagua",
+            "pred": "Nderitu Gachagua",
+            "f1": 1.0
+          },
+          {
+            "id": "6",
+            "input": "question: Daktari wa kwanza wa ubongo anaitwa nani? context: Sir William Macewen, CB, FRS, FRCS (/m\u0259\u02c8kju\u02d0\u026an/; 22 June 18",
+            "gold": "William Macewen",
+            "pred": "William Macewen",
+            "f1": 1.0
+          },
+          {
+            "id": "104",
+            "input": "question: Gari lilibuniwa na nani? context: . The modern car\u2014a practical, marketable automobile for everyday use\u2014was inv",
+            "gold": "Carl Benz",
+            "pred": "Carl Benz",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "824",
+            "input": "question: Ilu wo ni ile G\u1eb9\u1eb9si ni a bi Frederick Sanger si? context: Frederick Sanger was born on 13 August 1918 in Rendc",
+            "gold": "Gloucestershire",
+            "pred": "Gloucestershire",
+            "f1": 1.0
+          },
+          {
+            "id": "641",
+            "input": "question: Tani o ko ipa Black Panther ninu fiimu Black Panter? context: Chadwick Boseman as T'Challa / Black Panther: Th",
+            "gold": "Chadwick Boseman",
+            "pred": "Chadwick Boseman",
+            "f1": 1.0
+          },
+          {
+            "id": "666",
+            "input": "question: Ta ni \u1eb9ni ak\u1ecdk\u1ecd ti o gba ami ey\u1eb9 Nobel ni litires\u1ecd? context: In 1901, French poet and essayist Sully Prudhomme",
+            "gold": "Sully Prudhomme",
+            "pred": "Sully Prudhomme",
+            "f1": 1.0
+          },
+          {
+            "id": "832",
+            "input": "question: Ki ni oruk\u1ecd olu-ilu Ipinl\u1eb9 Virginia? context: Virginia, officially the Commonwealth of Virginia,[a] is a state",
+            "gold": "Richmond",
+            "pred": "Richmond",
+            "f1": 1.0
+          },
+          {
+            "id": "706",
+            "input": "question: tani \u1ecdba Benin lowolowo ni Naijiria? context: Ewuare II (born 20 October 1953) was crowned the Oba of Benin on",
+            "gold": "Ewuare II",
+            "pred": "Ewuare II",
+            "f1": 1.0
+          }
+        ]
+      },
+      "high_partial": {
+        "hau": [
+          {
+            "id": "451",
+            "input": "question: Wacece gwamna mace ta farko a Najeriya? context: Dame Virginia Ngozi Etiaba (born 11 November 1942) was the Go",
+            "gold": "Dame Virginia Ngozi Etiaba",
+            "pred": "Dame Virginia Ng",
+            "f1": 0.571
+          },
+          {
+            "id": "500",
+            "input": "question: Wanene mace ta farko da aka zaba a cikin jihohin a America? context: After Kansas granted women the right to v",
+            "gold": "Susanna Madora Salter",
+            "pred": "Susanna Madora S",
+            "f1": 0.667
+          },
+          {
+            "id": "502",
+            "input": "question: Wace shekara ce Pakistan ta ware daga Indiya.. context: The partition of India in 1947 divided British India i",
+            "gold": "1947",
+            "pred": "August 1947",
+            "f1": 0.667
+          },
+          {
+            "id": "464",
+            "input": "question: Yaushe ne aka gyara kundin tsarin mulkin Najeriya? context: The Constitution of Nigeria is the supreme law of ",
+            "gold": "1999",
+            "pred": "May 1999",
+            "f1": 0.667
+          },
+          {
+            "id": "353",
+            "input": "question: Wacece muryar Cinderella ta farko? context: Jacqueline Ruth Woods (May 5, 1929 \u2013 July 1, 2010) better known as",
+            "gold": "Jacqueline Ruth Woods",
+            "pred": "Jacqueline Ruth",
+            "f1": 0.8
+          }
+        ],
+        "swa": [
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Stephen Wilfred",
+            "f1": 0.667
+          },
+          {
+            "id": "269",
+            "input": "question: Rais wa 20 wa Marekani anaitwa nani? context: James Abram Garfield (November 19, 1831 \u2013 September 19, 1881) wa",
+            "gold": "James Abram Garfield",
+            "pred": "Abram Garfield",
+            "f1": 0.8
+          },
+          {
+            "id": "177",
+            "input": "question: Je,nani alizindua simu ya kwanza ya rununu? context: The first handheld mobile phone was demonstrated by Marti",
+            "gold": "Martin Cooper",
+            "pred": "Martin Cooper of",
+            "f1": 0.8
+          },
+          {
+            "id": "111",
+            "input": "question: Je,utawala wa kifalme iliisha lini nchini Italia? context: The monarchy of Italy () was the system of governme",
+            "gold": "1946",
+            "pred": "1861, 1946",
+            "f1": 0.667
+          },
+          {
+            "id": "206",
+            "input": "question: Rais wa C\u00f4te d'Ivoire mwaka wa 2019 ni nani? context: Alassane Dramane Ouattara (US; French pronunciation: [al",
+            "gold": "Alassane Dramane Quattara",
+            "pred": "Alassane Dramane",
+            "f1": 0.8
+          }
+        ],
+        "yor": [
+          {
+            "id": "773",
+            "input": "question: Ta ni \u1eb9ni ak\u1ecdk\u1ecd ti o gba ami \u1eb9y\u1eb9 Nobel ninu K\u1eb9misitiri? context: The first Nobel Prize in Chemistry was awarde",
+            "gold": "Jacobus Henricus van 't Hoff",
+            "pred": "Jacobus Henricus",
+            "f1": 0.571
+          },
+          {
+            "id": "820",
+            "input": "question: Ta lo j\u1eb9 Igbakeji Aare JF Kennedy ? context: On November 22, 1963, Kennedy was assassinated in Dallas. His vic",
+            "gold": "Lyndon B. Johnson",
+            "pred": "Lyndon B. Johnso",
+            "f1": 0.667
+          },
+          {
+            "id": "768",
+            "input": "question: Ibo ni ibujoko ile-i\u1e63\u1eb9 microsoft ni Amerika? context: Microsoft Corporation is an American multinational techn",
+            "gold": "Redmond",
+            "pred": "Redmond Washingt",
+            "f1": 0.667
+          },
+          {
+            "id": "702",
+            "input": "question: Ta ni \u1ecdga ile-i\u1e63e NASA l'\u1ecddun 2020? context: James Frederick Bridenstine (born June 15, 1975) is an American m",
+            "gold": "James Frederick Bridenstine",
+            "pred": "James Frederick",
+            "f1": 0.8
+          },
+          {
+            "id": "608",
+            "input": "question: Ta l\u1eb9ni to da Coca-cola sil\u1eb9? context: Originally marketed as a temperance drink and intended as a patent medi",
+            "gold": "John Stith Pemberton",
+            "pred": "John Stith Pembe",
+            "f1": 0.667
+          }
+        ]
+      },
+      "low_partial": {
+        "swa": [
+          {
+            "id": "47",
+            "input": "question: Wachuma ni watu gani? context: A blacksmith is a metalsmith who creates objects primarily from wrought iron or",
+            "gold": "Watu wanaotengeneza vyombo tofauti kutumia chuma",
+            "pred": "Wachuma ni watu",
+            "f1": 0.222
+          },
+          {
+            "id": "20",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Facebook? context: Facebook is an online social media and social ",
+            "gold": "Mark Zuckerberg pamoja na wanafunzi wenzake wa Harvard College ambao pia walishiriki chumba, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz na Chris Hughes",
+            "pred": "Mark Zuckerberg",
+            "f1": 0.167
+          },
+          {
+            "id": "194",
+            "input": "question: FORD-Kenya ilianzishwa na nani? context: The history of FORD-Kenya is essentially the history of multi-party p",
+            "gold": "Jaramogi Oginga Odinga, Phillip Gachoka, Ahmed Bamahariz, Salim Ndamwe, Masinde Muliro na George Nthenge",
+            "pred": "Phillip Gachoka",
+            "f1": 0.25
+          },
+          {
+            "id": "127",
+            "input": "question: Mwandishi wa kitabu cha Fifty shades of Grey anaitwa nani? context: Erika Mitchell (born 7 March 1963), known ",
+            "gold": "Erika Mitchell",
+            "pred": "Arika Mitchell",
+            "f1": 0.5
+          },
+          {
+            "id": "219",
+            "input": "question: Mfalme wa Makka anaitwa nani? context: Salman bin Abdulaziz Al Saud (Arabic: \u0633\u0644\u0645\u0627\u0646 \u0628\u0646 \u0639\u0628\u062f \u0627\u0644\u0639\u0632\u06cc\u0632 \u0622\u0644 \u0633\u0639\u0648\u062f \"\", ;",
+            "gold": "Salman bin Abdulaziz Al Saud",
+            "pred": "Salman bin Abdul",
+            "f1": 0.5
+          }
+        ],
+        "yor": [
+          {
+            "id": "686",
+            "input": "question: Kinni oruk\u1ecd \u1eb9ni to j\u1eb9 \u1ecdba ilu Iwo ni ipinl\u1eb9 \u1eccsun l'\u1ecddun 2021? context: 9 November 2015 until present Oba Abdul",
+            "gold": "Oba Abdulrasheed Adewale Akanbi",
+            "pred": "Abdulrasheed Ade",
+            "f1": 0.333
+          },
+          {
+            "id": "682",
+            "input": "question: Ta lo j\u1eb9 Gomina Ipinl\u1eb9 Benue saaju Aper Aku? context: Aper Aku was appointed as Chairman of Kwande Local Gover",
+            "gold": "Abdullahi Shelleng",
+            "pred": "Abdullahi Shelle",
+            "f1": 0.5
+          },
+          {
+            "id": "728",
+            "input": "question: Tani o tum\u1ecd orin oril\u1eb9-ede Naijiria si ede Yoruba? context: Adebayo Faleti has acted, written, and produced a ",
+            "gold": "Ade\u0301ba\u0301y\u1ecd\u0300 Fa\u0301le\u0301ti\u0301",
+            "pred": "Adebayo Faleti",
+            "f1": 0.5
+          },
+          {
+            "id": "642",
+            "input": "question: Ori oke wo ni o tobi jul\u1ecd ninu ori oke Kilimanjaro ati ori oke everest ? context: High elevations on mountains",
+            "gold": "ori oke ti o ga jul\u1ecd ni gbogbo agbaye ni Oke Everest",
+            "pred": "Mount Everest",
+            "f1": 0.143
+          },
+          {
+            "id": "708",
+            "input": "question: Igba wo ni w\u1ecdn pin ipinl\u1eb9 \u1eccsun kuro lara ipinl\u1eb9 \u1eccy\u1ecd? context: The modern State of Osun was created on 27 Augus",
+            "gold": "27 O\u0300gu\u0301n 1991",
+            "pred": "August 1991",
+            "f1": 0.4
+          }
+        ],
+        "hau": [
+          {
+            "id": "440",
+            "input": "question: Ya sunan mutumin da ya kirkiri fasahar bincike ta Google? context: Google was founded on September 4, 1998, by",
+            "gold": "Larry Page da Sergey Brin",
+            "pred": "Larry Page and S",
+            "f1": 0.444
+          },
+          {
+            "id": "393",
+            "input": "question: Menene sunan babban filin jirgin sama a Malaysia? context: Kuala Lumpur International Airport (KLIA) (IATA: KU",
+            "gold": "Kuala Lumpur International Airport (KLIA)",
+            "pred": "Kuala Lumpur Int",
+            "f1": 0.5
+          },
+          {
+            "id": "528",
+            "input": "question: Wanene ya wallafa littafin Merchant of Venice? context: The Merchant of Venice is a 16th-century play written ",
+            "gold": "William Shakespeare",
+            "pred": "William Shakespe",
+            "f1": 0.5
+          },
+          {
+            "id": "509",
+            "input": "question: Wanene matar farko ta Mohamed Seghir Boushaki? context: He soon gained notable profits which allowed him to re",
+            "gold": "Fatma Cherifi",
+            "pred": "Batma Cherifi",
+            "f1": 0.5
+          },
+          {
+            "id": "516",
+            "input": "question: Yaya sunan shugaban kasar amurka na farko? context: The president of the United States is the head of state an",
+            "gold": "George Washington",
+            "pred": "George Washingto",
+            "f1": 0.5
+          }
+        ]
+      }
+    }
+  },
+  "translation_pipeline_test": {
+    "n": 848,
+    "overall": {
+      "empty": {
+        "count": 2,
+        "pct": 0.0023584905660377358
+      },
+      "exact_match": {
+        "count": 98,
+        "pct": 0.11556603773584906
+      },
+      "high_partial": {
+        "count": 35,
+        "pct": 0.041273584905660375
+      },
+      "low_partial": {
+        "count": 135,
+        "pct": 0.15919811320754718
+      },
+      "wrong": {
+        "count": 578,
+        "pct": 0.6816037735849056
+      }
+    },
+    "by_lang": {
+      "hau": {
+        "empty": {
+          "count": 1,
+          "pct": 0.0033333333333333335
+        },
+        "exact_match": {
+          "count": 47,
+          "pct": 0.15666666666666668
+        },
+        "high_partial": {
+          "count": 13,
+          "pct": 0.043333333333333335
+        },
+        "low_partial": {
+          "count": 47,
+          "pct": 0.15666666666666668
+        },
+        "wrong": {
+          "count": 192,
+          "pct": 0.64
+        }
+      },
+      "swa": {
+        "empty": {
+          "count": 1,
+          "pct": 0.003389830508474576
+        },
+        "exact_match": {
+          "count": 36,
+          "pct": 0.12203389830508475
+        },
+        "high_partial": {
+          "count": 15,
+          "pct": 0.05084745762711865
+        },
+        "low_partial": {
+          "count": 50,
+          "pct": 0.1694915254237288
+        },
+        "wrong": {
+          "count": 193,
+          "pct": 0.6542372881355932
+        }
+      },
+      "yor": {
+        "exact_match": {
+          "count": 15,
+          "pct": 0.05928853754940711
+        },
+        "high_partial": {
+          "count": 7,
+          "pct": 0.02766798418972332
+        },
+        "low_partial": {
+          "count": 38,
+          "pct": 0.15019762845849802
+        },
+        "wrong": {
+          "count": 193,
+          "pct": 0.7628458498023716
+        }
+      }
+    },
+    "examples": {
+      "wrong": {
+        "swa": [
+          {
+            "id": "0",
+            "input": "question: Musikari Nazi Kombo anahudumu kama mbunge wa kuteuliwa katika eneo gani? context: He was first elected as a Me",
+            "gold": "Webuye",
+            "pred": "2007",
+            "f1": 0.0
+          },
+          {
+            "id": "2",
+            "input": "question: Je,papa wa roma wa kwanza aliitwa nani? context: This chronological list of popes corresponds to that given in",
+            "gold": "Mt Petro",
+            "pred": "Mimi Sommi Pontefici Romani",
+            "f1": 0.0
+          },
+          {
+            "id": "5",
+            "input": "question: Je,Marekani hufanya sensa baada ya kila miaka ngapi? context: The United States census (plural censuses or cen",
+            "gold": "kila baada ya miaka 10",
+            "pred": "hesabu tangu wakati huo",
+            "f1": 0.0
+          },
+          {
+            "id": "7",
+            "input": "question: Je ubaguzi wa rangi wa kisheria nchini Afrika Kusini uliisha mwak upi? context: ational sanctions, including a",
+            "gold": "Mwaka wa 1990",
+            "pred": "vikwazo vya silaha",
+            "f1": 0.0
+          },
+          {
+            "id": "8",
+            "input": "question: Waziri mkuu wa Israeli ajulikana kama nani? context: Naftali Bennett (Hebrew: \u05e0\u05b7\u05e4\u05b0\u05ea\u05b8\u05bc\u05dc\u05b4\u05d9 \u05d1\u05b6\u05bc\u05e0\u05b6\u05d8, Transliterate",
+            "gold": "Naftali Bennett",
+            "pred": "Waziri Mkuu wa Israel kutoka 2001 hadi 2003.",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "296",
+            "input": "question: A wane gari babban Ofishin Al jazeera yake? context: Al Jazeera (Arabic: \u0627\u0644\u062c\u0632\u064a\u0631\u0629, romanized: al-jazi\u0304rah, IPA:",
+            "gold": "Doha",
+            "pred": "Babban tushen bayanin Al Jazeera, kuma babban tushen bayaninsa, shine shafin yanar gizon Al Jazeera.",
+            "f1": 0.0
+          },
+          {
+            "id": "298",
+            "input": "question: Shin \u0199asashe nawa ne suka raba iyaka da Saudi Arabiya? context: Saudi Arabia is bounded by seven countries and",
+            "gold": "bakwai",
+            "pred": "Mil na Yemen.",
+            "f1": 0.0
+          },
+          {
+            "id": "299",
+            "input": "question: A wace shekara aka haifi Chioma Opara? context: Chioma Opara (born 23 May 1951 in Jos, Nigeria) is a Nigerian ",
+            "gold": "1951",
+            "pred": "babban mai taimakawa wajen bunkasa ka'idar mata a Afirka.",
+            "f1": 0.0
+          },
+          {
+            "id": "300",
+            "input": "question: Wace jami'a ce mafi tsufa a yankin Asia? context: The oldest universities, colleges, vocational schools and th",
+            "gold": "Jami'ar Santo Tomas",
+            "pred": "su ne mafi girma kabilanci a Asiya.",
+            "f1": 0.0
+          },
+          {
+            "id": "301",
+            "input": "question: A wace shekara aka kirkiri wutar lantarki? context: Electricity would remain little more than an intellectual ",
+            "gold": "Austria",
+            "pred": "Ayyukan Gilbert ya kasance babban taimako ga ci gaban ka'idar magnetism.",
+            "f1": 0.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "595",
+            "input": "question: \u1eccm\u1ecd \u1ecddun melo ni Cosmas Maduka nigbati o f\u1eb9 iyawo r\u1eb9 Charity? context: The startup also failed sooner than exp",
+            "gold": "21",
+            "pred": "Coscharis.",
+            "f1": 0.0
+          },
+          {
+            "id": "596",
+            "input": "question: Igbawo ni Popu John Paul II ku ? context: Pope John Paul II (Latin: Ioannes Paulus II; Italian: Giovanni Paolo",
+            "gold": "2005",
+            "pred": "December 15, 1992",
+            "f1": 0.0
+          },
+          {
+            "id": "597",
+            "input": "question: Ta l\u1eb9ni to j\u1eb9 gomina ti Eko nigba ti w\u1ecdn pari kik\u1ecd National Arts Theatre l'Eko? context: The building of the N",
+            "gold": "Olu\u1e63\u1eb9gun \u1ecdbasanj\u1ecd",
+            "pred": "Olusurun Obasanjo",
+            "f1": 0.0
+          },
+          {
+            "id": "598",
+            "input": "question: Ipinl\u1eb9 wo l'Am\u1eb9rika ni Wikimedia Foundation k\u1ecd olu ile i\u1e63\u1eb9 w\u1ecdn si? context: Wikimedia Foundation, Inc. (WMF, a",
+            "gold": "California",
+            "pred": "Wikimedia j\u1eb9 \u00e0j\u1ecd t\u00ed k\u00f2 n\u00ed \u00e8r\u00e8 t\u00ed \u00e0w\u00f9j\u1ecd \u00e0w\u1ecdn \u00e8n\u00ecy\u00e0n \u00e0ti \u00e0j\u1ecd kan d\u00e1 s\u00edl\u1eb9\u0300 l\u00f3\u0323d\u00fan 2005 t\u00ed w\u1ecd\u0301n j\u1eb9\u0301 k\u00f3k\u00f3 p\u00e0t\u00e0k\u00ec n\u00edn\u00fa \u00ecd\u00e0gb\u00e0s\u00f3k\u00e8 Wikipedia \u00e0ti Wikipedia Wikipedia",
+            "f1": 0.0
+          },
+          {
+            "id": "599",
+            "input": "question: Eroja pataki wo ni aw\u1ecdn ara Igbo fi maa n se ounj\u1eb9 abacha ? context: Abacha is popular in the Eastern part of ",
+            "gold": "Gbaguda",
+            "pred": "\u00e0d\u00e0b\u00e0",
+            "f1": 0.0
+          }
+        ]
+      },
+      "high_partial": {
+        "swa": [
+          {
+            "id": "1",
+            "input": "question: Chama cha FORD-Kenya kilianzishwa na nani? context: An umbrella political grouping, the Forum for the Restorat",
+            "gold": "Oginga Odinga",
+            "pred": "Jaramogi Oginga Odinga",
+            "f1": 0.8
+          },
+          {
+            "id": "6",
+            "input": "question: Daktari wa kwanza wa ubongo anaitwa nani? context: Sir William Macewen, CB, FRS, FRCS (/m\u0259\u02c8kju\u02d0\u026an/; 22 June 18",
+            "gold": "William Macewen",
+            "pred": "Sir William Macewen",
+            "f1": 0.8
+          },
+          {
+            "id": "24",
+            "input": "question: Chama cha National Development Party kiliundwa na nani? context: The National Development Party (NDP) was a po",
+            "gold": "Stephen Wilfred Omondi Oludhe",
+            "pred": "Chama hicho kilianzishwa na Stephen Wilfred Omondi Oludhe",
+            "f1": 0.667
+          },
+          {
+            "id": "68",
+            "input": "question: Je, shirika la kutetea haki za kibinadamu ulimwenguni linaitwaje? context: The Human Rights Campaign (HRC) is ",
+            "gold": "Kampeni ya Haki za Binadamu (HRC)",
+            "pred": "Kampeni ya Haki za Kibinadamu",
+            "f1": 0.727
+          },
+          {
+            "id": "74",
+            "input": "question: Rais wa Marekani mwaka wa 1964 anaitwa nani? context: The 1964 United States elections were held in the United",
+            "gold": "Lyndon B. Johnson",
+            "pred": "Lyndon B.",
+            "f1": 0.8
+          }
+        ],
+        "hau": [
+          {
+            "id": "318",
+            "input": "question: Ina mamman Shata ta mutu? context: Alhaji Shata suffered a debilitating illness that made him to be hospitalis",
+            "gold": "Kano",
+            "pred": "Aminu Kano",
+            "f1": 0.667
+          },
+          {
+            "id": "361",
+            "input": "question: Yaushe aka haifi Charlotte Olajumoke Obasa? context: Charlotte Olajumoke Obasa (\"n\u00e9e\" Blaize; January 7, 1874 ",
+            "gold": "Janairu 7, 1874",
+            "pred": "7 ga Janairu, 1874",
+            "f1": 0.857
+          },
+          {
+            "id": "385",
+            "input": "question: Wane birni ne mafi \u0199an\u0199anta a cikin Tanzaniya a 2021? context: The population distribution in Tanzania is unev",
+            "gold": "Katavi",
+            "pred": "Yankin Katavi",
+            "f1": 0.667
+          },
+          {
+            "id": "388",
+            "input": "question: Shin Allah nawa kirista suka yarda da shi? context: Early Christian views of God were expressed in the Pauline",
+            "gold": "\u0257aya",
+            "pred": "Allah \u0257aya",
+            "f1": 0.667
+          },
+          {
+            "id": "392",
+            "input": "question: Wace kasa ce ta halarta auren jinsi a Afrika? context: Same-sex marriage in South Africa has been legal since ",
+            "gold": "Afrika ta kudu",
+            "pred": "Afirka ta Kudu",
+            "f1": 0.667
+          }
+        ],
+        "yor": [
+          {
+            "id": "612",
+            "input": "question: Ta ni oludasil\u1eb9 Mount Zion Movies ? context: Mike Abayomi BamiloyeListen is a Nigerian gospel film actor, dram",
+            "gold": "Mike Abayomi Bamiloye",
+            "pred": "Mike Abayomi Bamiloye\u1eb8 gb\u1ecd\u0301",
+            "f1": 0.571
+          },
+          {
+            "id": "673",
+            "input": "question: Nigba wo ni Moses Orim\u1ecdlade b\u1eb9r\u1eb9 ijo Kerubu ati Serafu? context: The Eternal Sacred Order of Cherubim and Sera",
+            "gold": "1925",
+            "pred": "\u1eccd\u00fan 1925",
+            "f1": 0.667
+          },
+          {
+            "id": "686",
+            "input": "question: Kinni oruk\u1ecd \u1eb9ni to j\u1eb9 \u1ecdba ilu Iwo ni ipinl\u1eb9 \u1eccsun l'\u1ecddun 2021? context: 9 November 2015 until present Oba Abdul",
+            "gold": "Oba Abdulrasheed Adewale Akanbi",
+            "pred": "Oba Abdulrasheed Adewale Akanbi Ilufemiloye Telu",
+            "f1": 0.8
+          },
+          {
+            "id": "747",
+            "input": "question: Igba wo ni Miss Sahara fi oril\u1eb9-ede Naijiria sil\u1eb9 lati lo oril\u1eb9-ede United Kingdom? context: After two suicide",
+            "gold": "2004",
+            "pred": "\u1eccd\u00fan 2004",
+            "f1": 0.667
+          },
+          {
+            "id": "787",
+            "input": "question: Nigbawo ni a da orile\u0323 ede Canada sile\u0323? context: In 1867, the Province of Canada was joined with two other Br",
+            "gold": "1867",
+            "pred": "\u1eccd\u00fan 1867",
+            "f1": 0.667
+          }
+        ]
+      },
+      "low_partial": {
+        "swa": [
+          {
+            "id": "3",
+            "input": "question: Je,kampuni ya Blizzard Entertainment inapatikana nchi gani? context: Blizzard Entertainment, Inc. is an Americ",
+            "gold": "Irvine, California",
+            "pred": "Blizzard Entertainment ni msanidi programu wa michezo ya video na mchapishaji makao yake katika Irvine, California.",
+            "f1": 0.222
+          },
+          {
+            "id": "10",
+            "input": "question: Je,ni shirika gani la serikali inasimamia bandari ya Mombasa? context: Kenya Ports Authority (KPA) is a state ",
+            "gold": "Kenya Ports Authority",
+            "pred": "Kenya Ports Authority (KPA) ni shirika la serikali na jukumu la \"kuhifadhi, kuendesha, kuboresha na kudhibiti bandari zote za baharini zilizoorodheshwa",
+            "f1": 0.25
+          },
+          {
+            "id": "16",
+            "input": "question: Jina la mto Don chanzo chake ni nini? context: The Don Valley is notable because of its deep wide valley in th",
+            "gold": "Glaciation ya Wisconsinan",
+            "pred": "asili ya barafu",
+            "f1": 0.333
+          },
+          {
+            "id": "20",
+            "input": "question: Je,nani mwanzilishi wa mtandao wa kijamii ya Facebook? context: Facebook is an online social media and social ",
+            "gold": "Mark Zuckerberg pamoja na wanafunzi wenzake wa Harvard College ambao pia walishiriki chumba, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz na Chris Hughes",
+            "pred": "Mark Zuckerberg",
+            "f1": 0.167
+          },
+          {
+            "id": "26",
+            "input": "question: Rais wa Meksiko alihudhuria chuo kikuu gani? context: Salinas attended the National Autonomous University of M",
+            "gold": "Chuo Kikuu cha Kitaifa uhuru cha Mexico",
+            "pred": "harakati ya wanafunzi nchini Mexico",
+            "f1": 0.167
+          }
+        ],
+        "hau": [
+          {
+            "id": "295",
+            "input": "question: Awane yanki jahar Anambra take a Nijeriya? context: Anambra State  is a Nigerian state, located in the southea",
+            "gold": "gabas ta kudu",
+            "pred": "Jihar Anambra tana da iyaka da jihar Delta a yamma, jihar Imo a kudu, jihar Enugu a gabas da Kog",
+            "f1": 0.174
+          },
+          {
+            "id": "306",
+            "input": "question: Which makarantar jami'a ce ta ilorin da ke da ala\u0199a da? context: The university began in 1975 as a university ",
+            "gold": "Jami'ar Ibadan",
+            "pred": "shugaban jami'ar.",
+            "f1": 0.5
+          },
+          {
+            "id": "321",
+            "input": "question: Shin kamfanin jarida nawa ne a Malaysia? context: There are over 30 newspapers and tabloids published mainly i",
+            "gold": "30",
+            "pred": "fiye da 30",
+            "f1": 0.5
+          },
+          {
+            "id": "323",
+            "input": "question: Menene yawan jama'ar Vietnam a shekara ta 2020? context: Vietnam (, ), officially the Socialist Republic of Vi",
+            "gold": "sama da miliyan 96",
+            "pred": "Miliyan 1.3",
+            "f1": 0.333
+          },
+          {
+            "id": "326",
+            "input": "question: Menene yawan jama'ar kasar China a shekarar 2021? context: The demographics of China demonstrate a large popul",
+            "gold": "biliyan 1.413",
+            "pred": "Biliyan 1",
+            "f1": 0.5
+          }
+        ],
+        "yor": [
+          {
+            "id": "602",
+            "input": "question: Aarin \u1ecddun wo ni ogun ab\u1eb9le fi s\u1eb9l\u1eb9 ni oril\u1eb9-ede Naijiria? context: The Nigerian Civil War (6 July 1967 \u2013 15 J",
+            "gold": "6 Ag\u1eb9m\u1ecd 1967 \u2013 15 \u1e63\u1eb9\u1eb9r\u1eb9 1970",
+            "pred": "\u1eccm\u1ecd N\u00e0\u00ecj\u00edr\u00ed\u00e0 l\u00f3\u0323d\u00fan 1967",
+            "f1": 0.2
+          },
+          {
+            "id": "618",
+            "input": "question: Ta ni \u1ecdba ak\u1ecdk\u1ecd ij\u1ecdba Tooro ni Uganda ? context: The Tooro Kingdom evolved out of a breakaway segment of Bunyo",
+            "gold": "Omukama Kaboyo Olimi I",
+            "pred": "\u00d3m\u00fak\u00f9m\u00e0 Kaboyo Olimi K\u00ec\u00edn\u00ed, ni w\u00f3\u0323n fi ok\u00f9n r\u00e8\u0323 gor\u00ed \u00ect\u00e9\u0323 \u00ecj\u1ecdba Tooro n\u00ed \u1ecdd\u00fan 1830",
+            "f1": 0.2
+          },
+          {
+            "id": "620",
+            "input": "question: Ile-i\u1e63\u1eb9 wo lo gbe ere amohunmaworan Baba Ajasco sita? context: Wale Adenuga Productions Limited, (in abbreviat",
+            "gold": "Wale Adenuga Productions Limited",
+            "pred": "Wale Adenuga Productions Limited (ti a fi \u1e63oki WAPL tabi WAP) j\u1eb9 ile-i\u1e63\u1eb9 idanilaraya ati iwe irohin ti Nigeria ti o \u1e63e pataki ni fiimu",
+            "f1": 0.276
+          },
+          {
+            "id": "622",
+            "input": "question: Ij\u1ecd wo l\u1ecd bi Pasit\u1ecd Enoch Adeboye? context: Enoch Adejare Adeboye was born on 2nd of March 1942, He is a Niger",
+            "gold": "\u1eccj\u1ecd 2, O\u1e63u \u1eb8r\u1eb9na, \u1ecddun 1942",
+            "pred": "March 2, 1942",
+            "f1": 0.444
+          },
+          {
+            "id": "632",
+            "input": "question: kiloruk\u1ecd emperor alak\u1ecd\u1ecdk\u1ecd ni oril\u1eb9 ede China? context: Qin Shi Huang (Chinese: \u79e6\u59cb\u7687, pronunciation (help\u00b7info);",
+            "gold": "Qin Shi Huang",
+            "pred": "Emperor) j\u1eb9\u0301 \u1ecdba \u00ecj\u1ecdba Qin.",
+            "f1": 0.25
+          }
+        ]
+      },
+      "exact_match": {
+        "swa": [
+          {
+            "id": "4",
+            "input": "question: Je,rais wa kwanza wa Kongo alifahamika kama nani? context: Joseph Kasa-Vubu, alternatively Joseph Kasavubu, ( ",
+            "gold": "Joseph Kasa-Vubu",
+            "pred": "Joseph Kasa-Vubu",
+            "f1": 1.0
+          },
+          {
+            "id": "9",
+            "input": "question: Kocha mkuu wa timu ya soka ya Argentina mwaka 2017 anaitwa nani? context: On 20 May 2017, the Argentine Footba",
+            "gold": "Sampaoli",
+            "pred": "Sampaoli",
+            "f1": 1.0
+          },
+          {
+            "id": "45",
+            "input": "question: Jimbo la Mugirango Kaskazini lipo katika kaunti gani? context: North Mugirango is one of four constituencies i",
+            "gold": "Nyamira",
+            "pred": "Nyamira",
+            "f1": 1.0
+          },
+          {
+            "id": "52",
+            "input": "question: Je,jina ya sayansi ya spinach ni ipi? context: Spinach (Spinacia oleracea) is a leafy green flowering plant na",
+            "gold": "Spinacia oleracea",
+            "pred": "Spinacia oleracea",
+            "f1": 1.0
+          },
+          {
+            "id": "53",
+            "input": "question: Je,wahusika wakuu ni wangapi katika tamthilia ya Heroes? context: In its inaugural season, \"Heroes\" featured a",
+            "gold": "Kumi na mbili",
+            "pred": "kumi na mbili",
+            "f1": 1.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "297",
+            "input": "question: Wanene farkon mataimakin shugaban jami'ar Lagos? context: Eni Njoku (6 November 1917 \u2013 22 December 1974) was a",
+            "gold": "Eni Njoku",
+            "pred": "Eni Njoku",
+            "f1": 1.0
+          },
+          {
+            "id": "304",
+            "input": "question: A wace shekara aka haifi shugaba Muhammadu Buhari? context: Muhammadu Buhari GCFR (born 17 December 1942) is a",
+            "gold": "1942",
+            "pred": "1942",
+            "f1": 1.0
+          },
+          {
+            "id": "317",
+            "input": "question: Wanene annabin karshe a musulunci? context: The phrase Khatamu \u2019n-Nabiyyi\u0304n (\"Seal of the Prophets\") is a titl",
+            "gold": "Muhammad",
+            "pred": "Muhammad",
+            "f1": 1.0
+          },
+          {
+            "id": "325",
+            "input": "question: Wane kamfani ne ya fara samar da maganin rigakafin cutar covid-19 context: The Pfizer\u2013BioNTech partnership sub",
+            "gold": "Pfizer\u2013BioNTech",
+            "pred": "PfizerBioNTech",
+            "f1": 1.0
+          },
+          {
+            "id": "338",
+            "input": "question: Fim din Harry Potter guda nawa ne? context: Harry Potter is a film series based on the eponymous novels by J. ",
+            "gold": "takwas",
+            "pred": "takwas",
+            "f1": 1.0
+          }
+        ],
+        "yor": [
+          {
+            "id": "600",
+            "input": "question: Ta lo'darii apa kinni fiimu Transformers? context: Transformers is a series of American science fiction action",
+            "gold": "Michael Bay",
+            "pred": "Michael Bay",
+            "f1": 1.0
+          },
+          {
+            "id": "601",
+            "input": "question: Ta l\u1eb9ni to da orin-iyin ti oril\u1eb9-ede Am\u1eb9rika? context: Francis Scott Key (August 1, 1779January 11, 1843) was ",
+            "gold": "Francis Scott Key",
+            "pred": "Francis Scott Key",
+            "f1": 1.0
+          },
+          {
+            "id": "608",
+            "input": "question: Ta l\u1eb9ni to da Coca-cola sil\u1eb9? context: Originally marketed as a temperance drink and intended as a patent medi",
+            "gold": "John Stith Pemberton",
+            "pred": "John Stith Pemberton",
+            "f1": 1.0
+          },
+          {
+            "id": "617",
+            "input": "question: Ilu wo lo tobi jul\u1ecd ni orile ede Haiti ? context: Haiti has many mountains. There are only some coastal plains",
+            "gold": "Port-au-Prince",
+            "pred": "Port-au-Prince",
+            "f1": 1.0
+          },
+          {
+            "id": "639",
+            "input": "question: Kini oruk\u1ecd ti w\u1ecdn pe Kinshasa, ti oj\u1eb9 olu ilu oril\u1eb9-ede Kongo t\u1eb9l\u1eb9? context: On independence in 1960, L\u00e9opoldv",
+            "gold": "L\u00e9opoldville",
+            "pred": "L\u00e9opoldville",
+            "f1": 1.0
+          }
+        ]
+      },
+      "empty": {
+        "swa": [
+          {
+            "id": "195",
+            "input": "question: Je, kuna arithropodi aina ngapi? context: Arthropods (, (gen. \u03c0\u03bf\u03b4\u03cc\u03c2)) are invertebrate animals having an exosk",
+            "gold": "milioni 10",
+            "pred": ". .",
+            "f1": 0.0
+          }
+        ],
+        "hau": [
+          {
+            "id": "484",
+            "input": "question: A wace shekara akai juyin mulki na farko a Nijar? context: For its first 14 years as an independent state Nige",
+            "gold": "1963",
+            "pred": "\"",
+            "f1": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

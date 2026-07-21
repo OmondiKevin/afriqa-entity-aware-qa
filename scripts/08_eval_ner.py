@@ -14,7 +14,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-PREDICTIONS_DIR = Path("outputs_colab/predictions")
+PREDICTIONS_DIR = Path("outputs/predictions")
 OUTPUT_DIR = Path("outputs/analysis")
 
 CONFIGS = [

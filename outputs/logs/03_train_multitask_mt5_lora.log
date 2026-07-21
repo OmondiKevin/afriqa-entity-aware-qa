@@ -1,0 +1,112 @@
+2026-03-12 16:07:43,789 | INFO | Tokenization: max_source_length=256, max_target_length=128
+2026-03-12 16:07:43,790 | INFO | Loading JSONL from data/processed/qa_seq2seq_swa_hau_yor_multitask
+2026-03-12 16:07:44,595 | INFO | Train: 28585, Validation: 2963
+2026-03-12 16:07:44,595 | INFO | Loading model and tokenizer: google/mt5-base
+2026-03-12 16:07:59,368 | INFO | LoRA injected! Trainable parameters:
+2026-03-12 16:07:59,370 | INFO | Adafactor + gradient checkpointing enabled for low-memory training
+2026-03-12 16:07:59,371 | INFO | Training: learning_rate=0.0001, lr_scheduler_type=linear, optim=adafactor
+2026-03-12 16:07:59,653 | INFO | max_grad_norm=1.0
+2026-03-12 16:07:59,654 | INFO | Enabling early stopping with patience=3
+2026-03-12 16:08:08,428 | INFO | Starting training...
+2026-03-12 16:08:08,429 | INFO | Trainer args: learning_rate=1.00e-04, lr_scheduler_type=SchedulerType.LINEAR, optim=OptimizerNames.ADAFACTOR (constant scheduler => no decay)
+2026-03-12 16:08:08,429 | INFO | Starting SEQUENTIAL training. Phase 1: NER
+2026-03-12 16:08:16,931 | ERROR | Phase 1 (NER) Training failed: CUDA out of memory. Tried to allocate 15.27 GiB. GPU 0 has a total capacity of 79.25 GiB of which 8.83 GiB is free. Including non-PyTorch memory, this process has 70.41 GiB memory in use. Of the allocated memory 69.76 GiB is allocated by PyTorch, and 156.94 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/content/afriqa-entity-aware-qa/scripts/03_train_multitask_qa.py", line 262, in main
+    trainer_ner.train()
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 2174, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 2536, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 3809, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 3880, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 823, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 811, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 2259, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 311, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mt5/modeling_mt5.py", line 1182, in forward
+    loss = loss_fct(lm_logits.view(-1, lm_logits.size(-1)), labels.view(-1))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/loss.py", line 1362, in forward
+    return F.cross_entropy(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/functional.py", line 3504, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.27 GiB. GPU 0 has a total capacity of 79.25 GiB of which 8.83 GiB is free. Including non-PyTorch memory, this process has 70.41 GiB memory in use. Of the allocated memory 69.76 GiB is allocated by PyTorch, and 156.94 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-12 16:08:30,783 | INFO | Tokenization: max_source_length=1024, max_target_length=128
+2026-03-12 16:08:30,784 | INFO | Loading JSONL from data/processed/qa_seq2seq_swa_hau_yor_multitask
+2026-03-12 16:08:31,520 | INFO | Train: 28585, Validation: 2963
+2026-03-12 16:08:31,520 | INFO | Loading model and tokenizer: google/byt5-base
+2026-03-12 16:08:42,511 | INFO | LoRA injected! Trainable parameters:
+2026-03-12 16:08:42,513 | INFO | Adafactor + gradient checkpointing enabled for low-memory training
+2026-03-12 16:08:42,514 | INFO | Training: learning_rate=0.0001, lr_scheduler_type=linear, optim=adafactor
+2026-03-12 16:08:42,796 | INFO | max_grad_norm=1.0
+2026-03-12 16:08:42,796 | INFO | Enabling early stopping with patience=3
+2026-03-12 16:23:33,979 | INFO | Tokenization: max_source_length=256, max_target_length=128
+2026-03-12 16:23:34,667 | INFO | Loading JSONL from data/processed/qa_seq2seq_swa_hau_yor_multitask
+2026-03-12 16:23:35,484 | INFO | Train: 28585, Validation: 2963
+2026-03-12 16:23:35,484 | INFO | Loading model and tokenizer: google/mt5-base
+2026-03-12 16:23:51,620 | INFO | LoRA injected! Trainable parameters:
+2026-03-12 16:23:51,622 | INFO | Adafactor + gradient checkpointing enabled for low-memory training
+2026-03-12 16:23:51,623 | INFO | Training: learning_rate=0.0001, lr_scheduler_type=linear, optim=adafactor
+2026-03-12 16:23:51,911 | INFO | max_grad_norm=1.0
+2026-03-12 16:23:51,912 | INFO | Enabling early stopping with patience=3
+2026-03-12 16:24:00,735 | INFO | Starting training...
+2026-03-12 16:24:00,735 | INFO | Trainer args: learning_rate=1.00e-04, lr_scheduler_type=SchedulerType.LINEAR, optim=OptimizerNames.ADAFACTOR (constant scheduler => no decay)
+2026-03-12 16:24:00,735 | INFO | Starting SEQUENTIAL training. Phase 1: NER
+2026-03-12 17:15:53,912 | INFO | Saved Phase 1 (NER) checkpoint to outputs/checkpoints/multitask_mt5_lora_ner_phase
+2026-03-12 17:15:53,913 | INFO | Starting SEQUENTIAL training. Phase 2: QA
+2026-03-12 17:30:48,827 | INFO | Saved Phase 2 (QA) checkpoint to outputs/checkpoints/multitask_mt5_lora
+2026-03-12 17:30:48,889 | INFO | Saved checkpoint to outputs/checkpoints/multitask_mt5_lora
+2026-03-12 17:30:48,896 | INFO | Loading and tokenizing from data/processed/qa_seq2seq_swa_hau_yor_multitask (max_source=256, max_target=128)
+2026-03-12 17:30:58,376 | INFO | [tokenize debug] decoded input: extract entities: Ó ní , bí ìjọba kò bá gbé ìgbésẹ̀ náà , a jẹ́ pé iye owó táwọn àgbẹ̀ ọlọ́sìn máa ta n...
+2026-03-12 17:30:58,377 | INFO | [tokenize debug] decoded label (ignoring -100): none
+2026-03-12 17:30:58,377 | INFO | [tokenize debug] labels: -100 count=125, total=128
+2026-03-12 17:30:58,378 | INFO | Generating predictions on 6328 examples
+2026-03-12 17:30:59,320 | INFO | [example 1] input: extract entities: Idan za a iya tunawa dai tun a watan Maris din da ya gabata hukumar tara kudaden h...
+2026-03-12 17:30:59,320 | INFO | [example 1] target (gold): DATE: watan Maris din da ya gabata, LOC: jihar Kano
+2026-03-12 17:30:59,320 | INFO | [example 1] prediction: a'a
+2026-03-12 17:30:59,321 | INFO | [example 2] input: question: Steven Kanumba alizaliwa mwaka upi? context: Steven Charles Kanumba (8 January 1984 – 7 Ap...
+2026-03-12 17:30:59,321 | INFO | [example 2] target (gold): 1984
+2026-03-12 17:30:59,321 | INFO | [example 2] prediction: Sukuma
+2026-03-12 17:30:59,321 | INFO | [example 3] input: extract entities: í dáná sunlé ....
+2026-03-12 17:30:59,321 | INFO | [example 3] target (gold): none
+2026-03-12 17:30:59,321 | INFO | [example 3] prediction: í dáná sunlé
+2026-03-12 17:37:33,880 | INFO | Saved 6328 predictions to outputs/predictions/multitask_mt5_lora_test.jsonl
+2026-03-12 17:37:33,880 | INFO | Done.

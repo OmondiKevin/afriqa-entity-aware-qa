@@ -1,0 +1,210 @@
+{
+  "multitask_mt5_test": {
+    "n_total": 5480,
+    "n_parseable_gold": 3973,
+    "n_parseable_pred": 409,
+    "n_empty_pred": 0,
+    "overall": {
+      "tp": 368,
+      "fp": 70,
+      "fn": 9766,
+      "precision": 0.8401826484018264,
+      "recall": 0.036313400434181964,
+      "f1": 0.06961785849413546
+    },
+    "per_type": {
+      "PER": {
+        "tp": 94,
+        "fp": 9,
+        "fn": 3001,
+        "precision": 0.912621359223301,
+        "recall": 0.03037156704361874,
+        "f1": 0.05878674171357098,
+        "support": 3095
+      },
+      "LOC": {
+        "tp": 84,
+        "fp": 4,
+        "fn": 3131,
+        "precision": 0.9545454545454546,
+        "recall": 0.026127527216174184,
+        "f1": 0.05086285195277021,
+        "support": 3215
+      },
+      "ORG": {
+        "tp": 94,
+        "fp": 30,
+        "fn": 2080,
+        "precision": 0.7580645161290323,
+        "recall": 0.04323827046918123,
+        "f1": 0.08181026979982593,
+        "support": 2174
+      },
+      "DATE": {
+        "tp": 96,
+        "fp": 27,
+        "fn": 1554,
+        "precision": 0.7804878048780488,
+        "recall": 0.05818181818181818,
+        "f1": 0.10829103214890017,
+        "support": 1650
+      }
+    }
+  },
+  "multitask_byt5_test": {
+    "n_total": 5480,
+    "n_parseable_gold": 3973,
+    "n_parseable_pred": 41,
+    "n_empty_pred": 0,
+    "overall": {
+      "tp": 5,
+      "fp": 36,
+      "fn": 10129,
+      "precision": 0.12195121951219512,
+      "recall": 0.0004933885928557331,
+      "f1": 0.0009828009828009826
+    },
+    "per_type": {
+      "PER": {
+        "tp": 1,
+        "fp": 18,
+        "fn": 3094,
+        "precision": 0.05263157894736842,
+        "recall": 0.00032310177705977385,
+        "f1": 0.0006422607578676943,
+        "support": 3095
+      },
+      "LOC": {
+        "tp": 3,
+        "fp": 6,
+        "fn": 3212,
+        "precision": 0.3333333333333333,
+        "recall": 0.0009331259720062209,
+        "f1": 0.0018610421836228288,
+        "support": 3215
+      },
+      "ORG": {
+        "tp": 1,
+        "fp": 7,
+        "fn": 2173,
+        "precision": 0.125,
+        "recall": 0.00045998160073597056,
+        "f1": 0.0009165902841429881,
+        "support": 2174
+      },
+      "DATE": {
+        "tp": 0,
+        "fp": 5,
+        "fn": 1650,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1650
+      }
+    }
+  },
+  "multitask_mt5_lora_test": {
+    "n_total": 5480,
+    "n_parseable_gold": 3973,
+    "n_parseable_pred": 0,
+    "n_empty_pred": 0,
+    "overall": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 10134,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "per_type": {
+      "PER": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3095,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3095
+      },
+      "LOC": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3215,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3215
+      },
+      "ORG": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2174,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2174
+      },
+      "DATE": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1650,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1650
+      }
+    }
+  },
+  "multitask_byt5_lora_test": {
+    "n_total": 5480,
+    "n_parseable_gold": 3973,
+    "n_parseable_pred": 0,
+    "n_empty_pred": 0,
+    "overall": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 10134,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "per_type": {
+      "PER": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3095,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3095
+      },
+      "LOC": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3215,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3215
+      },
+      "ORG": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2174,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2174
+      },
+      "DATE": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1650,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1650
+      }
+    }
+  }
+}

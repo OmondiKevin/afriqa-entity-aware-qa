@@ -1,0 +1,7 @@
+2026-07-21 15:05:18,274 | INFO | Loading AfriQA from disk: data/processed/afriqa_swa_hau_yor
+2026-07-21 15:05:18,284 | INFO | AfriQA splits: [('train', 470), ('validation', 222), ('test', 848)]
+2026-07-21 15:05:18,285 | INFO | Exporting seq2seq JSONL to: data/processed/qa_seq2seq_swa_hau_yor (prompt_prefix='question: ')
+2026-07-21 15:05:18,454 | INFO |   train: 470 examples
+2026-07-21 15:05:18,455 | INFO |   validation: 222 examples
+2026-07-21 15:05:18,455 | INFO |   test: 848 examples
+2026-07-21 15:05:18,455 | INFO | Done.

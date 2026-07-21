@@ -1,0 +1,11 @@
+2026-07-21 15:05:26,773 | INFO | Loading test split from data/processed/qa_seq2seq_swa_hau_yor/test.jsonl
+2026-07-21 15:05:27,546 | INFO | Using device: cuda
+2026-07-21 15:05:27,547 | INFO | --- Hardware & Diagnostics ---
+2026-07-21 15:05:27,569 | INFO | GPU: NVIDIA A100-SXM4-80GB | VRAM: 79.3 GB
+2026-07-21 15:05:27,569 | INFO | PyTorch CUDA: 12.8
+2026-07-21 15:05:27,569 | INFO | ------------------------------
+2026-07-21 15:05:27,569 | INFO | Loading NLLB-200 translation model: facebook/nllb-200-distilled-600M
+2026-07-21 15:05:45,301 | INFO | Loading English QA model: google/flan-t5-base
+2026-07-21 15:06:01,873 | INFO | Starting translation pipeline inference...
+2026-07-21 15:06:14,364 | INFO | Saved 848 predictions to outputs/predictions/translation_pipeline_test.jsonl
+2026-07-21 15:06:14,365 | INFO | Done.

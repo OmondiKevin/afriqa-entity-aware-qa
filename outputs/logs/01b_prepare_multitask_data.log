@@ -1,0 +1,27 @@
+2026-03-12 16:07:29,269 | INFO | Loading AfriQA from disk: data/processed/afriqa_swa_hau_yor
+2026-03-12 16:07:29,280 | INFO | Loading MasakhaNER from disk: data/processed/masakhaner2_swa_hau_yor
+2026-03-12 16:07:29,287 | INFO | Exporting QA seq2seq JSONL to: data/processed/qa_temp
+2026-03-12 16:07:29,452 | INFO | Exporting NER seq2seq JSONL to: data/processed/ner_temp
+2026-03-12 16:07:32,287 | INFO | Combining and shuffling into: data/processed/qa_seq2seq_swa_hau_yor_multitask
+2026-03-12 16:07:32,347 | INFO |   train: 28585 total examples combined (QA upsampled 20x)
+2026-03-12 16:07:32,353 | INFO |   validation: 2963 total examples combined (QA upsampled 1x)
+2026-03-12 16:07:32,367 | INFO |   test: 6328 total examples combined (QA upsampled 1x)
+2026-03-12 16:07:32,368 | INFO | Done.
+2026-03-12 16:23:17,638 | INFO | Loading AfriQA from disk: data/processed/afriqa_swa_hau_yor
+2026-03-12 16:23:18,397 | INFO | Loading MasakhaNER from disk: data/processed/masakhaner2_swa_hau_yor
+2026-03-12 16:23:18,404 | INFO | Exporting QA seq2seq JSONL to: data/processed/qa_temp
+2026-03-12 16:23:18,568 | INFO | Exporting NER seq2seq JSONL to: data/processed/ner_temp
+2026-03-12 16:23:21,430 | INFO | Combining and shuffling into: data/processed/qa_seq2seq_swa_hau_yor_multitask
+2026-03-12 16:23:21,492 | INFO |   train: 28585 total examples combined (QA upsampled 20x)
+2026-03-12 16:23:21,499 | INFO |   validation: 2963 total examples combined (QA upsampled 1x)
+2026-03-12 16:23:21,514 | INFO |   test: 6328 total examples combined (QA upsampled 1x)
+2026-03-12 16:23:21,514 | INFO | Done.
+2026-03-12 19:56:35,812 | INFO | Loading AfriQA from disk: data/processed/afriqa_swa_hau_yor
+2026-03-12 19:56:36,194 | INFO | Loading MasakhaNER from disk: data/processed/masakhaner2_swa_hau_yor
+2026-03-12 19:56:36,202 | INFO | Exporting QA seq2seq JSONL to: data/processed/qa_temp
+2026-03-12 19:56:36,363 | INFO | Exporting NER seq2seq JSONL to: data/processed/ner_temp
+2026-03-12 19:56:39,118 | INFO | Combining and shuffling into: data/processed/qa_seq2seq_swa_hau_yor_multitask
+2026-03-12 19:56:39,176 | INFO |   train: 28585 total examples combined (QA upsampled 20x)
+2026-03-12 19:56:39,183 | INFO |   validation: 2963 total examples combined (QA upsampled 1x)
+2026-03-12 19:56:39,196 | INFO |   test: 6328 total examples combined (QA upsampled 1x)
+2026-03-12 19:56:39,197 | INFO | Done.

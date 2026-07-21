@@ -15,13 +15,13 @@ from pathlib import Path
 from typing import Any
 
 
-METRICS_DIR = Path("outputs_colab/metrics")
+METRICS_DIR = Path("outputs/metrics")
 OUTPUT_DIR = Path("outputs/analysis")
 
 # Map config stems to human-readable names and ordering
 CONFIG_ORDER = [
     ("baseline_mt5_test_metrics", "Baseline mT5 (1x)"),
-    ("baseline_byt5_test_metrics", "Baseline ByT5 (1x)"),
+    ("baseline_byt5_test_v2_metrics", "Baseline ByT5 (1x)"),
     ("matchedqa_mt5_test_metrics", "Matched-Vol mT5 (20x)"),
     ("matchedqa_byt5_test_metrics", "Matched-Vol ByT5 (20x)"),
     ("multitask_mt5_test_qa_only_metrics", "Multitask mT5 (NER→QA)"),
@@ -95,7 +95,7 @@ def compute_deltas(data: dict[str, dict]) -> dict[str, Any]:
 
     for arch, baseline_key, matched_key, multitask_key in [
         ("mT5", "baseline_mt5_test_metrics", "matchedqa_mt5_test_metrics", "multitask_mt5_test_qa_only_metrics"),
-        ("ByT5", "baseline_byt5_test_metrics", "matchedqa_byt5_test_metrics", "multitask_byt5_test_qa_only_metrics"),
+        ("ByT5", "baseline_byt5_test_v2_metrics", "matchedqa_byt5_test_metrics", "multitask_byt5_test_qa_only_metrics"),
     ]:
         arch_deltas = {"overall": {}, "per_lang": {}}
 

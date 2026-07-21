@@ -1,0 +1,10 @@
+2026-07-21 15:05:00,126 | INFO | AfriQA configs: ['swa', 'hau', 'yor']
+2026-07-21 15:05:00,127 | INFO | MasakhaNER configs: ['swa', 'hau', 'yor']
+2026-07-21 15:05:00,127 | INFO | HF cache_dir: .cache/huggingface
+2026-07-21 15:05:00,128 | INFO | Loading AfriQA: masakhane/afriqa-gold-passages (configs: ['swa', 'hau', 'yor'])
+2026-07-21 15:05:08,231 | INFO | AfriQA splits: [('train', 470), ('validation', 222), ('test', 848)]
+2026-07-21 15:05:08,231 | INFO | Saving AfriQA subset to: data/processed/afriqa_swa_hau_yor
+2026-07-21 15:05:08,250 | INFO | Loading MasakhaNER 2.0: masakhane/masakhaner2 (configs: ['swa', 'hau', 'yor'])
+2026-07-21 15:05:16,738 | INFO | MasakhaNER splits: [('train', 19185), ('validation', 2741), ('test', 5480)]
+2026-07-21 15:05:16,739 | INFO | Saving MasakhaNER subset to: data/processed/masakhaner2_swa_hau_yor
+2026-07-21 15:05:16,781 | INFO | Done.

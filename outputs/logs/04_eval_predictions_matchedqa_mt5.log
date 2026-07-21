@@ -1,0 +1,9 @@
+2026-03-13 12:29:24,304 | INFO | Loading predictions from outputs/predictions/matchedqa_mt5_test.jsonl
+2026-03-13 12:29:24,314 | INFO | Loaded 848 rows from outputs/predictions/matchedqa_mt5_test.jsonl
+2026-03-13 12:29:47,413 | INFO | Wrote metrics JSON to outputs/metrics/matchedqa_mt5_test_metrics.json
+2026-03-13 12:29:47,418 | INFO | Wrote metrics CSV to outputs/metrics/matchedqa_mt5_test_metrics.csv
+2026-03-13 12:29:47,418 | INFO | Overall: n=848 EM=0.1969 F1=0.2360 semantic=0.4394
+2026-03-13 12:29:47,418 | INFO |   swa: n=295 EM=0.1763 F1=0.2136 semantic=0.4227
+2026-03-13 12:29:47,418 | INFO |   hau: n=300 EM=0.2267 F1=0.2605 semantic=0.4677
+2026-03-13 12:29:47,419 | INFO |   yor: n=253 EM=0.1858 F1=0.2331 semantic=0.4254
+2026-03-13 12:29:47,419 | INFO | Done.
