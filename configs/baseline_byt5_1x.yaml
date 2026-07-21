@@ -36,29 +36,29 @@ train:
   debug_max_target_length: 16
   max_grad_norm: 1.0
   batch_size: 32
-  grad_accum: 8
+  grad_accum: 2
   lr: 1.0e-4
   learning_rate: 1e-4
   weight_decay: 0.01
-  epochs: 200
-  early_stopping_patience: 5
+  epochs: 20
+  early_stopping_patience: 3
   overfit_epochs: 30
   warmup_steps: 50
   fp16: false
   bf16: true
-  num_workers: 2
-  eval_steps: 20
-  save_steps: 20
+  num_workers: 4
+  eval_steps: 50
+  save_steps: 50
   save_total_limit: 1
   logging_steps: 10
 
 run:
-  baseline_output_dir: outputs/checkpoints/baseline_byt5
-  baseline_pred_path: outputs/predictions/baseline_byt5_test.jsonl
-  baseline_log_path: outputs/logs/02_train_baseline_byt5.log
+  baseline_output_dir: outputs/checkpoints/baseline_byt5_v2
+  baseline_pred_path: outputs/predictions/baseline_byt5_test_v2.jsonl
+  baseline_log_path: outputs/logs/02_train_baseline_byt5_v2.log
   overfit_pred_path: outputs/predictions/overfit_byt5_train.jsonl
-  baseline_metrics_json: outputs/metrics/baseline_byt5_test_metrics.json
-  baseline_metrics_csv: outputs/metrics/baseline_byt5_test_metrics.csv
+  baseline_metrics_json: outputs/metrics/baseline_byt5_test_metrics_v2.json
+  baseline_metrics_csv: outputs/metrics/baseline_byt5_test_metrics_v2.csv
 
 debug:
   overfit_n: 0
