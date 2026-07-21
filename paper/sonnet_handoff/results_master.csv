@@ -1,0 +1,10 @@
+config,lang,n,em,f1,semantic
+Baseline mT5 (1x),overall,848,0.032,0.071,0.293
+Baseline ByT5 (1x),overall,848,0.025,0.073,0.326
+Translation Pipeline,overall,848,0.116,0.189,
+Matched-Vol mT5 (20x),overall,848,0.197,0.236,0.439
+Matched-Vol ByT5 (20x),overall,848,0.219,0.292,0.513
+Multitask mT5,overall,848,0.21,0.262,0.469
+Multitask ByT5,overall,848,0.192,0.272,0.476
+LoRA mT5,overall,848,0.164,0.2,0.398
+LoRA ByT5,overall,848,0.045,0.094,0.308

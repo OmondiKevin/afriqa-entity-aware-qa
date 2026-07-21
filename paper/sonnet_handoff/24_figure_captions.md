@@ -1,0 +1,3 @@
+# Figure Captions
+- **Fig 1:** "Overall QA performance across all configurations. Matched-Volume ByT5 establishes a new state-of-the-art, outperforming translation pipelines purely through exposure scaling."
+- **Fig 3:** "Delta Decomposition of EM gains. mT5 derives positive utility from explicit NER supervision (Task Delta), whereas ByT5 is harmed by it, relying entirely on extended gradient exposure."\n

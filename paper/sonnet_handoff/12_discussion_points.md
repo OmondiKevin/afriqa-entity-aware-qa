@@ -1,0 +1,4 @@
+# Discussion Points
+1. **The Translation Illusion:** Translation pipelines seem better than direct QA ONLY when direct QA is starved of gradient steps (1x exposure). Once exposed properly (20x), direct QA natively dominates.
+2. **The Bitter Lesson in African NLP:** Richard Sutton's "Bitter Lesson" argues that general methods leveraging computation beat human-engineered heuristics. Our finding perfectly aligns: throwing more gradient steps (Matched Volume) at a byte-level model completely outperformed human-engineered heuristic constraints (Multitask NER). 
+3. **Subwords vs. Bytes:** mT5 relies on the heuristic (Multitask NER gives positive delta). ByT5 rejects the heuristic (Multitask NER gives negative delta).\n

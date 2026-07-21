@@ -1,0 +1,6 @@
+{
+  "metrics_dir": "outputs/metrics",
+  "predictions_dir": "outputs/predictions",
+  "figures_dir": "outputs/figures",
+  "analysis_dir": "outputs/analysis"
+}\n
