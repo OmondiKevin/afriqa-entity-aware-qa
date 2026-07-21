@@ -52,7 +52,7 @@ train:
   overfit_epochs: 30  # used when debug.overfit_n > 0
   warmup_steps: 50
   fp16: false
-  bf16: false
+  bf16: true
   num_workers: 2
   eval_steps: 50
   save_steps: 50

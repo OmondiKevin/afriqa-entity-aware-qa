@@ -195,6 +195,7 @@ def main() -> None:
             "seed": seed,
             "dataloader_num_workers": num_workers,
             "dataloader_pin_memory": pin_memory,
+            "dataloader_persistent_workers": num_workers > 0,
             "optim": optim_name,
             "lr_scheduler_type": lr_scheduler_type,
             "predict_with_generate": False,
@@ -213,7 +214,16 @@ def main() -> None:
             logger.info(f"Overfit mode: using max_steps={overfit_max_steps} (ignoring epochs)")
 
         training_args = Seq2SeqTrainingArguments(**training_kw)
+        logger.info(f"--- Hardware & Diagnostics ---")
+        if torch.cuda.is_available():
+            logger.info(f"GPU: {torch.cuda.get_device_name(0)} | VRAM: {torch.cuda.get_device_properties(0).total_memory / (1024 ** 3):.1f} GB")
+            logger.info(f"PyTorch CUDA: {torch.version.cuda}")
+        else:
+            logger.warning("CUDA is NOT available! Training will be extremely slow.")
+        logger.info(f"Precision: fp16={training_args.fp16}, bf16={training_args.bf16}")
+        logger.info(f"Batch sizing: physical={training_args.per_device_train_batch_size}, grad_accum={training_args.gradient_accumulation_steps}, effective={training_args.per_device_train_batch_size * training_args.gradient_accumulation_steps}")
         logger.info(f"max_grad_norm={training_args.max_grad_norm}")
+        logger.info(f"------------------------------")
         if overfit_n > 0:
             assert training_args.max_grad_norm > 0, "max_grad_norm must be > 0 for overfit mode"
 

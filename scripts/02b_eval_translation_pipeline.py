@@ -30,6 +30,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/default.yaml")
     parser.add_argument("--subset", type=int, default=0, help="Test on a subset of examples")
+    parser.add_argument("--force", action="store_true", help="Force run even if predictions file already exists")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -40,6 +41,11 @@ def main() -> None:
 
     qa_seq2seq_dir = cfg["data"]["qa_seq2seq_out_dir"]
     data_files = {"test": str(Path(qa_seq2seq_dir) / "test.jsonl")}
+    
+    output_path = paths.outputs / "predictions" / "translation_pipeline_test.jsonl"
+    if output_path.exists() and not args.force:
+        logger.info(f"Predictions already exist at {output_path}. Skipping. (Use --force to override)")
+        return
     
     if not Path(data_files["test"]).exists():
         logger.error(f"Test data file not found: {data_files['test']}")
@@ -56,9 +62,15 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "mps" if use_mps else "cpu")
     logger.info(f"Using device: {device}")
     
+    logger.info(f"--- Hardware & Diagnostics ---")
     if torch.cuda.is_available():
+        logger.info(f"GPU: {torch.cuda.get_device_name(0)} | VRAM: {torch.cuda.get_device_properties(0).total_memory / (1024 ** 3):.1f} GB")
+        logger.info(f"PyTorch CUDA: {torch.version.cuda}")
         torch.backends.cuda.matmul.allow_tf32 = True
         torch.backends.cudnn.allow_tf32 = True
+    else:
+        logger.warning("CUDA is NOT available! Translation inference will be extremely slow.")
+    logger.info(f"------------------------------")
 
     # Load NLLB
     model_name = "facebook/nllb-200-distilled-600M"
@@ -109,7 +121,6 @@ def main() -> None:
     batch_size = 512
     results = []
     
-    output_path = paths.outputs / "predictions" / "translation_pipeline_test.jsonl"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
     logger.info("Starting translation pipeline inference...")

@@ -126,7 +126,8 @@ def evaluate_predictions(
             from sentence_transformers import SentenceTransformer
             import numpy as np
 
-            model = SentenceTransformer(labse_model)
+            device_str = "cuda" if torch.cuda.is_available() else "cpu"
+            model = SentenceTransformer(labse_model, device=device_str)
             pred_embs = model.encode(pred_texts, batch_size=batch_size, show_progress_bar=False)
             gold_embs = model.encode(gold_texts, batch_size=batch_size, show_progress_bar=False)
             pred_embs = pred_embs / (np.linalg.norm(pred_embs, axis=1, keepdims=True) + 1e-9)
