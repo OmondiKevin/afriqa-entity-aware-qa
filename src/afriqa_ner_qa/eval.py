@@ -125,6 +125,7 @@ def evaluate_predictions(
         try:
             from sentence_transformers import SentenceTransformer
             import numpy as np
+            import torch
 
             device_str = "cuda" if torch.cuda.is_available() else "cpu"
             model = SentenceTransformer(labse_model, device=device_str)
