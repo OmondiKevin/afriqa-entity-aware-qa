@@ -92,7 +92,7 @@ eval:
   do_semantic: true
   labse_model: sentence-transformers/LaBSE
   semantic_threshold: 0.75
-  semantic_batch_size: 128
+  semantic_batch_size: 1024
   generation_max_new_tokens: 16
   generation_min_new_tokens: 1
   # Strip NER tags (PER:, LOC:, etc.) from predictions before computing metrics

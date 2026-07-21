@@ -35,7 +35,7 @@ train:
   max_target_length: 128
   debug_max_target_length: 16
   max_grad_norm: 1.0
-  batch_size: 64
+  batch_size: 256
   grad_accum: 1
   lr: 1.0e-4
   learning_rate: 1e-4
@@ -79,7 +79,7 @@ eval:
   do_semantic: true
   labse_model: sentence-transformers/LaBSE
   semantic_threshold: 0.75
-  semantic_batch_size: 128
+  semantic_batch_size: 1024
   generation_max_new_tokens: 16
   generation_min_new_tokens: 1
   strip_ner_tags: false

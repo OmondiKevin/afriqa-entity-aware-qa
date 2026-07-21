@@ -106,7 +106,7 @@ def main() -> None:
             generated_tokens = qa_model.generate(**inputs, max_new_tokens=32)
         return qa_tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
 
-    batch_size = 64
+    batch_size = 512
     results = []
     
     output_path = paths.outputs / "predictions" / "translation_pipeline_test.jsonl"
